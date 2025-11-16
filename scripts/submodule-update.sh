@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DIR="packages/VibeBrowser-agent"
+DIR="packages/vibebrowser-agent"
 BRANCH="${1:-main}"
 
 git -C "$DIR" fetch origin "$BRANCH" --tags
