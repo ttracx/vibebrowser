@@ -113,7 +113,7 @@ The agent is a Chrome extension that provides AI-powered automation. Most contri
 <Steps>
   <Step title="Navigate to Agent Directory">
     ```bash
-    cd packages/VibeBrowser-agent
+    cd packages/vibebrowser-agent
     ```
   </Step>
 
@@ -149,7 +149,7 @@ The agent is a Chrome extension that provides AI-powered automation. Most contri
   </Step>
 
   <Step title="Load Unpacked Extension">
-    Click **Load unpacked** and select `packages/VibeBrowser-agent/dist/`
+    Click **Load unpacked** and select `packages/vibebrowser-agent/dist/`
   </Step>
 
   <Step title="Open Agent Panel">
@@ -158,7 +158,7 @@ The agent is a Chrome extension that provides AI-powered automation. Most contri
 </Steps>
 
 <Note>
-For detailed setup, architecture, and code standards, see the [Agent Contributing Guide](https://github.com/VibeBrowser/VibeBrowser/blob/main/packages/VibeBrowser-agent/CONTRIBUTING.md).
+For detailed setup, architecture, and code standards, see the [Agent Contributing Guide](https://github.com/VibeBrowser/VibeBrowser/blob/main/packages/vibebrowser-agent/CONTRIBUTING.md).
 </Note>
 
 </Accordion>
@@ -213,7 +213,7 @@ Building the custom Chromium browser requires significant disk space and time. O
     Once you have Chromium checked out, navigate to our build system:
 
     ```bash
-    cd packages/VibeBrowser
+    cd packages/vibebrowser
     ```
   </Step>
 
@@ -391,7 +391,7 @@ export type ToolInput = z.infer<typeof ToolInputSchema>
 
 <Note>
 claude.md file can be found at below:
-- Agent: [packages/VibeBrowser-agent/CLAUDE.md](https://github.com/VibeBrowser/VibeBrowser/blob/main/packages/VibeBrowser-agent/CLAUDE.md)
+- Agent: [packages/vibebrowser-agent/CLAUDE.md](https://github.com/VibeBrowser/VibeBrowser/blob/main/packages/vibebrowser-agent/CLAUDE.md)
 </Note>
 
 ## 6. Project Structure
@@ -399,12 +399,12 @@ claude.md file can be found at below:
 ```
 monorepo/
 ├── packages/
-│   ├── VibeBrowser/              # Chromium build system
+│   ├── vibebrowser/              # Chromium build system
 │   │   ├── build/             # Python build scripts
 │   │   ├── chromium_patches/  # Patches to Chromium source
 │   │   └── resources/         # Icons, configs
 │   │
-│   └── VibeBrowser-agent/        # Chrome extension
+│   └── vibebrowser-agent/        # Chrome extension
 │       ├── src/
 │       │   ├── lib/           # Core agent logic
 │       │   ├── sidepanel/     # Side panel UI

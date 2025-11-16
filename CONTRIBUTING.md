@@ -63,7 +63,7 @@ The agent is a Chrome extension that provides AI-powered automation. Most contri
 
 ```bash
 # 1. Navigate to agent directory
-cd packages/VibeBrowser-agent
+cd packages/vibebrowser-agent
 
 # 2. Install dependencies
 yarn install
@@ -81,10 +81,10 @@ yarn build:dev       # One-time build
 1. Open `chrome://extensions/`
 2. Enable **Developer mode** (top right toggle)
 3. Click **Load unpacked**
-4. Select `packages/VibeBrowser-agent/dist/`
+4. Select `packages/vibebrowser-agent/dist/`
 5. Press Agent icon from extensions toolbar to open the agent panel
 
-**For detailed setup, architecture, and code standards, see [Agent Contributing Guide](packages/VibeBrowser-agent/CONTRIBUTING.md).**
+**For detailed setup, architecture, and code standards, see [Agent Contributing Guide](packages/vibebrowser-agent/CONTRIBUTING.md).**
 
 ## Browser Development
 
@@ -113,7 +113,7 @@ This will set up `depot_tools` and fetch the ~100GB Chromium source tree. This t
 Once you have Chromium checked out, navigate to our build system:
 
 ```bash
-cd packages/VibeBrowser
+cd packages/vibebrowser
 
 # Debug build (for development)
 # macOS
@@ -198,7 +198,7 @@ export type ToolInput = z.infer<typeof ToolInputSchema>
 - Handle errors gracefully
 
 **For detailed standards:**
-- Agent: [packages/VibeBrowser-agent/CLAUDE.md](packages/VibeBrowser-agent/CLAUDE.md)
+- Agent: [packages/vibebrowser-agent/CLAUDE.md](packages/vibebrowser-agent/CLAUDE.md)
 - Browser: Follow Chromium style guide
 
 ## Project Structure
@@ -206,12 +206,12 @@ export type ToolInput = z.infer<typeof ToolInputSchema>
 ```
 monorepo/
 ├── packages/
-│   ├── VibeBrowser/              # Chromium build system
+│   ├── vibebrowser/              # Chromium build system
 │   │   ├── build/             # Python build scripts
 │   │   ├── chromium_patches/  # Patches to Chromium source
 │   │   └── resources/         # Icons, configs
 │   │
-│   └── VibeBrowser-agent/        # Chrome extension
+│   └── vibebrowser-agent/        # Chrome extension
 │       ├── src/
 │       │   ├── lib/           # Core agent logic
 │       │   ├── sidepanel/     # Side panel UI
