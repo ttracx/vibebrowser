@@ -1,0 +1,12 @@
+diff --git a/chrome/common/importer/profile_import.mojom b/chrome/common/importer/profile_import.mojom
+index b28b7324629ae..7ff6dc29b25c1 100644
+--- a/chrome/common/importer/profile_import.mojom
++++ b/chrome/common/importer/profile_import.mojom
+@@ -82,6 +82,7 @@ interface ProfileImportObserver {
+   OnAutofillFormDataImportStart(uint32 total_autofill_form_data_entry_count);
+   OnAutofillFormDataImportGroup(
+       array<ImporterAutofillFormDataEntry> autofill_form_data_entry_group);
++  OnExtensionsImportReady(array<string> extension_ids);
+ };
+ 
+ // This interface is used to control the import process.

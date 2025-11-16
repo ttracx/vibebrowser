@@ -1,0 +1,146 @@
+---
+title: "Using OpenAI's GPT-OSS"
+description: "Complete guide to running OpenAI's GPT-OSS model locally with LM Studio"
+icon: "brain"
+---
+
+## Complete Setup Guide
+
+This guide will walk you through setting up and using OpenAI's GPT-OSS model with LM Studio and VibeBrowser.
+
+## Step 1: Setup LM Studio and Download GPT-OSS
+
+<Steps>
+  <Step title="Download LM Studio">
+    Download LM Studio from [https://lmstudio.ai/](https://lmstudio.ai/)
+  </Step>
+
+  <Step title="Open Discovery Page">
+    Click on **Discover** in LM Studio (the 🔍 icon on the left).
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step1.png" alt="Setup LMStudio and download OpenAI GPT-OSS" />
+    </Frame>
+  </Step>
+
+  <Step title="Search and Download Model">
+    Search for `gpt-oss-20b` and click **Download**.
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step2.png" alt="Search for gpt-oss-20b and click Download" />
+    </Frame>
+  </Step>
+
+  <Step title="Load the Model">
+    After download finishes, load the model.
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step3.png" alt="After download finishes, load the model" />
+    </Frame>
+
+    <Note>
+    Enable the flag to choose model parameters on load
+    </Note>
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step4.png" alt="Enable the flag to choose model parameters on load" />
+    </Frame>
+
+    Set context length to **32768** (adjust based on your hardware) and load the model.
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step5.png" alt="Set context length to 32768" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Step 2: Configure VibeBrowser to use LM Studio
+
+<Steps>
+  <Step title="Add Provider">
+    Navigate to `chrome://settings/VibeBrowser-ai` and click **Add Provider**.
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step6.png" alt="Configure VibeBrowser to use LMStudio" />
+    </Frame>
+  </Step>
+
+  <Step title="Select Provider Type">
+    Choose **OpenAI Compatible** as the Provider Type.
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step7.png" alt="Choose Provider Type as OpenAI Compatible" />
+    </Frame>
+  </Step>
+
+  <Step title="Configure Connection">
+    - Set Base URL to `http://127.0.0.1:1234/v1`
+    - Set Model ID to `openai/gpt-oss-20b`
+    - Set context length to **32768**
+    - Save your configuration
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step8.png" alt="Set Base URL configuration" />
+    </Frame>
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step9.png" alt="Complete configuration" />
+    </Frame>
+  </Step>
+
+  <Step title="Set as Default">
+    Change the default provider to **lmstudio** and you're ready to go!
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step10.png" alt="Change the default provider to lmstudio" />
+    </Frame>
+  </Step>
+
+  <Step title="Start Using GPT-OSS">
+    You can now use GPT-OSS from the Agent!
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step11.png" alt="You can use gpt-oss from Agent" />
+    </Frame>
+
+    If everything is set up correctly, you should see messages in LM Studio:
+
+    <Frame>
+      <img src="/images/using-lm-studio-openais-gpt-oss/lm-studio-openais-step12.png" alt="LM Studio showing active connections" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Configuration Summary
+
+<Cards>
+  <Card title="LM Studio Settings" icon="cog">
+    - Model: `openai/gpt-oss-20b`
+    - Context Length: 32768
+    - Server: `http://127.0.0.1:1234/v1`
+  </Card>
+  <Card title="VibeBrowser Settings" icon="browser">
+    - Provider Type: OpenAI Compatible
+    - Base URL: `http://127.0.0.1:1234/v1`
+    - Model ID: `openai/gpt-oss-20b`
+    - Context Window: 32768
+  </Card>
+</Cards>
+
+## Troubleshooting
+
+<Accordion title="Model not responding">
+  - Verify LM Studio is running and the model is loaded
+  - Check the server logs in LM Studio for any errors
+  - Ensure the Base URL is correct (http://127.0.0.1:1234/v1)
+</Accordion>
+
+<Accordion title="Context length errors">
+  - Make sure the context length in VibeBrowser matches LM Studio
+  - Reduce context length if you're running out of memory
+  - Consider using a smaller model if hardware is limited
+</Accordion>
+---
+<p align="center">
+© 2025 VibeBrowser powered by VibeCaaS.com a division of NeuralQuantum.ai LLC. All rights reserved.
+</p>

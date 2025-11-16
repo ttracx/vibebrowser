@@ -1,0 +1,12 @@
+diff --git a/chrome/VERSION b/chrome/VERSION
+index cdbed925f47c1..37b80272989ff 100644
+--- a/chrome/VERSION
++++ b/chrome/VERSION
+@@ -1,4 +1,4 @@
+ MAJOR=137
+ MINOR=0
+-BUILD=7151
+-PATCH=69
++BUILD=7187
++PATCH=69
+\ No newline at end of file

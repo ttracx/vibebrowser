@@ -1,0 +1,15 @@
+diff --git a/chrome/common/extensions/api/_permission_features.json b/chrome/common/extensions/api/_permission_features.json
+index 93ae24f9a0972..01742801dc6b5 100644
+--- a/chrome/common/extensions/api/_permission_features.json
++++ b/chrome/common/extensions/api/_permission_features.json
+@@ -91,6 +91,10 @@
+     "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
+     "location": "component"
+   },
++  "VibeBrowser": {
++    "channel": "stable",
++    "extension_types": ["extension", "platform_app"]
++  },
+   "browsingData": {
+     "channel": "stable",
+     "extension_types": ["extension", "legacy_packaged_app"]

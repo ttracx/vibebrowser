@@ -1,0 +1,56 @@
+diff --git a/chrome/browser/BUILD.gn b/chrome/browser/BUILD.gn
+index ad39862fdd9a5..fc8552e6e6dac 100644
+--- a/chrome/browser/BUILD.gn
++++ b/chrome/browser/BUILD.gn
+@@ -12,6 +12,7 @@ import("//build/config/features.gni")
+ import("//build/config/python.gni")
+ import("//build/config/ui.gni")
+ import("//chrome/browser/buildflags.gni")
++import("//chrome/browser/sparkle_buildflags.gni")
+ import("//chrome/browser/downgrade/buildflags.gni")
+ import("//chrome/browser/request_header_integrity/buildflags.gni")
+ import("//chrome/common/features.gni")
+@@ -119,6 +120,11 @@ buildflag_header("buildflags") {
+   }
+ }
+ 
++buildflag_header("sparkle_buildflags") {
++  header = "sparkle_buildflags.h"
++  flags = [ "ENABLE_SPARKLE=$enable_sparkle" ]
++}
++
+ source_set("browser_process") {
+   sources = [
+     "browser_process.cc",
+@@ -287,6 +293,10 @@ static_library("browser") {
+     "chrome_browser_interface_binders.h",
+     "chrome_browser_interface_binders_webui.cc",
+     "chrome_browser_interface_binders_webui.h",
++    "VibeBrowser_server/VibeBrowser_server_manager.cc",
++    "VibeBrowser_server/VibeBrowser_server_manager.h",
++    "VibeBrowser_server/VibeBrowser_server_prefs.cc",
++    "VibeBrowser_server/VibeBrowser_server_prefs.h",
+     "chrome_browser_main.cc",
+     "chrome_browser_main.h",
+     "chrome_browser_main_extra_parts_nacl_deprecation.cc",
+@@ -6557,6 +6567,20 @@ static_library("browser") {
+     ]
+   }
+ 
++  if (is_mac && enable_sparkle) {
++    sources += [
++      "mac/sparkle_glue.h",
++      "mac/sparkle_glue.mm",
++      "mac/su_updater.h",
++    ]
++
++    # Add dependency on sparkle buildflags and framework
++    deps += [
++      ":sparkle_buildflags",
++      "//third_party/sparkle:sparkle_framework",
++    ]
++  }
++
+   if (is_android || is_mac || is_win || is_chromeos) {
+     sources += [
+       "device_reauth/chrome_device_authenticator_factory.cc",

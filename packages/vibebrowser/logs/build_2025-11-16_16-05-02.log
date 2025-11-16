@@ -1,0 +1,9 @@
+Nxtscape Build Log - Started at 2025-11-16 16:05:02
+================================================================================
+
+[2025-11-16 16:05:02] INFO: 🚀 Nxtscape Build System
+[2025-11-16 16:05:02] INFO: ==================================================
+[2025-11-16 16:05:02] INFO: 📄 Loaded config from: build/config/debug.yaml
+[2025-11-16 16:05:02] INFO: 📁 Using Chromium source from CLI: /Users/knightdev/chromium/src
+[2025-11-16 16:05:02] ERROR: Chromium source directory does not exist: /Users/knightdev/chromium/src
+[2025-11-16 16:05:02] ERROR: Please provide a valid chromium source path

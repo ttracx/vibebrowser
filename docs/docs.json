@@ -1,0 +1,125 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "VibeBrowser Documentation",
+  "colors": {
+    "primary": "#6D4AFF",
+    "light": "#AD94FF",
+    "dark": "#4D32BF"
+  },
+  "favicon": "/logo/favicon.svg",
+  "customCSS": ["/vibecaas-theme.css"],
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "onboarding"
+            ]
+          },
+          {
+            "group": "Configure AI",
+            "expanded": true,
+            "pages": [
+              "llm-setup-guide",
+              {
+                "group": "BYOK LLM",
+                "expanded": true,
+                "pages": [
+                  "bring-your-own-keys/gemini",
+                  "bring-your-own-keys/claude",
+                  "bring-your-own-keys/openai",
+                  "bring-your-own-keys/openrouter"
+                ]
+              },
+              {
+                "group": "Local LLMs",
+                "expanded": true,
+                "pages": [
+                  "local-LLMs/ollama",
+                  "local-LLMs/lm-studio",
+                  "local-LLMs/gpt-oss"
+                ]
+              },
+              {
+                "group": "VibeBrowser-mcp",
+                "expanded": true,
+                "pages": [
+                  "VibeBrowser-mcp/how-to-guide"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Contributing",
+            "pages": [
+              "contributing"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/VibeBrowser-ai/VibeBrowser",
+          "icon": "github"
+        },
+        {
+          "anchor": "Discord",
+          "href": "https://discord.gg/YKwjt5vuKr",
+          "icon": "discord"
+        },
+        {
+          "anchor": "Slack",
+          "href": "http://dub.sh/VibeBrowser-slack",
+          "icon": "slack"
+        }
+
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/vibebrowser-original.svg",
+    "dark": "/logo/vibebrowser-original.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "https://discord.gg/YKwjt5vuKr"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Download",
+      "href": "https://VibeBrowser.com"
+    }
+  },
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude",
+     "perplexity",
+     "mcp",
+     "cursor",
+     "vscode"
+   ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/VibeBrowser_ai",
+      "github": "https://github.com/VibeBrowser-ai/VibeBrowser",
+      "discord": "https://discord.gg/YKwjt5vuKr",
+      "slack": "http://dub.sh/VibeBrowser-slack"
+    },
+    "copyright": "© 2025 VibeBrowser powered by VibeCaaS.com a division of NeuralQuantum.ai LLC. All rights reserved."
+  }
+}

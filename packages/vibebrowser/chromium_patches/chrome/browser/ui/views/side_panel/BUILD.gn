@@ -1,0 +1,29 @@
+diff --git a/chrome/browser/ui/views/side_panel/BUILD.gn b/chrome/browser/ui/views/side_panel/BUILD.gn
+index 2af616e71a52a..56021613259dc 100644
+--- a/chrome/browser/ui/views/side_panel/BUILD.gn
++++ b/chrome/browser/ui/views/side_panel/BUILD.gn
+@@ -88,6 +88,16 @@ source_set("side_panel") {
+     "side_panel_util.h",
+     "side_panel_web_ui_view.cc",
+     "side_panel_web_ui_view.h",
++    "third_party_llm/third_party_llm_panel_coordinator.cc",
++    "third_party_llm/third_party_llm_panel_coordinator.h",
++    "third_party_llm/third_party_llm_view.cc",
++    "third_party_llm/third_party_llm_view.h",
++    "clash_of_gpts/clash_of_gpts_coordinator.cc",
++    "clash_of_gpts/clash_of_gpts_coordinator.h",
++    "clash_of_gpts/clash_of_gpts_view.cc",
++    "clash_of_gpts/clash_of_gpts_view.h",
++    "clash_of_gpts/clash_of_gpts_window.cc",
++    "clash_of_gpts/clash_of_gpts_window.h",
+   ]
+   public_deps = [
+     "//base",
+@@ -162,6 +172,7 @@ source_set("side_panel") {
+     "//components/keyed_service/core",
+     "//components/language/core/browser",
+     "//components/language/core/common",
++    "//components/metrics/VibeBrowser_metrics",
+     "//components/omnibox/browser:vector_icons",
+     "//components/optimization_guide/core:features",
+     "//components/performance_manager",

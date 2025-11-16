@@ -1,0 +1,30 @@
+diff --git a/chrome/browser/ui/BUILD.gn b/chrome/browser/ui/BUILD.gn
+index 93096ad92c1a3..bf0e13928f08e 100644
+--- a/chrome/browser/ui/BUILD.gn
++++ b/chrome/browser/ui/BUILD.gn
+@@ -1566,6 +1566,8 @@ static_library("ui") {
+       "webui/settings/reset_settings_handler.h",
+       "webui/settings/search_engines_handler.cc",
+       "webui/settings/search_engines_handler.h",
++      "webui/settings/VibeBrowser_metrics_handler.cc",
++      "webui/settings/VibeBrowser_metrics_handler.h",
+       "webui/settings/settings_clear_browsing_data_handler.cc",
+       "webui/settings/settings_clear_browsing_data_handler.h",
+       "webui/settings/settings_localized_strings_privacy_sandbox_provider.cc",
+@@ -3435,6 +3437,8 @@ static_library("ui") {
+       "views/frame/native_browser_frame_factory_mac.mm",
+       "views/tab_contents/chrome_web_contents_view_delegate_views_mac.h",
+       "views/tab_contents/chrome_web_contents_view_delegate_views_mac.mm",
++      "webui/help/sparkle_version_updater_mac.h",
++      "webui/help/sparkle_version_updater_mac.mm",
+       "webui/help/version_updater_mac.mm",
+       "webui/settings/mac_system_settings_handler.cc",
+       "webui/settings/mac_system_settings_handler.h",
+@@ -3453,6 +3457,7 @@ static_library("ui") {
+     allow_circular_includes_from += [ "//chrome/browser/apps/app_shim" ]
+ 
+     deps += [
++      "//chrome/browser:sparkle_buildflags",
+       "//chrome/browser/apps/app_shim",
+       "//chrome/browser/enterprise/connectors/device_trust/key_management/core/mac",
+       "//chrome/browser/updater:browser_updater_client",

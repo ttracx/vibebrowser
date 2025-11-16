@@ -1,0 +1,81 @@
+---
+title: "Setting up Ollama"
+description: "Configure Ollama to work with VibeBrowser for local AI capabilities"
+icon: "robot"
+---
+
+## Quick Setup
+
+<Steps>
+  <Step title="Navigate to AI Settings">
+    Navigate to `chrome://settings/VibeBrowser-ai` to add Ollama as a provider.
+  </Step>
+  <Step title="Get Model ID">
+    Get the model ID of your Ollama model (e.g., `gpt-oss:20b`)
+  </Step>
+  <Step title="Start Ollama Server">
+    Start Ollama with CORS enabled:
+    ```bash
+    OLLAMA_ORIGINS="*" ollama serve
+    ```
+  </Step>
+  <Step title="Select and Use">
+    Select the model in agent and start using it! 🥳
+  </Step>
+</Steps>
+
+<Warning>
+If you don't want to run from CLI with CORS settings, we recommend using LM Studio instead. See the [LM Studio setup guide](/local-LLMs/lm-studio).
+</Warning>
+
+## Detailed Visual Guide
+
+### Step 1: Navigate to Settings Page
+
+Navigate to the VibeBrowser AI settings page at `chrome://settings/VibeBrowser-ai`
+
+<Frame>
+  <img src="/images/setting-up-ollama/ollama-step1.png" alt="Navigate to settings page" />
+</Frame>
+
+### Step 2: Get the Ollama Model ID
+
+Identify and copy your Ollama model ID for configuration.
+
+<Frame>
+  <img src="/images/setting-up-ollama/ollama-step2.png" alt="Get the ollama model ID" />
+</Frame>
+
+### Step 3: Start Ollama from CLI
+
+Run Ollama with the required CORS settings to allow VibeBrowser to connect:
+
+```bash
+OLLAMA_ORIGINS="*" ollama serve
+```
+
+<Note>
+Unfortunately, Ollama by default doesn't allow requests from other apps without this configuration.
+</Note>
+
+<Frame>
+  <img src="/images/setting-up-ollama/ollama-step3.png" alt="Start Ollama from CLI" />
+</Frame>
+
+### Step 4: Use the Model
+
+Select the model in the Agent dropdown and start using it! 🚀
+
+<Frame>
+  <img src="/images/setting-up-ollama/ollama-step4.png" alt="Use the model" />
+</Frame>
+
+## Alternative: LM Studio
+
+<Card title="LM Studio Setup" icon="desktop" href="/local-LLMs/lm-studio">
+  If you prefer not to run Ollama from the command line, LM Studio provides a more user-friendly alternative with a graphical interface.
+</Card>
+---
+<p align="center">
+© 2025 VibeBrowser powered by VibeCaaS.com a division of NeuralQuantum.ai LLC. All rights reserved.
+</p>

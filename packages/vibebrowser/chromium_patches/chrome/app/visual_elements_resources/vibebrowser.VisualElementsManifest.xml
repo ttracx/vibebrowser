@@ -1,0 +1,16 @@
+diff --git a/chrome/app/visual_elements_resources/VibeBrowser.VisualElementsManifest.xml b/chrome/app/visual_elements_resources/VibeBrowser.VisualElementsManifest.xml
+new file mode 100644
+index 0000000000000..a7bb10b4056e2
+--- /dev/null
++++ b/chrome/app/visual_elements_resources/VibeBrowser.VisualElementsManifest.xml
+@@ -0,0 +1,10 @@
++<!-- This is only meant to be copied by chrome.exe in developer builds. -->
++<Application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
++  <VisualElements
++    BackgroundColor="#212121"
++    ShowNameOnSquare150x150Logo="on"
++    ForegroundText="light"
++    Square150x150Logo="Logo.png"
++    Square70x70Logo="SmallLogo.png"
++    Square44x44Logo="SmallLogo.png"/>
++</Application>

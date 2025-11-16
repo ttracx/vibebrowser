@@ -1,0 +1,54 @@
+---
+title: "How To Guide"
+description: "Connect VibeBrowser as an MCP server to Claude Code or Claude Desktop"
+---
+
+## How to use `VibeBrowser-mcp` on Claude Code
+
+1. Download binary from [VibeBrowser.com](https://VibeBrowser.com)
+2. Open VibeBrowser and from a new tab click the settings icon to open the settings page.
+3. From the settings page, navigate to **MCP** in the sidebar and copy the MCP URL
+4. In your terminal, type the below command (Replace `<mcp_url>` with the MCP URL you copied above): 
+   ```
+   claude mcp add --transport http VibeBrowser <mcp_url>
+   # example: claude mcp add --transport http VibeBrowser http://127.0.0.1:9226/mcp
+   ``` 
+5. Now start Claude Code: `claude --dangerously-skip-permissions` (so Claude doesn't ask for confirmation each time)
+6. Now, in Claude Code, type `Open amazon.com on VibeBrowser` to open the tab in VibeBrowser.
+
+Here's a [loom video](https://www.loom.com/share/9a41b74f265649a2993c329b05f93b54?sid=009690dd-e1a0-47b9-9b41-abe544e90c78) capturing the above steps! 🥳
+
+### gemini-cli
+The steps are roughly the same as above, but to add the MCP server, run the following command:
+
+```
+gemini mcp add local-server <mcp_url> --transport http
+# example: gemini mcp add local-server http://127.0.0.1:9226/mcp --transport http
+
+```
+
+---
+
+## How to add `VibeBrowser-mcp` on Claude Desktop
+
+1. Download binary from [VibeBrowser.com](https://VibeBrowser.com)
+2. Open VibeBrowser and from a new tab click the settings icon to open the settings page. From the settings page, navigate to **MCP** in the sidebar and note the port number (usually `9225`).
+3. Open your Claude Desktop config file: `/Users/<username>/Library/Application Support/Claude/claude_desktop_config.json`
+4. Add VibeBrowser to your config (replace the port with the value shown in MCP settings page):
+```json
+{
+  "mcpServers": {
+    "VibeBrowser": {
+      "command": "npx",
+      "args": ["mcp-remote", "http://127.0.0.1:<port>/mcp"]
+    }
+  }
+}
+```
+5. Restart Claude Desktop. You should see the MCP connection indicator showing VibeBrowser is connected
+
+
+---
+<p align="center">
+© 2025 VibeBrowser powered by VibeCaaS.com a division of NeuralQuantum.ai LLC. All rights reserved.
+</p>

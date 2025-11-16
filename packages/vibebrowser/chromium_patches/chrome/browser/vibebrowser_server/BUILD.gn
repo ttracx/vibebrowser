@@ -1,0 +1,80 @@
+diff --git a/chrome/browser/VibeBrowser_server/BUILD.gn b/chrome/browser/VibeBrowser_server/BUILD.gn
+new file mode 100644
+index 0000000000000..7165c4459db08
+--- /dev/null
++++ b/chrome/browser/VibeBrowser_server/BUILD.gn
+@@ -0,0 +1,74 @@
++# Copyright 2024 The Chromium Authors
++# Use of this source code is governed by a BSD-style license that can be
++# found in the LICENSE file.
++
++import("//build/config/chrome_build.gni")
++
++source_set("VibeBrowser_server") {
++  sources = [
++    "VibeBrowser_server_manager.cc",
++    "VibeBrowser_server_manager.h",
++    "VibeBrowser_server_prefs.cc",
++    "VibeBrowser_server_prefs.h",
++  ]
++
++  deps = [
++    "//base",
++    "//chrome/browser:browser_process",
++    "//chrome/common",
++    "//components/prefs",
++    "//content/public/browser",
++    "//net",
++  ]
++}
++
++# Determine OS name for binary selection
++if (is_mac) {
++  _VibeBrowser_os = "darwin"
++} else if (is_win) {
++  _VibeBrowser_os = "windows"
++} else if (is_linux) {
++  _VibeBrowser_os = "linux"
++}
++
++# Construct source binary filename based on target OS and architecture
++_VibeBrowser_binary_name = "VibeBrowser-server-${_VibeBrowser_os}-${target_cpu}"
++if (is_win) {
++  _VibeBrowser_binary_name += ".exe"
++}
++
++# Source binary path (architecture-specific)
++_VibeBrowser_source_binary = "binaries/${_VibeBrowser_binary_name}"
++
++# Output filename (standardized)
++_VibeBrowser_output_name = "VibeBrowser_server"
++if (is_win) {
++  _VibeBrowser_output_name += ".exe"
++}
++
++if (is_mac) {
++  import("//build/config/apple/symbols.gni")
++  import("//build/config/mac/mac_sdk.gni")
++
++  # Bundle data for macOS - packages to Resources/VibeBrowserServer/default/
++  bundle_data("VibeBrowser_server_bundle_data") {
++    sources = [ _VibeBrowser_source_binary ]
++    outputs =
++        [ "{{bundle_resources_dir}}/VibeBrowserServer/default/${_VibeBrowser_output_name}" ]
++  }
++} else {
++  # Copy for Windows/Linux - packages to <exe_dir>/VibeBrowserServer/default/
++  copy("VibeBrowser_server_binary") {
++    sources = [ _VibeBrowser_source_binary ]
++    outputs = [ "$root_out_dir/VibeBrowserServer/default/${_VibeBrowser_output_name}" ]
++  }
++}
++
++# Group for all VibeBrowser server resources
++group("VibeBrowser_server_resources") {
++  if (is_mac) {
++    deps = [ ":VibeBrowser_server_bundle_data" ]
++  } else {
++    deps = [ ":VibeBrowser_server_binary" ]
++  }
++}

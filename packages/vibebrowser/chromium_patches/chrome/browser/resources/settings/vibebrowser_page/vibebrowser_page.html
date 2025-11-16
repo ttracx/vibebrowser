@@ -1,0 +1,1005 @@
+diff --git a/chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html b/chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html
+new file mode 100644
+index 0000000000000..6680e841cbb1e
+--- /dev/null
++++ b/chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html
+@@ -0,0 +1,999 @@
++    <link rel="import" href="../controls/settings_toggle_button.html">
++    <link rel="import" href="chrome://resources/cr_elements/cr_button/cr_button.html">
++    <style include="cr-shared-style settings-shared md-select">
++      /* Global box-sizing for all form elements */
++      input, select, textarea {
++        box-sizing: border-box;
++      }
++
++      .provider-header-section {
++        padding: 24px 20px;
++        border-bottom: var(--cr-separator-line);
++      }
++
++      .provider-header-top {
++        display: flex;
++        align-items: center;
++        gap: 16px;
++        margin-bottom: 20px;
++      }
++
++      .provider-header-icon {
++        width: 48px;
++        height: 48px;
++        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
++        border-radius: 50%;
++        display: flex;
++        align-items: center;
++        justify-content: center;
++        color: white;
++        font-size: 28px;
++        flex-shrink: 0;
++      }
++
++      .provider-header-content {
++        flex: 1;
++      }
++
++      .provider-header-title {
++        font-size: 20px;
++        font-weight: 400;
++        color: var(--cr-primary-text-color);
++        margin: 0 0 4px 0;
++      }
++
++      .provider-header-subtitle {
++        font-size: 14px;
++        color: var(--cr-secondary-text-color);
++        line-height: 20px;
++      }
++
++      .provider-controls {
++        display: flex;
++        align-items: center;
++        gap: 12px;
++        padding: 16px 0;
++      }
++
++      .provider-control-label {
++        font-size: 13px;
++        font-weight: 500;
++        color: var(--cr-primary-text-color);
++        white-space: nowrap;
++      }
++
++      .provider-dropdown {
++        height: 36px;
++        padding: 0 32px 0 12px;
++        border-radius: 4px;
++        font-size: 13px;
++        min-width: 200px;
++        box-sizing: border-box;
++      }
++      
++      .spacer {
++        flex: 1;
++      }
++
++      .add-provider-button {
++        --cr-button-height: 36px;
++        flex-shrink: 0;
++      }
++
++      .provider-cards-container {
++        max-width: 680px;
++        margin: 20px auto 0;
++        padding: 0 20px 20px;
++        display: flex;
++        flex-direction: column;
++        gap: 12px;
++      }
++
++      .provider-card {
++        background: var(--cr-card-background-color);
++        border: 1px solid var(--cr-separator-color);
++        border-radius: 8px;
++        padding: 16px 20px;
++        transition: all 0.2s ease;
++        margin: 0;
++        position: relative;
++      }
++
++      .provider-card:hover {
++        box-shadow: var(--cr-card-shadow);
++      }
++
++      .provider-card.selected {
++        border-color: var(--cr-focus-outline-color);
++        background: var(--cr-card-background-color);
++      }
++
++      .provider-card.VibeBrowser {
++        background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
++      }
++      
++      /* Templates section styles */
++      .templates-section {
++        background: var(--cr-card-background-color);
++        border: 1px solid var(--cr-separator-color);
++        border-radius: 8px;
++        margin-bottom: 16px;
++        overflow: hidden;
++      }
++      
++      .templates-header {
++        display: flex;
++        align-items: center;
++        justify-content: space-between;
++        padding: 12px 16px;
++        cursor: pointer;
++        user-select: none;
++        transition: background 0.2s ease;
++      }
++      
++      .templates-header:hover {
++        background: var(--cr-hover-background-color);
++      }
++      
++      .templates-title {
++        display: flex;
++        align-items: center;
++        gap: 8px;
++        font-size: 14px;
++        font-weight: 500;
++        color: var(--cr-primary-text-color);
++      }
++      
++      .templates-expand-icon {
++        transition: transform 0.2s ease;
++      }
++      
++      .templates-expand-icon.expanded {
++        transform: rotate(90deg);
++      }
++      
++      .templates-grid {
++        display: grid;
++        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
++        gap: 12px;
++        padding: 16px;
++        border-top: 1px solid var(--cr-separator-color);
++      }
++      
++      .template-card {
++        background: var(--cr-card-background-color);
++        border: 1px solid var(--cr-separator-color);
++        border-radius: 6px;
++        padding: 12px 16px;
++        transition: all 0.2s ease;
++        display: flex;
++        flex-direction: row;
++        align-items: center;
++        justify-content: space-between;
++      }
++      
++      .template-card:hover {
++        border-color: var(--cr-focus-outline-color);
++        box-shadow: var(--cr-card-shadow);
++      }
++      
++      .template-name {
++        font-size: 14px;
++        font-weight: 500;
++        color: var(--cr-primary-text-color);
++      }
++      
++      .template-setup-btn {
++        padding: 4px 12px;
++        font-size: 12px;
++        background: transparent;
++        color: var(--cr-link-color);
++        border: 1px solid var(--cr-separator-color);
++        border-radius: 4px;
++        cursor: pointer;
++        transition: all 0.2s ease;
++        white-space: nowrap;
++      }
++      
++      .template-setup-btn:hover {
++        border-color: var(--cr-focus-outline-color);
++        background: var(--cr-hover-background-color);
++      }
++
++      .provider-card-content {
++        display: flex;
++        align-items: center;
++        gap: 16px;
++      }
++
++      .provider-radio {
++        width: 20px;
++        height: 20px;
++        border-radius: 50%;
++        border: 2px solid var(--cr-separator-color);
++        position: relative;
++        cursor: pointer;
++        flex-shrink: 0;
++      }
++
++      .provider-card.selected .provider-radio {
++        border-color: var(--cr-focus-outline-color);
++      }
++
++      .provider-card.selected .provider-radio::after {
++        content: '';
++        position: absolute;
++        top: 50%;
++        left: 50%;
++        transform: translate(-50%, -50%);
++        width: 10px;
++        height: 10px;
++        border-radius: 50%;
++        background: var(--cr-focus-outline-color);
++      }
++
++      .provider-card-icon {
++        width: 40px;
++        height: 40px;
++        border-radius: 8px;
++        display: flex;
++        align-items: center;
++        justify-content: center;
++        font-size: 18px;
++        font-weight: 600;
++        color: white;
++        flex-shrink: 0;
++      }
++
++      .provider-card.VibeBrowser .provider-card-icon {
++        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
++      }
++
++      .provider-card-icon.openai {
++        background: linear-gradient(135deg, #10a37f 0%, #1a7f64 100%);
++      }
++      
++      .provider-card-icon.openai_compatible {
++        background: linear-gradient(135deg, #10a37f 0%, #1a7f64 100%);
++      }
++
++      .provider-card-icon.anthropic {
++        background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
++      }
++
++      .provider-card-icon.google_gemini {
++        background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%);
++      }
++
++      .provider-card-icon.ollama {
++        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
++      }
++
++      .provider-card-icon.openrouter {
++        background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
++      }
++
++      .provider-card-icon.custom {
++        background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
++      }
++
++      .provider-card-info {
++        flex: 1;
++      }
++
++      .provider-card-header {
++        display: flex;
++        align-items: center;
++        gap: 8px;
++      }
++
++      .provider-card-name {
++        font-size: 15px;
++        font-weight: 500;
++        color: var(--cr-primary-text-color);
++        margin: 0;
++      }
++
++      .provider-badge {
++        padding: 2px 8px;
++        border-radius: 4px;
++        font-size: 11px;
++        font-weight: 500;
++        text-transform: uppercase;
++        letter-spacing: 0.5px;
++      }
++
++      .provider-badge.default {
++        background: var(--google-green-50);
++        color: var(--google-green-700);
++      }
++
++      .provider-badge.builtin {
++        background: var(--google-blue-50);
++        color: var(--google-blue-700);
++      }
++      
++      .provider-badge.draft {
++        background: var(--google-yellow-50);
++        color: var(--google-yellow-900);
++      }
++      
++      .setup-hint {
++        font-size: 12px;
++        color: var(--google-green-700);
++        background: var(--google-green-50);
++        padding: 4px 8px;
++        border-radius: 4px;
++        margin-top: 8px;
++        display: inline-flex;
++        align-items: center;
++        gap: 4px;
++      }
++
++      @media (prefers-color-scheme: dark) {
++        .provider-badge.default {
++          background: rgba(129, 201, 149, 0.15);
++          color: var(--google-green-300);
++        }
++
++        .provider-badge.builtin {
++          background: rgba(138, 180, 248, 0.15);
++          color: var(--google-blue-300);
++        }
++        
++        .provider-badge.draft {
++          background: rgba(251, 188, 4, 0.15);
++          color: var(--google-yellow-300);
++        }
++        
++        .setup-hint {
++          background: rgba(129, 201, 149, 0.1);
++          color: var(--google-green-300);
++        }
++      }
++
++      .provider-card-subtitle {
++        font-size: 13px;
++        color: var(--cr-secondary-text-color);
++        margin-top: 4px;
++      }
++
++      .provider-card-actions {
++        display: flex;
++        gap: 8px;
++        align-items: center;
++      }
++
++      .provider-action-button {
++        padding: 6px 12px;
++        border: 1px solid var(--cr-separator-color);
++        border-radius: 4px;
++        background: transparent;
++        color: var(--cr-primary-text-color);
++        font-size: 12px;
++        cursor: pointer;
++        transition: all 0.2s ease;
++      }
++
++      .provider-action-button:hover {
++        background: var(--cr-hover-background-color);
++      }
++
++      .provider-action-button.delete {
++        color: var(--google-red-600);
++      }
++
++      .provider-action-button.delete:hover {
++        background: var(--google-red-50);
++      }
++
++      @media (prefers-color-scheme: dark) {
++        .provider-action-button.delete:hover {
++          background: rgba(244, 67, 54, 0.1);
++        }
++      }
++
++      /* Provider Form Card Styles */
++      .provider-form-card {
++        background: var(--cr-card-background-color);
++        border: 1px solid var(--cr-focus-outline-color);
++        border-radius: 8px;
++        padding: 24px 28px;
++        margin-bottom: 16px;
++        display: none;
++        box-sizing: border-box;
++      }
++
++      .provider-form-card.show {
++        display: block;
++        animation: slideDown 0.3s ease-out;
++      }
++      
++      .provider-form-card.highlight {
++        border-color: var(--cr-focus-outline-color);
++        box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
++      }
++
++      @keyframes slideDown {
++        from {
++          opacity: 0;
++          transform: translateY(-10px);
++        }
++        to {
++          opacity: 1;
++          transform: translateY(0);
++        }
++      }
++      
++      @keyframes pulse {
++        0% {
++          box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4);
++        }
++        70% {
++          box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
++        }
++        100% {
++          box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
++        }
++      }
++
++      .form-title {
++        font-size: 16px;
++        font-weight: 500;
++        color: var(--cr-primary-text-color);
++        margin: 0 0 20px 0;
++      }
++
++      .form-content {
++        display: flex;
++        flex-direction: column;
++        gap: 16px;
++      }
++
++      .form-row {
++        display: flex;
++        gap: 16px;
++      }
++
++      .form-row .form-group {
++        flex: 1;
++        min-width: 0;
++      }
++
++      .form-group {
++        display: flex;
++        flex-direction: column;
++        gap: 8px;
++      }
++
++      .form-label {
++        font-size: 13px;
++        font-weight: 500;
++        color: var(--cr-primary-text-color);
++      }
++
++      .form-label .required {
++        color: var(--google-red-600);
++      }
++
++      .form-field {
++        width: 100%;
++        height: 36px;
++        padding: 0 12px;
++        border: 1px solid var(--cr-separator-color);
++        border-radius: 4px;
++        font-size: 13px;
++        background: var(--cr-input-background-color);
++        color: var(--cr-primary-text-color);
++        transition: border-color 0.2s ease;
++        box-sizing: border-box;
++      }
++
++      .form-field:hover {
++        border-color: var(--cr-hover-border-color);
++      }
++
++      .form-field:focus {
++        outline: none;
++        border-color: var(--cr-focus-outline-color);
++      }
++
++      .form-helper {
++        font-size: 12px;
++        color: var(--cr-secondary-text-color);
++      }
++
++      .form-section {
++        border-top: 1px solid var(--cr-separator-color);
++        padding-top: 16px;
++        margin-top: 16px;
++      }
++
++      .form-section-title {
++        font-size: 14px;
++        font-weight: 500;
++        color: var(--cr-primary-text-color);
++        margin-bottom: 16px;
++      }
++
++      .checkbox-group {
++        display: flex;
++        align-items: center;
++        gap: 8px;
++        margin-bottom: 16px;
++      }
++      
++      .checkbox-group input[type="checkbox"] {
++        width: auto;
++        margin: 0;
++      }
++
++      .form-buttons {
++        display: flex;
++        justify-content: flex-end;
++        gap: 8px;
++        margin-top: 20px;
++        padding-top: 16px;
++        border-top: 1px solid var(--cr-separator-color);
++      }
++      
++      /* Custom autocomplete dropdown styles */
++      .model-id-container {
++        position: relative;
++      }
++      
++      .model-id-input {
++        width: 100%;
++        height: 36px;
++        padding: 0 32px 0 12px;
++        border: 1px solid var(--cr-separator-color);
++        border-radius: 4px;
++        font-size: 13px;
++        background: var(--cr-input-background-color);
++        color: var(--cr-primary-text-color);
++        transition: border-color 0.2s ease;
++        box-sizing: border-box;
++      }
++      
++      .model-id-input:hover {
++        border-color: var(--cr-hover-border-color);
++      }
++      
++      .model-id-input:focus {
++        outline: none;
++        border-color: var(--cr-focus-outline-color);
++      }
++      
++      .model-dropdown-icon {
++        position: absolute;
++        right: 8px;
++        top: 50%;
++        transform: translateY(-50%);
++        width: 20px;
++        height: 20px;
++        color: var(--cr-secondary-text-color);
++        cursor: pointer;
++        transition: color 0.15s ease;
++      }
++      
++      .model-dropdown-icon:hover {
++        color: var(--cr-primary-text-color);
++      }
++      
++      .model-suggestions-dropdown {
++        position: absolute;
++        top: 100%;
++        left: 0;
++        right: 0;
++        margin-top: 4px;
++        background: var(--cr-card-background-color);
++        border: 1px solid var(--cr-separator-color);
++        border-radius: 4px;
++        box-shadow: var(--cr-card-shadow);
++        max-height: 240px;
++        overflow-y: auto;
++        z-index: 100;
++        display: none;
++      }
++      
++      .model-suggestions-dropdown.show {
++        display: block;
++      }
++      
++      .model-suggestion-item {
++        padding: 8px 12px;
++        font-size: 13px;
++        color: var(--cr-primary-text-color);
++        cursor: pointer;
++        transition: background 0.15s ease;
++      }
++      
++      .model-suggestion-item:hover {
++        background: var(--cr-hover-background-color);
++      }
++      
++      .model-suggestion-item.selected {
++        background: var(--cr-focus-background-color);
++      }
++      
++      .model-suggestion-item:first-child {
++        border-radius: 4px 4px 0 0;
++      }
++      
++      .model-suggestion-item:last-child {
++        border-radius: 0 0 4px 4px;
++      }
++      
++      .no-suggestions {
++        padding: 12px;
++        text-align: center;
++        color: var(--cr-secondary-text-color);
++        font-size: 13px;
++        font-style: italic;
++      }
++      
++      .custom-model-option {
++        padding: 10px 12px;
++        background: linear-gradient(to right, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
++        border-bottom: 1px solid var(--cr-separator-color);
++        cursor: pointer;
++        transition: background 0.15s ease;
++      }
++      
++      .custom-model-option:hover {
++        background: linear-gradient(to right, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
++      }
++      
++      .custom-model-option.selected {
++        background: linear-gradient(to right, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
++      }
++      
++      .custom-model-label {
++        font-size: 11px;
++        color: var(--cr-secondary-text-color);
++        text-transform: uppercase;
++        letter-spacing: 0.5px;
++        margin-bottom: 4px;
++        font-weight: 500;
++      }
++      
++      .custom-model-value {
++        font-size: 13px;
++        color: var(--cr-primary-text-color);
++        font-weight: 500;
++      }
++      
++      .suggestions-divider {
++        font-size: 11px;
++        color: var(--cr-secondary-text-color);
++        padding: 8px 12px 4px;
++        text-transform: uppercase;
++        letter-spacing: 0.5px;
++        font-weight: 500;
++        background: var(--cr-hover-background-color);
++      }
++
++      /* Status Toast */
++      .status-toast {
++        position: fixed;
++        bottom: 24px;
++        left: 50%;
++        transform: translateX(-50%) translateY(100px);
++        padding: 12px 24px;
++        border-radius: 4px;
++        background: var(--google-grey-900);
++        color: white;
++        font-size: 14px;
++        display: flex;
++        align-items: center;
++        gap: 8px;
++        opacity: 0;
++        transition: all 0.3s ease;
++        z-index: 1000;
++        pointer-events: none;
++      }
++
++      .status-toast.show {
++        transform: translateX(-50%) translateY(0);
++        opacity: 1;
++      }
++
++      .status-toast.error {
++        background: var(--google-red-600);
++      }
++
++      @media (prefers-color-scheme: dark) {
++        .provider-card.VibeBrowser {
++          background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
++        }
++      }
++    </style>
++
++    <!-- Main Header -->
++    <div class="provider-header-section">
++      <div class="provider-header-top">
++        <div class="provider-header-icon">
++          <cr-icon icon="settings:auto-awesome"></cr-icon>
++        </div>
++        <div class="provider-header-content">
++          <h1 class="provider-header-title">LLM Providers</h1>
++          <div class="provider-header-subtitle">
++            Add your provider and choose the default LLM
++          </div>
++        </div>
++      </div>
++      <div class="provider-controls">
++        <span class="provider-control-label">Default Provider:</span>
++        <select id="defaultProvider" class="md-select provider-dropdown"
++                value="[[defaultProviderId_]]"
++                on-change="onDefaultProviderChange_">
++          <template is="dom-repeat" items="[[providers_]]">
++            <option value="[[item.id]]">[[item.name]]</option>
++          </template>
++        </select>
++        <div class="spacer"></div>
++        <cr-button class="add-provider-button" on-click="onAddProvider_">
++          <cr-icon icon="cr:add" slot="prefix-icon"></cr-icon>
++          <template is="dom-if" if="[[!showProviderForm_]]">
++            Add custom provider
++          </template>
++          <template is="dom-if" if="[[showProviderForm_]]">
++            Cancel
++          </template>
++        </cr-button>
++      </div>
++    </div>
++
++    <!-- Provider Cards Container -->
++    <div class="provider-cards-container">
++      <!-- Templates Section -->
++      <div class="templates-section">
++        <div class="templates-header" on-click="onToggleTemplates_">
++          <div class="templates-title">
++            <cr-icon class$="templates-expand-icon [[getExpandIconClass_(showTemplates_)]]" 
++                     icon="cr:chevron-right"></cr-icon>
++            <span>Quick provider templates</span>
++          </div>
++          <span style="font-size: 12px; color: var(--cr-secondary-text-color);">
++            [[providerTemplates_.length]] templates available
++          </span>
++        </div>
++        <template is="dom-if" if="[[showTemplates_]]">
++          <div class="templates-grid">
++            <template is="dom-repeat" items="[[providerTemplates_]]">
++              <div class="template-card">
++                <div class="template-name">[[item.name]]</div>
++                <button class="template-setup-btn" 
++                        on-click="onUseTemplate_"
++                        data-template-index$="[[index]]">
++                  use
++                </button>
++              </div>
++            </template>
++          </div>
++        </template>
++      </div>
++      
++      <!-- Provider Form Card (shown when adding/editing) -->
++      <div class$="provider-form-card [[getFormCardClass_(showProviderForm_)]]">
++        <h3 class="form-title">
++          <template is="dom-if" if="[[editingProvider_]]">
++            Edit Provider
++          </template>
++          <template is="dom-if" if="[[!editingProvider_]]">
++            Configure New Provider
++          </template>
++        </h3>
++        
++        <div class="form-content">
++          <div class="form-row">
++            <div class="form-group">
++              <label class="form-label">
++                Provider Type <span class="required">*</span>
++              </label>
++              <select class="form-field"
++                      value="{{dialogProviderType_::change}}"
++                      on-change="onProviderTypeChange_"
++                      disabled$="[[editingProvider_]]">
++                <option value="openai">OpenAI</option>
++                <option value="openai_compatible">OpenAI Compatible</option>
++                <option value="anthropic">Anthropic</option>
++                <option value="google_gemini">Google Gemini</option>
++                <option value="ollama">Ollama</option>
++                <option value="openrouter">OpenRouter</option>
++                <option value="custom">Custom</option>
++              </select>
++            </div>
++
++            <div class="form-group">
++              <label class="form-label">
++                Provider Name <span class="required">*</span>
++              </label>
++              <input type="text" 
++                     class="form-field"
++                     value="{{dialogProviderName_::input}}"
++                     placeholder="e.g., Work OpenAI">
++            </div>
++          </div>
++
++          <div class="form-row">
++            <div class="form-group">
++              <label class="form-label">Base URL</label>
++              <input type="url" 
++                     class="form-field"
++                     value="{{dialogBaseUrl_::input}}"
++                     placeholder="Leave empty for default">
++              <div class="form-helper">Override the default API endpoint</div>
++            </div>
++
++            <div class="form-group">
++              <label class="form-label">
++                Model ID <span class="required">*</span>
++              </label>
++              <div class="model-id-container">
++                <input type="text" 
++                       class="model-id-input"
++                       value="{{dialogModelId_::input}}"
++                       on-input="onModelIdInput_"
++                       on-focus="onModelIdFocus_"
++                       on-blur="onModelIdBlur_"
++                       on-keydown="onModelIdKeydown_"
++                       placeholder="e.g., gpt-4o, claude-3-5-sonnet">
++                <cr-icon class="model-dropdown-icon" 
++                         icon="cr:arrow-drop-down"
++                         on-click="onToggleDropdown_"></cr-icon>
++                <div class$="model-suggestions-dropdown [[getDropdownClass_(showModelDropdown_)]]">
++                  <!-- Show custom model option when user has typed something -->
++                  <template is="dom-if" if="[[shouldShowCustomOption_(dialogModelId_, filteredModelSuggestions_)]]">
++                    <div class$="custom-model-option [[getCustomOptionClass_(selectedSuggestionIndex_)]]"
++                         on-click="onSelectCustomModel_">
++                      <div class="custom-model-label">Use custom model</div>
++                      <div class="custom-model-value">[[dialogModelId_]]</div>
++                    </div>
++                    <template is="dom-if" if="[[filteredModelSuggestions_.length]]">
++                      <div class="suggestions-divider">Suggestions</div>
++                    </template>
++                  </template>
++                  
++                  <!-- Show suggestions if available -->
++                  <template is="dom-if" if="[[filteredModelSuggestions_.length]]">
++                    <template is="dom-repeat" items="[[filteredModelSuggestions_]]">
++                      <div class$="model-suggestion-item [[getSuggestionClass_(index, selectedSuggestionIndex_)]]"
++                           on-click="onSelectSuggestion_"
++                           data-model$="[[item]]">
++                        [[item]]
++                      </div>
++                    </template>
++                  </template>
++                  
++                  <!-- Show empty state only if no custom option and no suggestions -->
++                  <template is="dom-if" if="[[shouldShowEmptyState_(dialogModelId_, filteredModelSuggestions_)]]">
++                    <div class="no-suggestions">Type a model ID or select from suggestions</div>
++                  </template>
++                </div>
++              </div>
++            </div>
++          </div>
++
++          <div class="form-group">
++            <label class="form-label">API Key</label>
++            <input type="password" 
++                   class="form-field"
++                   value="{{dialogApiKey_::input}}"
++                   placeholder="Enter your API key (optional for some providers)">
++            <div class="form-helper">Your API key is encrypted and stored locally</div>
++          </div>
++
++          <div class="form-section">
++            <div class="form-section-title">Model Configuration</div>
++            
++            <div class="checkbox-group">
++              <input type="checkbox" 
++                     id="supportsImages"
++                     checked="{{dialogSupportsImages_::change}}">
++              <label for="supportsImages">Supports Images</label>
++            </div>
++
++            <div class="form-row">
++              <div class="form-group">
++                <label class="form-label">Context Window Size</label>
++                <input type="number" 
++                       class="form-field"
++                       value="{{dialogContextWindow_::input}}"
++                       min="1024"
++                       placeholder="128000">
++              </div>
++
++              <div class="form-group">
++                <label class="form-label">Temperature (0-2)</label>
++                <input type="number" 
++                       class="form-field"
++                       value="{{dialogTemperature_::input}}"
++                       min="0"
++                       max="2"
++                       step="0.1"
++                       placeholder="0.7">
++              </div>
++            </div>
++          </div>
++
++          <div class="form-buttons">
++            <!-- Test connection hidden for now -->
++            <!--
++            <cr-button on-click="testConnection_"
++                       disabled="[[isTestingConnection_]]">
++              <template is="dom-if" if="[[isTestingConnection_]]">
++                Testing...
++              </template>
++              <template is="dom-if" if="[[!isTestingConnection_]]">
++                Test Connection
++              </template>
++            </cr-button>
++            -->
++            <cr-button on-click="closeProviderForm_">
++              Cancel
++            </cr-button>
++            <cr-button class="action-button"
++                       on-click="saveProvider_">
++              Save
++            </cr-button>
++          </div>
++        </div>
++      </div>
++
++      <!-- Provider Cards List -->
++      <template is="dom-repeat" items="[[providers_]]">
++        <div class$="[[getProviderCardClass_(item)]]">
++          <div class="provider-card-content">
++            <!-- Radio button for selection -->
++            <template is="dom-if" if="[[shouldShowRadio_(item)]]">
++              <div class="provider-radio" 
++                   on-click="setAsDefault_"
++                   data-provider-id$="[[item.id]]"></div>
++            </template>
++            <template is="dom-if" if="[[!shouldShowRadio_(item)]]">
++              <div style="width: 20px;"></div>
++            </template>
++            
++            <div class$="provider-card-icon [[item.type]]">
++              <span>[[getProviderIcon_(item.type)]]</span>
++            </div>
++            <div class="provider-card-info">
++              <div class="provider-card-header">
++                <h3 class="provider-card-name">[[item.name]]</h3>
++                <template is="dom-if" if="[[item.isDefault]]">
++                  <span class="provider-badge default">Default</span>
++                </template>
++                <template is="dom-if" if="[[item.isBuiltIn]]">
++                  <span class="provider-badge builtin">Built-in</span>
++                </template>
++              </div>
++              <div class="provider-card-subtitle">
++                [[getProviderSubtitle_(item)]]
++              </div>
++            </div>
++            <div class="provider-card-actions">
++              <template is="dom-if" if="[[shouldShowActions_(item)]]">
++                <button class="provider-action-button"
++                        on-click="onEditProvider_"
++                        data-provider-id$="[[item.id]]">
++                  Edit
++                </button>
++                <button class="provider-action-button delete"
++                        on-click="onDeleteProvider_"
++                        data-provider-id$="[[item.id]]">
++                  Delete
++                </button>
++              </template>
++            </div>
++          </div>
++        </div>
++      </template>
++    </div>
++
++    
++    <!-- Status Toast -->
++    <div id="statusMessage" class="status-toast">
++      <cr-icon icon="cr:check-circle"></cr-icon>
++      <span>Settings saved successfully</span>
++    </div>

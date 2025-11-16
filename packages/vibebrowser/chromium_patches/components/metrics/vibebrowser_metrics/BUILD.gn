@@ -1,0 +1,46 @@
+diff --git a/components/metrics/VibeBrowser_metrics/BUILD.gn b/components/metrics/VibeBrowser_metrics/BUILD.gn
+new file mode 100644
+index 0000000000000..c57c43bb575ea
+--- /dev/null
++++ b/components/metrics/VibeBrowser_metrics/BUILD.gn
+@@ -0,0 +1,39 @@
++# Copyright 2025 The Chromium Authors
++# Use of this source code is governed by a BSD-style license that can be
++# found in the LICENSE file.
++
++import("//build/config/features.gni")
++
++static_library("VibeBrowser_metrics") {
++  sources = [
++    "VibeBrowser_metrics.cc",
++    "VibeBrowser_metrics.h",
++    "VibeBrowser_metrics_prefs.cc",
++    "VibeBrowser_metrics_prefs.h",
++    "VibeBrowser_metrics_service.cc",
++    "VibeBrowser_metrics_service.h",
++    "VibeBrowser_metrics_service_factory.cc",
++    "VibeBrowser_metrics_service_factory.h",
++  ]
++
++  deps = [
++    "//base",
++    "//chrome/browser/profiles:profile",
++    "//chrome/common:constants",
++    "//components/keyed_service/content",
++    "//components/keyed_service/core",
++    "//components/pref_registry",
++    "//components/prefs",
++    "//components/version_info",
++    "//content/public/browser",
++    "//net",
++    "//services/network/public/cpp",
++    "//services/network/public/mojom",
++    "//url",
++  ]
++
++  public_deps = [
++    "//base",
++    "//components/keyed_service/core",
++  ]
++}
+\ No newline at end of file

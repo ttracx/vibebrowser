@@ -1,0 +1,217 @@
+/* VibeCaaS Accessible Theme System (Light, Dark, High-Contrast)
+   Brand: Vibe Purple (#6D4AFF), Aqua Teal (#14B8A6), Signal Amber (#FF8C00)
+   Notes:
+   - All color tokens are rgb(var) to enable alpha in Tailwind via <alpha-value>.
+   - Foreground tokens are chosen for >= WCAG AA on their paired backgrounds.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Core tokens: fonts, radii, shadows, spacing, full color ramps in rgb(var) format */
+:root {
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Radius */
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px rgba(0 0 0 / 0.10);
+  --shadow-lg: 0 10px 15px rgba(0 0 0 / 0.15);
+  --shadow-xl: 0 20px 25px rgba(0 0 0 / 0.18);
+
+  /* Spacing */
+  --space-xxs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* === Brand Ramps === */
+  /* Primary (Vibe Purple): #6D4AFF */
+  --primary-50: 243 240 255;
+  --primary-100: 233 227 255;
+  --primary-200: 211 199 255;
+  --primary-300: 182 164 255;
+  --primary-400: 150 122 255;
+  --primary-500: 109 74 255;
+  --primary-600: 92 62 224;
+  --primary-700: 77 52 191;
+  --primary-800: 59 36 147;
+  --primary-900: 41 24 108;
+  --primary-950: 23 12 64;
+  --primary-foreground: 255 255 255;
+
+  /* Secondary (Aqua Teal): #14B8A6 */
+  --secondary-50: 229 250 246;
+  --secondary-100: 191 245 236;
+  --secondary-200: 152 238 226;
+  --secondary-300: 112 226 213;
+  --secondary-400: 74 213 198;
+  --secondary-500: 20 184 166;
+  --secondary-600: 17 148 134;
+  --secondary-700: 13 116 106;
+  --secondary-800: 10 90 82;
+  --secondary-900: 7 64 58;
+  --secondary-950: 4 40 36;
+  --secondary-foreground: 17 24 39;
+
+  /* Accent (Signal Amber): #FF8C00 */
+  --accent-50: 255 244 230;
+  --accent-100: 255 231 204;
+  --accent-200: 255 210 153;
+  --accent-300: 255 187 102;
+  --accent-400: 255 164 51;
+  --accent-500: 255 140 0;
+  --accent-600: 217 119 0;
+  --accent-700: 179 97 0;
+  --accent-800: 140 76 0;
+  --accent-900: 102 55 0;
+  --accent-950: 64 35 0;
+  --accent-foreground: 17 24 39;
+
+  /* Semantic ramps */
+  --success-50: 236 253 245;
+  --success-500: 5 150 105;
+  --success-700: 4 120 84;
+
+  --error-50: 254 242 242;
+  --error-500: 220 38 38;
+  --error-700: 185 28 28;
+
+  --warning-50: 255 251 235;
+  --warning-500: 217 119 6;
+  --warning-700: 180 83 9;
+
+  --info-50: 239 246 255;
+  --info-500: 59 130 246;
+  --info-700: 29 78 216;
+
+  /* Light surfaces */
+  --background: 246 247 251;
+  --surface: 255 255 255;
+  --surface-variant: 245 247 252;
+  --card: 255 255 255;
+  --overlay: 0 0 0;
+
+  /* Text & borders */
+  --text-primary: 17 24 39;
+  --text-secondary: 55 65 81;
+  --text-muted: 107 114 128;
+  --border: 203 213 225;
+
+  /* Links */
+  --link: var(--primary-600);
+  --link-visited: 102 63 200;
+
+  /* Focus ring and selection */
+  --focus-ring: var(--primary-500);
+  --selection-bg: var(--primary-200);
+  --selection-fg: 23 12 64;
+
+  /* Motion */
+  --transition-fast: 150ms;
+  --transition-base: 250ms;
+  --transition-slow: 400ms;
+
+  /* Brand utility */
+  --brand-gradient-from: var(--primary-500);
+  --brand-gradient-to: var(--secondary-500);
+}
+
+/* Dark theme */
+:root[data-theme='dark'] {
+  --background: 15 23 42;
+  --surface: 30 41 59;
+  --surface-variant: 42 53 70;
+  --card: 30 41 59;
+  --overlay: 0 0 0;
+
+  --text-primary: 248 250 252;
+  --text-secondary: 203 213 225;
+  --text-muted: 148 163 184;
+  --border: 71 85 105;
+
+  /* Slightly brighter brand in dark mode for contrast */
+  --primary-500: 173 148 255;
+  --secondary-500: 45 212 191;
+  --accent-500: 251 191 36;
+
+  --primary-foreground: 23 12 64;
+  --secondary-foreground: 17 24 39;
+  --accent-foreground: 17 24 39;
+
+  --success-50: 32 39 35;
+  --success-500: 110 231 183;
+  --success-700: 6 95 70;
+
+  --error-50: 40 32 34;
+  --error-500: 248 113 113;
+  --error-700: 153 27 27;
+
+  --warning-50: 41 37 31;
+  --warning-500: 251 191 36;
+  --warning-700: 180 83 9;
+
+  --info-50: 30 36 47;
+  --info-500: 147 197 253;
+  --info-700: 55 48 163;
+
+  --link: var(--primary-500);
+  --link-visited: 196 181 253;
+}
+
+/* High contrast */
+:root[data-theme='hc'] {
+  --background: 0 0 0;
+  --surface: 0 0 0;
+  --surface-variant: 0 0 0;
+  --card: 0 0 0;
+
+  --text-primary: 255 255 255;
+  --text-secondary: 255 255 0;
+  --text-muted: 200 200 200;
+  --border: 255 255 0;
+
+  --primary-500: 255 255 0;
+  --secondary-500: 255 255 0;
+  --accent-500: 255 255 0;
+
+  --primary-foreground: 0 0 0;
+  --secondary-foreground: 0 0 0;
+  --accent-foreground: 0 0 0;
+
+  --link: 255 255 0;
+  --link-visited: 173 255 47;
+
+  --focus-ring: 255 255 0;
+  --selection-bg: 255 255 0;
+  --selection-fg: 0 0 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selection color (all themes) */
+::selection {
+  background: rgb(var(--selection-bg));
+  color: rgb(var(--selection-fg));
+}
+

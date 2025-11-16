@@ -1,0 +1,32 @@
+diff --git a/extensions/browser/extension_function_histogram_value.h b/extensions/browser/extension_function_histogram_value.h
+index daced4aed4d50..804539041fa01 100644
+--- a/extensions/browser/extension_function_histogram_value.h
++++ b/extensions/browser/extension_function_histogram_value.h
+@@ -1997,6 +1997,27 @@ enum HistogramValue {
+   EXPERIMENTALACTOR_STARTTASK = 1934,
+   EXPERIMENTALACTOR_EXECUTEACTION = 1935,
+   EXPERIMENTALACTOR_STOPTASK = 1936,
++  BROWSER_OS_GETACCESSIBILITYTREE = 1937,
++  BROWSER_OS_GETINTERACTIVESNAPSHOT = 1938,
++  BROWSER_OS_CLICK = 1939,
++  BROWSER_OS_INPUTTEXT = 1940,
++  BROWSER_OS_CLEAR = 1941,
++  BROWSER_OS_GETPAGELOADSTATUS = 1942,
++  BROWSER_OS_SCROLLUP = 1943,
++  BROWSER_OS_SCROLLDOWN = 1944,
++  BROWSER_OS_SCROLLTONODE = 1945,
++  BROWSER_OS_SENDKEYS = 1946,
++  BROWSER_OS_GETPAGESTRUCTURE = 1947,
++  BROWSER_OS_CAPTURESCREENSHOT = 1948,
++  BROWSER_OS_GETSNAPSHOT = 1949,
++  BROWSER_OS_GETPREF = 1950,
++  BROWSER_OS_SETPREF = 1951,
++  BROWSER_OS_GETALLPREFS = 1952,
++  BROWSER_OS_LOGMETRIC = 1953,
++  BROWSER_OS_GETVERSIONNUMBER = 1954,
++  BROWSER_OS_EXECUTEJAVASCRIPT = 1955,
++  BROWSER_OS_CLICKCOORDINATES = 1956,
++  BROWSER_OS_TYPEATCOORDINATES = 1957,
+   // Last entry: Add new entries above, then run:
+   // tools/metrics/histograms/update_extension_histograms.py
+   ENUM_BOUNDARY

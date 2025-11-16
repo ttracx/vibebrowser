@@ -1,0 +1,23 @@
+diff --git a/chrome/browser/resources/settings/settings_menu/settings_menu.html b/chrome/browser/resources/settings/settings_menu/settings_menu.html
+index 79aad7032abc7..8d1ecfcc9767a 100644
+--- a/chrome/browser/resources/settings/settings_menu/settings_menu.html
++++ b/chrome/browser/resources/settings/settings_menu/settings_menu.html
+@@ -57,6 +57,18 @@
+           $i18n{peoplePageTitle}
+           <cr-ripple></cr-ripple>
+         </a>
++        <!-- <a role="menuitem" id="vibebrowser-menu" href="/VibeBrowser-ai" -->
++        <!--     class="cr-nav-menu-item"> -->
++        <!--   <cr-icon icon="[[aiPageIcon_]]"></cr-icon> -->
++        <!--   VibeBrowser AI -->
++        <!--   <cr-ripple></cr-ripple> -->
++        <!-- </a> -->
++        <a role="menuitem" id="VibeBrowser-prefs-menu" href="/VibeBrowser-settings"
++            class="cr-nav-menu-item">
++          <cr-icon icon="settings:system"></cr-icon>
++          VibeBrowser Settings
++          <cr-ripple></cr-ripple>
++        </a>
+         <a role="menuitem" id="autofill" href="/autofill"
+             hidden="[[!pageVisibility.autofill]]"
+             class="cr-nav-menu-item">

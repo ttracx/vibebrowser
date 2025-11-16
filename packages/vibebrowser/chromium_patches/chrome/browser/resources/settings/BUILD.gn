@@ -1,0 +1,14 @@
+diff --git a/chrome/browser/resources/settings/BUILD.gn b/chrome/browser/resources/settings/BUILD.gn
+index 6eb2b37837e97..45911df3d14f9 100644
+--- a/chrome/browser/resources/settings/BUILD.gn
++++ b/chrome/browser/resources/settings/BUILD.gn
+@@ -56,6 +56,9 @@ build_webui("build") {
+   web_component_files = [
+     "a11y_page/a11y_page.ts",
+     "about_page/about_page.ts",
++    "vibebrowser_page/models_data.ts",
++    "vibebrowser_page/vibebrowser_page.ts",
++    "VibeBrowser_prefs_page/VibeBrowser_prefs_page.ts",
+     "ai_page/ai_compare_subpage.ts",
+     "ai_page/ai_info_card.ts",
+     "ai_page/ai_logging_info_bullet.ts",

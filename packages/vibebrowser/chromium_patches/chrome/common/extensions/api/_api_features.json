@@ -1,0 +1,39 @@
+diff --git a/chrome/common/extensions/api/_api_features.json b/chrome/common/extensions/api/_api_features.json
+index 846a910323217..e78e1125f61cd 100644
+--- a/chrome/common/extensions/api/_api_features.json
++++ b/chrome/common/extensions/api/_api_features.json
+@@ -179,6 +179,34 @@
+     ],
+     "contexts": ["privileged_extension"]
+   }],
++  "VibeBrowser": {
++    "dependencies": ["permission:VibeBrowser"],
++    "contexts": ["privileged_extension"]
++  },
++  "VibeBrowser.getAccessibilityTree": {
++    "dependencies": ["permission:VibeBrowser"],
++    "contexts": ["privileged_extension"]
++  },
++  "VibeBrowser.getInteractiveSnapshot": {
++    "dependencies": ["permission:VibeBrowser"],
++    "contexts": ["privileged_extension"]
++  },
++  "VibeBrowser.getPageStructure": {
++    "dependencies": ["permission:VibeBrowser"],
++    "contexts": ["privileged_extension"]
++  },
++  "VibeBrowser.click": {
++    "dependencies": ["permission:VibeBrowser"],
++    "contexts": ["privileged_extension"]
++  },
++  "VibeBrowser.inputText": {
++    "dependencies": ["permission:VibeBrowser"],
++    "contexts": ["privileged_extension"]
++  },
++  "VibeBrowser.clear": {
++    "dependencies": ["permission:VibeBrowser"],
++    "contexts": ["privileged_extension"]
++  },
+   "browsingData": {
+     "dependencies": ["permission:browsingData"],
+     "contexts": ["privileged_extension"]
