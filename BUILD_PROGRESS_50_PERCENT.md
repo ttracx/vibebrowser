@@ -64,7 +64,7 @@ sudo cp -r ~/Downloads/MacOSX13.0.sdk /Applications/Xcode.app/Contents/Developer
 
 # 3. Update build config:
 cd /Volumes/VibeStore/chromium/src/out/Default_arm64
-echo 'mac_sdk = "13.0"' >> args.gn
+echo 'mac_sdk_min = "13.0"' >> args.gn
 gn gen .
 
 # 4. Resume build:
