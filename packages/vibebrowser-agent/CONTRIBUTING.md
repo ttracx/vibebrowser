@@ -12,14 +12,15 @@
    ```
 
 2. **Copy a `.env.example` into `.env` file in the root directory and set LITELLM_API_KEY**
-   ```
+   ```bash
    cp .env.example .env
    ```
+   
+   Then add your API key to `.env`:
+   ```bash
+   LITELLM_API_KEY=your-litellm-api-key-here
    ```
-   // fyi, this key has very limited usage limits
-   LITELLM_API_KEY=sk-xYnTqbxdLtQTrqVhtZgmrw
-   ```
-   > **Note:** You'll need a LiteLLM API key to use the LLM features.
+   > **Note:** You'll need a LiteLLM API key to use the LLM features. Get one from https://litellm.ai
 
 4. **Build the extension**
    ```bash
