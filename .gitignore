@@ -1,2 +1,3 @@
 .DS_Store
 packages/vibebrowser/build/*.DS_Store
+packages/vibebrowser-agent/node_modules/*
