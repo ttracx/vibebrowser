@@ -67,7 +67,7 @@
       "anchors": [
         {
           "anchor": "GitHub",
-          "href": "https://github.com/VibeBrowser-ai/VibeBrowser",
+          "href": "https://github.com/ttracx/vibebrowser",
           "icon": "github"
         },
         {
@@ -116,7 +116,7 @@
   "footer": {
     "socials": {
       "x": "https://x.com/VibeBrowser_ai",
-      "github": "https://github.com/VibeBrowser-ai/VibeBrowser",
+      "github": "https://github.com/ttracx/vibebrowser",
       "discord": "https://discord.gg/YKwjt5vuKr",
       "slack": "http://dub.sh/VibeBrowser-slack"
     },

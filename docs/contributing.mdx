@@ -18,7 +18,7 @@ Most folks start with the agent since it's way easier to set up and iterate on.
   <Card
     title="GitHub Repository"
     icon="github"
-    href="https://github.com/VibeBrowser/VibeBrowser"
+    href="https://github.com/ttracx/vibebrowser"
   >
     Star, fork, and contribute to our codebase
   </Card>
@@ -32,7 +32,7 @@ Most folks start with the agent since it's way easier to set up and iterate on.
   <Card
     title="Report Issues"
     icon="bug"
-    href="https://github.com/VibeBrowser/VibeBrowser/issues"
+    href="https://github.com/ttracx/vibebrowser/issues"
   >
     Report bugs or suggest new features
   </Card>
@@ -44,7 +44,7 @@ You can contribute to VibeBrowser in many ways! Whether you want to build featur
 
 <Tabs>
   <Tab title="🐛 Report Bugs">
-    Found a bug? [Open an issue](https://github.com/VibeBrowser-ai/VibeBrowser/issues/new) with:
+    Found a bug? [Open an issue](https://github.com/ttracx/vibebrowser/issues/new) with:
     - Clear description
     - Steps to reproduce
     - Expected vs actual behavior
@@ -53,7 +53,7 @@ You can contribute to VibeBrowser in many ways! Whether you want to build featur
   </Tab>
 
   <Tab title="💡 Suggest Features">
-    Have an idea? [Share it here](https://github.com/VibeBrowser-ai/VibeBrowser/issues/99) or chat with us on [Discord](https://discord.gg/YKwjt5vuKr).
+    Have an idea? [Share it here](https://github.com/ttracx/vibebrowser/issues) or chat with us on [Discord](https://discord.gg/YKwjt5vuKr).
   </Tab>
 
   <Tab title="📚 Improve Docs">
@@ -106,7 +106,11 @@ If you want to contribute to development, here are two paths you can take:
 
 The agent is a Chrome extension that provides AI-powered automation. Most contributors work here.
 
-<Accordion title="Instructions">
+<Warning>
+**Note:** The `packages/vibebrowser-agent` directory is not yet available in this repository. Agent development instructions will be updated once the agent code is added to the monorepo.
+</Warning>
+
+<Accordion title="Instructions (Coming Soon)">
 
 #### Quick Setup
 
@@ -158,7 +162,7 @@ The agent is a Chrome extension that provides AI-powered automation. Most contri
 </Steps>
 
 <Note>
-For detailed setup, architecture, and code standards, see the [Agent Contributing Guide](https://github.com/VibeBrowser/VibeBrowser/blob/main/packages/vibebrowser-agent/CONTRIBUTING.md).
+For detailed setup, architecture, and code standards, see the [Agent Contributing Guide](https://github.com/ttracx/vibebrowser/blob/main/packages/vibebrowser-agent/CONTRIBUTING.md).
 </Note>
 
 </Accordion>
@@ -391,7 +395,7 @@ export type ToolInput = z.infer<typeof ToolInputSchema>
 
 <Note>
 claude.md file can be found at below:
-- Agent: [packages/vibebrowser-agent/CLAUDE.md](https://github.com/VibeBrowser/VibeBrowser/blob/main/packages/vibebrowser-agent/CLAUDE.md)
+- Agent: [packages/vibebrowser-agent/CLAUDE.md](https://github.com/ttracx/vibebrowser/blob/main/packages/vibebrowser-agent/CLAUDE.md)
 </Note>
 
 ## 6. Project Structure
@@ -400,21 +404,21 @@ claude.md file can be found at below:
 monorepo/
 ├── packages/
 │   ├── vibebrowser/              # Chromium build system
-│   │   ├── build/             # Python build scripts
 │   │   ├── chromium_patches/  # Patches to Chromium source
+│   │   ├── chromium_files/    # Chromium branding files
+│   │   ├── patches/           # VibeBrowser patches
 │   │   └── resources/         # Icons, configs
 │   │
-│   └── vibebrowser-agent/        # Chrome extension
-│       ├── src/
-│       │   ├── lib/           # Core agent logic
-│       │   ├── sidepanel/     # Side panel UI
-│       │   ├── newtab/        # New tab page
-│       │   └── background/    # Extension background
-│       └── docs/              # Architecture docs
+│   └── vibebrowser-agent/        # Chrome extension (coming soon)
 │
 ├── docs/                       # General documentation
+├── scripts/                    # Build and utility scripts
 └── CONTRIBUTING.md            # Contributing guide
 ```
+
+<Note>
+**Current Status:** The repository currently contains the Chromium browser patches and resources. The agent extension and Python build system will be added in future updates.
+</Note>
 
 ## 7. Development Workflow
 
@@ -422,8 +426,8 @@ monorepo/
   <Step title="Fork and Clone">
     Fork the repository on GitHub and clone it locally:
     ```bash
-    git clone https://github.com/YOUR-USERNAME/VibeBrowser.git
-    cd VibeBrowser
+    git clone https://github.com/YOUR-USERNAME/vibebrowser.git
+    cd vibebrowser
     ```
   </Step>
 
@@ -467,14 +471,14 @@ Stuck? Need clarification? We're here to help.
   <Card
     title="GitHub Issues"
     icon="bug"
-    href="https://github.com/VibeBrowser-ai/VibeBrowser/issues"
+    href="https://github.com/ttracx/vibebrowser/issues"
   >
     Bug reports and features
   </Card>
   <Card
     title="GitHub Discussions"
     icon="comments"
-    href="https://github.com/VibeBrowser-ai/VibeBrowser/discussions"
+    href="https://github.com/ttracx/vibebrowser/discussions"
   >
     General questions
   </Card>

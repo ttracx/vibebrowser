@@ -229,7 +229,7 @@ You don't need to write code to help out! Here are other ways:
 
 ### 🐛 Report Bugs
 
-Found a bug? [Open an issue](https://github.com/VibeBrowser-ai/VibeBrowser/issues/new) with:
+Found a bug? [Open an issue](https://github.com/ttracx/vibebrowser/issues/new) with:
 - Clear description
 - Steps to reproduce
 - Expected vs actual behavior
@@ -238,7 +238,7 @@ Found a bug? [Open an issue](https://github.com/VibeBrowser-ai/VibeBrowser/issue
 
 ### 💡 Suggest Features
 
-Have an idea? [Share it here](https://github.com/VibeBrowser-ai/VibeBrowser/issues/99) or chat with us on [Discord](https://discord.gg/YKwjt5vuKr).
+Have an idea? [Share it here](https://github.com/ttracx/vibebrowser/issues) or chat with us on [Discord](https://discord.gg/YKwjt5vuKr).
 
 ### 📚 Improve Documentation
 
