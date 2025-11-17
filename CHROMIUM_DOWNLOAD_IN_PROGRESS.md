@@ -11,22 +11,21 @@ The Chromium source is now being downloaded. This is a **critical step** to buil
 **What's Downloading:** Full Chromium source code
 **Size:** ~100GB
 **Time:** 2-3 hours (depending on internet speed)
-**Location:** `/Users/knightdev/chromium/`
+**Location:** `/Volumes/VibeStore/chromium/`
 **Command:** `fetch chromium` (running in background)
+**depot_tools:** `/Volumes/VibeStore/depot_tools/`
 
 ---
 
 ## 💾 Disk Space
 
-**Available on home drive:** 96GB
-**Required:** ~100GB for source + 20GB for build output
+**Using:** VibeStore external drive
+**Available on VibeStore:** 3.5TB ✅
+**Required:** ~120GB total
+  - Chromium source: ~100GB
+  - Build output: ~20GB
 
-⚠️ **WARNING:** You're close to the limit! The download needs ~100GB and building needs another ~20GB.
-
-**Recommendation:** 
-- Monitor disk space: `df -h ~`
-- Free up space if needed
-- Or cancel and use external drive with more space
+✅ **Plenty of space!** VibeStore has more than enough room.
 
 ---
 
@@ -35,13 +34,13 @@ The Chromium source is now being downloaded. This is a **critical step** to buil
 ### Check Download Progress
 ```bash
 # View live output
-tail -f /Users/knightdev/.cursor/projects/Users-knightdev-vibebrowser/terminals/10.txt
+tail -f /Users/knightdev/.cursor/projects/Users-knightdev-vibebrowser/terminals/11.txt
 
 # Check chromium directory size (grows as it downloads)
-du -sh ~/chromium
+du -sh /Volumes/VibeStore/chromium
 
 # Expected final size
-# ~/chromium/src should be ~100GB when complete
+# /Volumes/VibeStore/chromium/src should be ~100GB when complete
 ```
 
 ### Signs It's Working
@@ -75,31 +74,39 @@ du -sh ~/chromium
 
 You'll know it's done when:
 1. Terminal shows "fetch chromium" completed
-2. Directory `~/chromium/src` exists
+2. Directory `/Volumes/VibeStore/chromium/src` exists
 3. Size is ~100GB
 4. No more network activity
 
 ### Then Run These Commands
 
+After Chromium download completes on VibeStore:
+
 ```bash
-# 1. Add depot_tools to your PATH permanently
+# 1. Setup depot_tools PATH permanently
+export PATH="/Volumes/VibeStore/depot_tools:$PATH"
 echo 'export PATH="/Volumes/VibeStore/depot_tools:$PATH"' >> ~/.zshrc
 
-# 2. Checkout correct version
-cd ~/chromium/src
+# 2. Initialize depot_tools (first time only)
+cd /Volumes/VibeStore/depot_tools
+gclient --version  # This initializes cipd and downloads tools
+
+# 3. Checkout correct Chromium version
+cd /Volumes/VibeStore/chromium/src
 git checkout 137.0.7187.69
 
-# 3. Sync dependencies
+# 4. Sync dependencies
 gclient sync
 
-# 4. Install build deps (macOS)
+# 5. Install build dependencies (macOS)
 ./build/install-build-deps.sh
 
-# 5. Run hooks
+# 6. Run hooks
 gclient runhooks
 
-# 6. Build VibeBrowser!
+# 7. Build VibeBrowser!
 cd /Users/knightdev/vibebrowser
+export CHROMIUM_SRC=/Volumes/VibeStore/chromium/src
 ./BUILD_VIBEBROWSER.sh
 ```
 
@@ -114,29 +121,24 @@ ps aux | grep "fetch chromium"
 # Kill it
 pkill -f "fetch chromium"
 
-# Clean up partial download
-rm -rf ~/chromium/*
+# Clean up partial download on VibeStore
+rm -rf /Volumes/VibeStore/chromium/*
+
+# Restart when ready
+cd /Volumes/VibeStore/chromium
+export PATH="/Volumes/VibeStore/depot_tools:$PATH"
+fetch chromium
 ```
 
 ---
 
-## 💡 Alternative: Use External Drive
-
-If you run out of space on home drive:
+## 🔄 If Download Fails or Gets Interrupted
 
 ```bash
-# Cancel current download
-pkill -f "fetch chromium"
-
-# Use VibeStore (needs sudo for permissions)
-sudo mkdir -p /Volumes/VibeStore/chromium
-sudo chown $(whoami) /Volumes/VibeStore/chromium
+# Resume the download
+export PATH="/Volumes/VibeStore/depot_tools:$PATH"
 cd /Volumes/VibeStore/chromium
-fetch chromium
-
-# Then build with:
-./BUILD_VIBEBROWSER.sh
-# And set CHROMIUM_SRC=/Volumes/VibeStore/chromium/src
+gclient sync  # This resumes/continues the download
 ```
 
 ---
@@ -145,20 +147,25 @@ fetch chromium
 
 ### 1. Verify Download Complete
 ```bash
-ls -la ~/chromium/src
+ls -la /Volumes/VibeStore/chromium/src
 # Should show thousands of files and directories
+
+du -sh /Volumes/VibeStore/chromium/src
+# Should be ~100GB
 ```
 
 ### 2. Build VibeBrowser
 ```bash
 cd /Users/knightdev/vibebrowser
+export PATH="/Volumes/VibeStore/depot_tools:$PATH"
+export CHROMIUM_SRC=/Volumes/VibeStore/chromium/src
 ./BUILD_VIBEBROWSER.sh
 # Will take 1-3 hours for first build
 ```
 
 ### 3. Launch VibeBrowser
 ```bash
-~/chromium/src/out/Default_arm64/VibeBrowser\ Dev.app/Contents/MacOS/VibeBrowser\ Dev
+/Volumes/VibeStore/chromium/src/out/Default_arm64/VibeBrowser\ Dev.app/Contents/MacOS/VibeBrowser\ Dev
 ```
 
 ---
