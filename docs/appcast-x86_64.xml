@@ -9,7 +9,7 @@
 
     <!-- Updates -->
     <item>
-      <title>Nxtscape - 0.28.0</title>
+      <title>VibeBrowser - 0.28.0</title>
       <description sparkle:format="plain-text">
       </description>
       <sparkle:version>7218.69</sparkle:version>
@@ -24,7 +24,7 @@
       <sparkle:minimumSystemVersion>10.15</sparkle:minimumSystemVersion>
     </item>
     <item>
-      <title>Nxtscape - 0.27.0</title>
+      <title>VibeBrowser - 0.27.0</title>
       <description sparkle:format="plain-text">
       </description>
       <sparkle:version>7215.69</sparkle:version>
@@ -39,7 +39,7 @@
       <sparkle:minimumSystemVersion>10.15</sparkle:minimumSystemVersion>
     </item>
     <item>
-      <title>Nxtscape - 0.26.0</title>
+      <title>VibeBrowser - 0.26.0</title>
       <description sparkle:format="plain-text">
       </description>
       <sparkle:version>7212.69</sparkle:version>
