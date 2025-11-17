@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Nxtscape First Run</title>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light dark">
+<style>
+ @import url(chrome://resources/css/text_defaults_md.css);
+ html{color:#202124; background:white; line-height:1.2em; font-family: sans-serif; font-size: 1.0em;}
+ a{color:#1967d2; text-decoration: none;}
+ a:hover{text-decoration: underline;}
+ h2{margin:0; padding:0.8em 1.33em; font-size: 1.5em;}
+ p,details{border-top:.063em solid #f0f0f0; margin:0; padding:1.2em 2em;}
+ ul,ol{padding-left:2.5em; margin-top: 0.5em; margin-bottom: 0.5em;}
+ code{background:rgba(128 128 128 / .2); padding:0.2em 0.5em; border-radius:0.25em; font-size: 0.9em;}
+ summary{cursor:pointer; font-weight: bold; padding: 0.5em 0;}
+ section{width:60em; max-width: 90%; margin:3.5em auto; padding:2em 2.5em; border-radius:.75em;
+         background:white; box-shadow:0 .1em .2em 0 rgba(0,0,0,0.1), 0 .2em .5em 0 rgba(0,0,0,0.1);}
+ .hero {text-align: center; padding-bottom: 1em;}
+ .hero h1 {font-size: 2.5em; margin-bottom: 0.2em; color: #333;}
+ .hero p {font-size: 1.1em; color: #555; border-top: none; padding-top: 0;}
+ .section-title { font-size: 1.8em; margin-bottom: 0.5em; color: #444;}
+ .feature-list li { margin-bottom: 0.5em; }
+ .community-links a { display: inline-block; margin: 0.5em; padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 0.3em; color: #333; }
+ .community-links a:hover { background-color: #e0e0e0; }
+ .sub-headline {
+  display: block;
+  margin-top: 1.0em;
+ }
+
+ @media(prefers-color-scheme:dark){
+  html{color:#e8eaed; background:#202124}
+  a{color:#8ab4f8}
+  p,details{border-top:.063em solid #3f4042}
+  section{background:#292a2d; box-shadow:0 .1em .2em 0 rgba(0,0,0,0.3), 0 .2em .5em 0 rgba(0,0,0,0.3);}
+  .hero h1 {color: #f1f1f1;}
+  .hero p {color: #ccc;}
+  .section-title { color: #ddd;}
+  .community-links a { background-color: #3a3b3d; color: #e8eaed; }
+  .community-links a:hover { background-color: #4a4b4d; }
+ }
+</style>
+<base target="_blank">
+</head>
+<body>
+<section class="hero">
+ <h1>The Open-Source Agentic Browser 🦊</h1>
+ <p class="sub-headline">Your Browser, Reimagined. ✨</p>
+ <p>We believe browsers must be open source, not owned by search or ad companies. And the future is AI agents automating your work locally and securely. We're building the best browser for that future. 🚀</p>
+ <p style="font-size:0.9em; color: #777;">This page can always be accessed again at <a href="chrome://nxtscape-first-run"><code>chrome://nxtscape-first-run</code></a></p>
+</section>
+
+<section>
+ <h2 class="section-title">🚀 Getting Started</h2>
+ <details open>
+  <summary><b>📥 Import your data from Chrome</b></summary>
+  <ol>
+   <li>Navigate to <a href="chrome://settings/importData"><code>chrome://settings/importData</code></a></li>
+   <li>Click "Import"</li>
+   <li>Follow the on-screen prompts and click "Always allow" when prompted to import all your data at once</li>
+  </ol>
+ </details>
+</section>
+
+<section>
+ <h2 class="section-title">✨ Key Features</h2>
+ <ul class="feature-list">
+  <li>🤖 <strong>Nxtscape Agent:</strong> Your productivity agent that can manage your tabs and browsing sessions. For example:
+   <ul>
+    <li>"list tabs I have open"</li>
+    <li>"close duplicate tabs"</li>
+    <li>"group tabs by topic"</li>
+    <li>"switch to Bookface tab"</li>
+    <li>"save my current browsing session as XYZ-Research"</li>
+    <li>"resume XYZ-Research browsing session"</li>
+    <li>"search my browser history for all github pages I visited"</li>
+    <li>"organize my entire bookmark collection"</li>
+   </ul>
+  </li>
+  <li>🧭 <strong>Nxtscape Navigator:</strong> Performs agentic tasks for you on web pages. For example:
+   <ul>
+    <li>Go to amazon.com and search for "hard disk"</li>
+    <li>Navigate to specific pages and interact with content</li>
+    <li>Automate repetitive browsing tasks</li>
+   </ul>
+  </li>
+ </ul>
+</section>
+
+<section>
+ <h2 class="section-title">🤝 Join Our Community & Explore</h2>
+ <p class="community-links">
+  <a href="https://discord.gg/YKwjt5vuKr">💬 Discord</a>
+  <a href="https://github.com/nxtscape/nxtscape">💻 GitHub</a>
+  <a href="https://x.com/nxtscape">🐦 X (Twitter)</a>
+ </p>
+ <p style="font-size:0.9em; text-align:center;">Have questions or want to contribute? We'd love to hear from you!</p>
+</section>
+
+<script>
+ document.getElementById("bdic").onchange = function(e){
+  var f = new FileReader;
+  f.onload = function(){
+   var a = document.createElement("a");
+   a.setAttribute("href", "data:application/octet-stream;base64, " + f.result);
+   a.setAttribute("download", e.target.files[0].name.replace(/\.[^/.]+$/, ".bdic"));
+   a.click()
+  }, f.readAsText(this.files[0])};
+</script>
+</body>
+</html> 
