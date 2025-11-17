@@ -1,0 +1,1111 @@
+VibeBrowser Build Log - Started at 2025-11-17 06:54:51
+================================================================================
+
+[2025-11-17 06:54:51] INFO: 🚀 VibeBrowser Build System
+[2025-11-17 06:54:51] INFO: ==================================================
+[2025-11-17 06:54:51] INFO: 📄 Loaded config from: build/config/debug.yaml
+[2025-11-17 06:54:51] INFO: 📁 Using Chromium source from CLI: /Volumes/VibeStore/chromium/src
+[2025-11-17 06:54:51] INFO: 📍 Using platform default architecture: arm64
+[2025-11-17 06:54:51] INFO: 📍 Root: /Users/knightdev/vibebrowser/packages/vibebrowser
+[2025-11-17 06:54:51] INFO: 📍 Chromium source: /Volumes/VibeStore/chromium/src
+[2025-11-17 06:54:51] INFO: 📍 Architectures: ['arm64']
+[2025-11-17 06:54:51] INFO: 📍 Universal build: False
+[2025-11-17 06:54:51] INFO: 📍 Build type: debug
+[2025-11-17 06:54:51] INFO: 
+============================================================
+[2025-11-17 06:54:51] INFO: 🏗️  Building for architecture: arm64
+[2025-11-17 06:54:51] INFO: ============================================================
+[2025-11-17 06:54:51] WARNING: 📁 Using provided Chromium source: /Volumes/VibeStore/chromium/src
+[2025-11-17 06:54:51] INFO: 📍 Chromium: 137.0.7151.69
+[2025-11-17 06:54:51] INFO: 📍 VibeBrowser: 
+[2025-11-17 06:54:51] INFO: 📍 Output directory: out/Default_arm64
+[2025-11-17 06:54:51] INFO: 
+🔀 Setting up Chromium 137.0.7151.69...
+[2025-11-17 06:54:51] INFO: 📥 Fetching all tags from remote...
+[2025-11-17 06:54:51] RUN_COMMAND: 🔧 Running: git fetch --tags --force
+[2025-11-17 06:54:51] INFO: 🔧 Running: git fetch --tags --force
+[2025-11-17 06:55:00] RUN_COMMAND: STDOUT: From https://chromium.googlesource.com/chromium/src
+[2025-11-17 06:55:00] RUN_COMMAND: STDOUT:    20ca9d0daa0da..0f569b84bb5d2  lkgr                  -> origin/lkgr
+[2025-11-17 06:55:00] RUN_COMMAND: STDOUT:    2846bea2e15f3..16ba1da6d771d  lkgr-android-internal -> origin/lkgr-android-internal
+[2025-11-17 06:55:00] RUN_COMMAND: STDOUT:    506139e269c9e..bcc57a7cda982  main                  -> origin/main
+[2025-11-17 06:55:00] RUN_COMMAND: ✅ Command completed with exit code: 0
+[2025-11-17 06:55:00] INFO: 🔀 Checking out tag: 137.0.7151.69
+[2025-11-17 06:55:00] RUN_COMMAND: 🔧 Running: git checkout tags/137.0.7151.69
+[2025-11-17 06:55:00] INFO: 🔧 Running: git checkout tags/137.0.7151.69
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: HEAD is now at 0b41cf178df5e Incrementing VERSION to 137.0.7151.69
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/BUILD.gn
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/VERSION
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/app-Info.plist
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/chrome_command_ids.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/chromium_strings.grd
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/generated_resources.grd
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/settings_chromium_strings.grdp
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/settings_strings.grdp
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/BRANDING
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/chromeos/chrome_app_icon_192.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/chromeos/chrome_app_icon_32.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/chromeos/crosh_app_icon_256.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/chromeos/webstore_app_icon_128.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/chromeos/webstore_app_icon_16.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/chromium.ai
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/linux/product_logo_128.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/linux/product_logo_24.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/linux/product_logo_256.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/linux/product_logo_32.xpm
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/linux/product_logo_48.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/linux/product_logo_64.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/mac/app.icns
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/mac/document.icns
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/product_logo.ai
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/product_logo.svg
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/product_logo_128.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/product_logo_16.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/product_logo_22_mono.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/product_logo_24.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/product_logo_256.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/product_logo_48.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/product_logo_64.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/product_logo_animation.svg
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/win/app_list.ico
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/win/chromium.ico
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/win/chromium_doc.ico
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/win/chromium_pdf.ico
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/win/incognito.ico
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/win/tiles/Logo.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/chromium/win/tiles/SmallLogo.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/default_100_percent/chromium/product_logo_16.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/default_100_percent/chromium/product_logo_32.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/default_100_percent/chromium/product_logo_name_22.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/default_100_percent/chromium/product_logo_name_22_white.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/default_200_percent/chromium/product_logo_16.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/default_200_percent/chromium/product_logo_32.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/default_200_percent/chromium/product_logo_name_22.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/app/theme/default_200_percent/chromium/product_logo_name_22_white.png
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/BUILD.gn
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/chrome_browser_main.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/BUILD.gn
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/api/debugger/debugger_api.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/api/developer_private/extension_info_generator_shared.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/api/settings_private/prefs_util.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/api/side_panel/side_panel_api.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/chrome_extension_registrar_delegate.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/chrome_extensions_browser_api_provider.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/extension_context_menu_model.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/extension_management.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/extension_web_ui_override_registrar.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/extensions/external_provider_impl.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/global_keyboard_shortcuts_mac.mm
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/importer/external_process_importer_client.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/importer/external_process_importer_client.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/importer/importer_list.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/importer/importer_uma.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/importer/in_process_importer_bridge.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/importer/in_process_importer_bridge.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/importer/profile_writer.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/importer/profile_writer.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/mac/chrome_browser_main_extra_parts_mac.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/mac/chrome_browser_main_extra_parts_mac.mm
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/media/extension_media_access_handler.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/metrics/chrome_metrics_service_client.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/prefs/browser_prefs.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/prefs/browser_prefs.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/resources/settings/BUILD.gn
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/resources/settings/people_page/import_data_browser_proxy.ts
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/resources/settings/people_page/import_data_dialog.html
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/resources/settings/route.ts
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/resources/settings/router.ts
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/resources/settings/settings.ts
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/resources/settings/settings_main/settings_main.html
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/resources/settings/settings_main/settings_main.ts
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/resources/settings/settings_menu/settings_menu.html
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/sync/prefs/chrome_syncable_prefs_database.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/BUILD.gn
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/actions/chrome_action_id.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/browser_actions.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/browser_command_controller.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/extensions/settings_overridden_params_providers.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/omnibox/chrome_omnibox_client.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/startup/google_api_keys_infobar_delegate.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/toolbar/toolbar_actions_model.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/toolbar/toolbar_pref_names.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/toolbar/toolbar_pref_names.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/ui_features.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/ui_features.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/accelerator_table.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/side_panel/BUILD.gn
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/side_panel/extensions/extension_side_panel_manager.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/side_panel/side_panel.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/side_panel/side_panel.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/side_panel/side_panel_entry_id.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/side_panel/side_panel_prefs.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/side_panel/side_panel_util.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/views/toolbar/pinned_toolbar_actions_container.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/webui/BUILD.gn
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/webui/chrome_web_ui_configs.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/webui/help/version_updater_mac.mm
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/webui/settings/import_data_handler.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/webui/settings/settings_ui.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/chrome_constants.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/chrome_paths_linux.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/extensions/api/_api_features.json
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/extensions/api/_permission_features.json
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/extensions/api/api_sources.gni
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/extensions/permissions/chrome_api_permissions.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/importer/importer_bridge.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/importer/importer_data_types.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/importer/importer_type.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/importer/profile_import.mojom
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/importer/profile_import_process_param_traits_macros.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/pref_names.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/webui_url_constants.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/common/webui_url_constants.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/enterprise_companion/branding.gni
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/install_static/chromium_install_modes.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/install_static/chromium_install_modes.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/installer/mini_installer/chrome.release
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/installer/setup/setup_constants.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/updater/branding.gni
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/utility/BUILD.gn
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/utility/importer/external_process_importer_bridge.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/utility/importer/external_process_importer_bridge.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	chrome/utility/importer/importer_creator.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	components/os_crypt/sync/keychain_password_mac.mm
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	components/vector_icons/BUILD.gn
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	extensions/browser/extension_function_histogram_value.h
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	extensions/common/mojom/api_permission_id.mojom
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	services/webnn/coreml/utils_coreml.mm
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	third_party/blink/renderer/core/frame/navigator.cc
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	tools/metrics/histograms/metadata/extensions/enums.xml
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	tools/metrics/histograms/metadata/sql/histograms.xml
+[2025-11-17 06:55:03] RUN_COMMAND: STDOUT: M	ui/accessibility/platform/browser_accessibility_cocoa.mm
+[2025-11-17 06:55:03] RUN_COMMAND: ✅ Command completed with exit code: 0
+[2025-11-17 06:55:03] INFO: 📥 Syncing dependencies (this may take a while)...
+[2025-11-17 06:55:03] RUN_COMMAND: 🔧 Running: gclient sync -D --no-history --shallow
+[2025-11-17 06:55:03] INFO: 🔧 Running: gclient sync -D --no-history --shallow
+[2025-11-17 06:55:09] RUN_COMMAND: STDOUT: ________ running 'vpython3 -vpython-spec src/.vpython3 -vpython-tool install' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/landmines.py' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/third_party/depot_tools/update_depot_tools_toggle.py --disable' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/tools/remove_stale_files.py src/third_party/test_fonts/test_fonts.tar.gz src/third_party/node/node_modules.tar.gz src/third_party/tfhub_models' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/tools/remove_stale_pyc_files.py src/android_webview/tools src/build/android src/gpu/gles2_conform_support src/infra src/ppapi src/printing src/third_party/blink/renderer/build/scripts src/third_party/blink/tools src/third_party/catapult src/third_party/mako src/tools' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/mac_toolchain.py' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:09] RUN_COMMAND: STDOUT: Skipping Mac toolchain installation for mac
+[2025-11-17 06:55:10] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -o src/build/util/LASTCHANGE' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:10] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -m GPU_LISTS_VERSION --revision-id-only --header src/gpu/config/gpu_lists_version.h' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:10] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -m SKIA_COMMIT_HASH -s src/third_party/skia --header src/skia/ext/skia_commit_hash.h' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:10] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -s src/third_party/dawn --revision src/gpu/webgpu/DAWN_VERSION' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:10] RUN_COMMAND: STDOUT: ________ running 'python3 src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --bucket chromium-browser-clang -s src/tools/clang/dsymutil/bin/dsymutil.arm64.sha1 -o src/tools/clang/dsymutil/bin/dsymutil' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:10] RUN_COMMAND: STDOUT: --no_auth is deprecated, this flag has no effect.
+[2025-11-17 06:55:11] RUN_COMMAND: STDOUT: ________ running 'python3 src/testing/generate_location_tags.py --out src/testing/location_tags.json' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:11] RUN_COMMAND: STDOUT: ________ running 'python3 src/buildtools/reclient_cfgs/configure_reclient_cfgs.py --rbe_instance projects/rbe-chrome-untrusted/instances/default_instance --reproxy_cfg_template reproxy.cfg.template --rewrapper_cfg_project  --skip_remoteexec_cfg_fetch --quiet' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:11] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/config/siso/configure_siso.py --rbe_instance projects/rbe-chrome-untrusted/instances/default_instance' in '/Volumes/VibeStore/chromium'
+[2025-11-17 06:55:11] RUN_COMMAND: ✅ Command completed with exit code: 0
+[2025-11-17 06:55:11] SUCCESS: Git setup complete
+[2025-11-17 06:55:11] INFO: 
+🔄 Replacing chromium files...
+[2025-11-17 06:55:11] INFO:   Build type: debug
+[2025-11-17 06:55:11] INFO:     ✓ Replaced: chrome/updater/branding.gni → chrome/updater/branding.gni
+[2025-11-17 06:55:11] INFO:     ✓ Replaced: chrome/enterprise_companion/branding.gni → chrome/enterprise_companion/branding.gni
+[2025-11-17 06:55:11] INFO:     ✓ Replaced: chrome/app/theme/chromium/BRANDING.debug → chrome/app/theme/chromium/BRANDING
+[2025-11-17 06:55:11] SUCCESS: Replaced 3 files (skipped 1 non-matching files)
+[2025-11-17 06:55:11] INFO: 
+🔤 Applying string replacements...
+[2025-11-17 06:55:11] INFO:   • Processing: chrome/app/chromium_strings.grd
+[2025-11-17 06:55:11] INFO:     No replacements needed
+[2025-11-17 06:55:11] INFO:   • Processing: chrome/app/settings_chromium_strings.grdp
+[2025-11-17 06:55:11] INFO:     No replacements needed
+[2025-11-17 06:55:11] SUCCESS: String replacements completed
+[2025-11-17 06:55:11] INFO: 
+✨ Setting up Sparkle framework...
+[2025-11-17 06:55:11] INFO: Downloading Sparkle from https://github.com/sparkle-project/Sparkle/releases/download/2.7.0/Sparkle-2.7.0.tar.xz...
+[2025-11-17 06:55:12] INFO: Extracting Sparkle...
+[2025-11-17 06:55:12] SUCCESS: Sparkle setup complete
+[2025-11-17 06:55:12] INFO: 
+🩹 Applying patches using new dev CLI system...
+[2025-11-17 06:55:12] INFO: Found 172 patches
+[2025-11-17 06:55:12] ERROR:   ✗ Failed: chrome/BUILD.gn
+[2025-11-17 06:55:12] ERROR:     error: chrome/BUILD.gn: does not match index
+
+[2025-11-17 06:55:12] ERROR:   ✗ Failed: chrome/VERSION
+[2025-11-17 06:55:12] ERROR:     error: chrome/VERSION: does not match index
+
+[2025-11-17 06:55:12] ERROR:   ✗ Failed: chrome/app/app-Info.plist
+[2025-11-17 06:55:12] ERROR:     error: chrome/app/app-Info.plist: does not match index
+
+[2025-11-17 06:55:12] ERROR:   ✗ Failed: chrome/app/chrome_command_ids.h
+[2025-11-17 06:55:12] ERROR:     error: chrome/app/chrome_command_ids.h: does not match index
+
+[2025-11-17 06:55:12] ERROR:   ✗ Failed: chrome/app/generated_resources.grd
+[2025-11-17 06:55:12] ERROR:     error: chrome/app/generated_resources.grd: does not match index
+
+[2025-11-17 06:55:12] ERROR:   ✗ Failed: chrome/app/settings_strings.grdp
+[2025-11-17 06:55:12] ERROR:     error: chrome/app/settings_strings.grdp: does not match index
+
+[2025-11-17 06:55:12] ERROR:   ✗ Failed: chrome/app/visual_elements_resources/vibebrowser.VisualElementsManifest.xml
+[2025-11-17 06:55:12] ERROR:     Performing three-way merge...
+error: chrome/app/visual_elements_resources/VibeBrowser.VisualElementsManifest.xml: does not exist in index
+error: cannot read the current contents of 'chrome/app/visual_elements_resources/VibeBrowser.VisualElementsManifest.xml'
+error: chrome/app/visual_elements_resources/VibeBrowser.VisualElementsManifest.xml: patch does not apply
+
+[2025-11-17 06:55:12] ERROR:   ✗ Failed: chrome/browser/BUILD.gn
+[2025-11-17 06:55:12] ERROR:     error: chrome/browser/BUILD.gn: does not match index
+
+[2025-11-17 06:55:12] ERROR:   ✗ Failed: chrome/browser/chrome_browser_main.cc
+[2025-11-17 06:55:12] ERROR:     error: chrome/browser/chrome_browser_main.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/BUILD.gn
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/BUILD.gn: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_api.cc
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_api.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_api.cc'
+error: chrome/browser/extensions/api/browser_os/browser_os_api.cc: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_api.h
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_api.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_api.h'
+error: chrome/browser/extensions/api/browser_os/browser_os_api.h: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_api_helpers.cc
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_api_helpers.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_api_helpers.cc'
+error: chrome/browser/extensions/api/browser_os/browser_os_api_helpers.cc: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_api_helpers.h
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_api_helpers.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_api_helpers.h'
+error: chrome/browser/extensions/api/browser_os/browser_os_api_helpers.h: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_api_utils.cc
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_api_utils.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_api_utils.cc'
+error: chrome/browser/extensions/api/browser_os/browser_os_api_utils.cc: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_api_utils.h
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_api_utils.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_api_utils.h'
+error: chrome/browser/extensions/api/browser_os/browser_os_api_utils.h: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_change_detector.cc
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_change_detector.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_change_detector.cc'
+error: chrome/browser/extensions/api/browser_os/browser_os_change_detector.cc: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_change_detector.h
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_change_detector.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_change_detector.h'
+error: chrome/browser/extensions/api/browser_os/browser_os_change_detector.h: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_content_processor.cc
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_content_processor.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_content_processor.cc'
+error: chrome/browser/extensions/api/browser_os/browser_os_content_processor.cc: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_content_processor.h
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_content_processor.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_content_processor.h'
+error: chrome/browser/extensions/api/browser_os/browser_os_content_processor.h: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.cc
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.cc'
+error: chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.cc: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.h
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.h'
+error: chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.h: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/debugger/debugger_api.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/api/debugger/debugger_api.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/developer_private/extension_info_generator_shared.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/api/developer_private/extension_info_generator_shared.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/settings_private/prefs_util.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/api/settings_private/prefs_util.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/api/side_panel/side_panel_api.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/api/side_panel/side_panel_api.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/chrome_extension_registrar_delegate.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/chrome_extension_registrar_delegate.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/chrome_extensions_browser_api_provider.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/chrome_extensions_browser_api_provider.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/extension_context_menu_model.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/extension_context_menu_model.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/extension_management.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/extension_management.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/extension_web_ui_override_registrar.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/extension_web_ui_override_registrar.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/external_provider_impl.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/extensions/external_provider_impl.cc: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/vibebrowser_extension_constants.h
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/VibeBrowser_extension_constants.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/VibeBrowser_extension_constants.h'
+error: chrome/browser/extensions/VibeBrowser_extension_constants.h: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/vibebrowser_external_loader.cc
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/VibeBrowser_external_loader.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/VibeBrowser_external_loader.cc'
+error: chrome/browser/extensions/VibeBrowser_external_loader.cc: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/extensions/vibebrowser_external_loader.h
+[2025-11-17 06:55:13] ERROR:     Performing three-way merge...
+error: chrome/browser/extensions/VibeBrowser_external_loader.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/extensions/VibeBrowser_external_loader.h'
+error: chrome/browser/extensions/VibeBrowser_external_loader.h: patch does not apply
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/global_keyboard_shortcuts_mac.mm
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/global_keyboard_shortcuts_mac.mm: does not match index
+
+[2025-11-17 06:55:13] ERROR:   ✗ Failed: chrome/browser/importer/external_process_importer_client.cc
+[2025-11-17 06:55:13] ERROR:     error: chrome/browser/importer/external_process_importer_client.cc: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/importer/external_process_importer_client.h
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/importer/external_process_importer_client.h: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/importer/importer_list.cc
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/importer/importer_list.cc: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/importer/importer_uma.cc
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/importer/importer_uma.cc: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/importer/in_process_importer_bridge.cc
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/importer/in_process_importer_bridge.cc: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/importer/in_process_importer_bridge.h
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/importer/in_process_importer_bridge.h: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/importer/profile_writer.cc
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/importer/profile_writer.cc: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/importer/profile_writer.h
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/importer/profile_writer.h: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/mac/chrome_browser_main_extra_parts_mac.h
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/mac/chrome_browser_main_extra_parts_mac.h: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/mac/chrome_browser_main_extra_parts_mac.mm
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/mac/chrome_browser_main_extra_parts_mac.mm: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/mac/sparkle_glue.h
+[2025-11-17 06:55:14] ERROR:     Performing three-way merge...
+error: chrome/browser/mac/sparkle_glue.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/mac/sparkle_glue.h'
+error: chrome/browser/mac/sparkle_glue.h: patch does not apply
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/mac/sparkle_glue.mm
+[2025-11-17 06:55:14] ERROR:     Performing three-way merge...
+error: chrome/browser/mac/sparkle_glue.mm: does not exist in index
+error: cannot read the current contents of 'chrome/browser/mac/sparkle_glue.mm'
+error: chrome/browser/mac/sparkle_glue.mm: patch does not apply
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/mac/su_updater.h
+[2025-11-17 06:55:14] ERROR:     Performing three-way merge...
+error: chrome/browser/mac/su_updater.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/mac/su_updater.h'
+error: chrome/browser/mac/su_updater.h: patch does not apply
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/media/extension_media_access_handler.cc
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/media/extension_media_access_handler.cc: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/metrics/chrome_metrics_service_client.cc
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/metrics/chrome_metrics_service_client.cc: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/prefs/browser_prefs.cc
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/prefs/browser_prefs.cc: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/prefs/browser_prefs.h
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/prefs/browser_prefs.h: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/BUILD.gn
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/resources/settings/BUILD.gn: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/people_page/import_data_browser_proxy.ts
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/resources/settings/people_page/import_data_browser_proxy.ts: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/people_page/import_data_dialog.html
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/resources/settings/people_page/import_data_dialog.html: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/route.ts
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/resources/settings/route.ts: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/router.ts
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/resources/settings/router.ts: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/settings.ts
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/resources/settings/settings.ts: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/settings_main/settings_main.html
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/resources/settings/settings_main/settings_main.html: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/settings_main/settings_main.ts
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/resources/settings/settings_main/settings_main.ts: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/settings_menu/settings_menu.html
+[2025-11-17 06:55:14] ERROR:     error: chrome/browser/resources/settings/settings_menu/settings_menu.html: does not match index
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/vibebrowser_page/models_data.html
+[2025-11-17 06:55:14] ERROR:     Performing three-way merge...
+error: chrome/browser/resources/settings/vibebrowser_page/models_data.html: does not exist in index
+error: cannot read the current contents of 'chrome/browser/resources/settings/vibebrowser_page/models_data.html'
+error: chrome/browser/resources/settings/vibebrowser_page/models_data.html: patch does not apply
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/vibebrowser_page/models_data.ts
+[2025-11-17 06:55:14] ERROR:     Performing three-way merge...
+error: chrome/browser/resources/settings/vibebrowser_page/models_data.ts: does not exist in index
+error: cannot read the current contents of 'chrome/browser/resources/settings/vibebrowser_page/models_data.ts'
+error: chrome/browser/resources/settings/vibebrowser_page/models_data.ts: patch does not apply
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html
+[2025-11-17 06:55:14] ERROR:     Performing three-way merge...
+error: chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html: does not exist in index
+error: cannot read the current contents of 'chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html'
+error: chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html: patch does not apply
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.ts
+[2025-11-17 06:55:14] ERROR:     Performing three-way merge...
+error: chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.ts: does not exist in index
+error: cannot read the current contents of 'chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.ts'
+error: chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.ts: patch does not apply
+
+[2025-11-17 06:55:14] ERROR:   ✗ Failed: chrome/browser/resources/settings/vibebrowser_prefs_page/vibebrowser_prefs_page.html
+[2025-11-17 06:55:14] ERROR:     Performing three-way merge...
+error: chrome/browser/resources/settings/VibeBrowser_prefs_page/VibeBrowser_prefs_page.html: does not exist in index
+error: cannot read the current contents of 'chrome/browser/resources/settings/VibeBrowser_prefs_page/VibeBrowser_prefs_page.html'
+error: chrome/browser/resources/settings/VibeBrowser_prefs_page/VibeBrowser_prefs_page.html: patch does not apply
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/resources/settings/vibebrowser_prefs_page/vibebrowser_prefs_page.ts
+[2025-11-17 06:55:15] ERROR:     Performing three-way merge...
+error: chrome/browser/resources/settings/VibeBrowser_prefs_page/VibeBrowser_prefs_page.ts: does not exist in index
+error: cannot read the current contents of 'chrome/browser/resources/settings/VibeBrowser_prefs_page/VibeBrowser_prefs_page.ts'
+error: chrome/browser/resources/settings/VibeBrowser_prefs_page/VibeBrowser_prefs_page.ts: patch does not apply
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/sparkle_buildflags.gni
+[2025-11-17 06:55:15] ERROR:     Performing three-way merge...
+error: chrome/browser/sparkle_buildflags.gni: does not exist in index
+error: cannot read the current contents of 'chrome/browser/sparkle_buildflags.gni'
+error: chrome/browser/sparkle_buildflags.gni: patch does not apply
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/sync/prefs/chrome_syncable_prefs_database.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/sync/prefs/chrome_syncable_prefs_database.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/BUILD.gn
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/BUILD.gn: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/actions/chrome_action_id.h
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/actions/chrome_action_id.h: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/actions/vibebrowser_actions_config.h
+[2025-11-17 06:55:15] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/actions/VibeBrowser_actions_config.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/actions/VibeBrowser_actions_config.h'
+error: chrome/browser/ui/actions/VibeBrowser_actions_config.h: patch does not apply
+
+[2025-11-17 06:55:15] SUCCESS:   ✓ Applied: chrome/browser/ui/browser_actions.cc
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/browser_command_controller.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/browser_command_controller.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/extensions/settings_overridden_params_providers.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/extensions/settings_overridden_params_providers.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/omnibox/chrome_omnibox_client.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/omnibox/chrome_omnibox_client.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/startup/google_api_keys_infobar_delegate.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/startup/google_api_keys_infobar_delegate.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.h
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.h: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/toolbar/toolbar_actions_model.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/toolbar/toolbar_actions_model.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/toolbar/toolbar_pref_names.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/toolbar/toolbar_pref_names.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/toolbar/toolbar_pref_names.h
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/toolbar/toolbar_pref_names.h: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/ui_features.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/ui_features.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/ui_features.h
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/ui_features.h: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/accelerator_table.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/views/accelerator_table.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/BUILD.gn
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/views/side_panel/BUILD.gn: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.cc
+[2025-11-17 06:55:15] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.cc'
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.cc: patch does not apply
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.h
+[2025-11-17 06:55:15] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.h'
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.h: patch does not apply
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.cc
+[2025-11-17 06:55:15] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.cc'
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.cc: patch does not apply
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.h
+[2025-11-17 06:55:15] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.h'
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.h: patch does not apply
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.cc
+[2025-11-17 06:55:15] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.cc'
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.cc: patch does not apply
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.h
+[2025-11-17 06:55:15] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.h'
+error: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.h: patch does not apply
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/extensions/extension_side_panel_manager.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/views/side_panel/extensions/extension_side_panel_manager.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/side_panel.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/views/side_panel/side_panel.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/side_panel.h
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/views/side_panel/side_panel.h: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/side_panel_entry_id.h
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/views/side_panel/side_panel_entry_id.h: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/side_panel_prefs.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/views/side_panel/side_panel_prefs.cc: does not match index
+
+[2025-11-17 06:55:15] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/side_panel_util.cc
+[2025-11-17 06:55:15] ERROR:     error: chrome/browser/ui/views/side_panel/side_panel_util.cc: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.cc
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.cc'
+error: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.cc: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.h
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.h'
+error: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.h: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.cc
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.cc'
+error: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.cc: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.h
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.h'
+error: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.h: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.cc
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.cc: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.h
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.h: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/views/toolbar/pinned_toolbar_actions_container.cc
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/views/toolbar/pinned_toolbar_actions_container.cc: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/BUILD.gn
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/webui/BUILD.gn: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/chrome_web_ui_configs.cc
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/webui/chrome_web_ui_configs.cc: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.cc
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.cc'
+error: chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.cc: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.h
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.h'
+error: chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.h: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/help/sparkle_version_updater_mac.h
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/webui/help/sparkle_version_updater_mac.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/webui/help/sparkle_version_updater_mac.h'
+error: chrome/browser/ui/webui/help/sparkle_version_updater_mac.h: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/help/sparkle_version_updater_mac.mm
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/webui/help/sparkle_version_updater_mac.mm: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/webui/help/sparkle_version_updater_mac.mm'
+error: chrome/browser/ui/webui/help/sparkle_version_updater_mac.mm: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/help/version_updater_mac.mm
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/webui/help/version_updater_mac.mm: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/settings/import_data_handler.cc
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/webui/settings/import_data_handler.cc: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/settings/settings_ui.cc
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/webui/settings/settings_ui.cc: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/settings/vibebrowser_metrics_handler.cc
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/webui/settings/VibeBrowser_metrics_handler.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/webui/settings/VibeBrowser_metrics_handler.cc'
+error: chrome/browser/ui/webui/settings/VibeBrowser_metrics_handler.cc: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/settings/vibebrowser_metrics_handler.h
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/webui/settings/VibeBrowser_metrics_handler.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/webui/settings/VibeBrowser_metrics_handler.h'
+error: chrome/browser/ui/webui/settings/VibeBrowser_metrics_handler.h: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc
+[2025-11-17 06:55:16] ERROR:     error: chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc: does not match index
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/ui/webui/vibebrowser_first_run.h
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/ui/webui/vibebrowser_first_run.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/ui/webui/vibebrowser_first_run.h'
+error: chrome/browser/ui/webui/vibebrowser_first_run.h: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/vibebrowser_server/BUILD.gn
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/VibeBrowser_server/BUILD.gn: does not exist in index
+error: cannot read the current contents of 'chrome/browser/VibeBrowser_server/BUILD.gn'
+error: chrome/browser/VibeBrowser_server/BUILD.gn: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/vibebrowser_server/vibebrowser_server_manager.cc
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/VibeBrowser_server/VibeBrowser_server_manager.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/VibeBrowser_server/VibeBrowser_server_manager.cc'
+error: chrome/browser/VibeBrowser_server/VibeBrowser_server_manager.cc: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/vibebrowser_server/vibebrowser_server_manager.h
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/VibeBrowser_server/VibeBrowser_server_manager.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/VibeBrowser_server/VibeBrowser_server_manager.h'
+error: chrome/browser/VibeBrowser_server/VibeBrowser_server_manager.h: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/vibebrowser_server/vibebrowser_server_prefs.cc
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/VibeBrowser_server/VibeBrowser_server_prefs.cc: does not exist in index
+error: cannot read the current contents of 'chrome/browser/VibeBrowser_server/VibeBrowser_server_prefs.cc'
+error: chrome/browser/VibeBrowser_server/VibeBrowser_server_prefs.cc: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/browser/vibebrowser_server/vibebrowser_server_prefs.h
+[2025-11-17 06:55:16] ERROR:     Performing three-way merge...
+error: chrome/browser/VibeBrowser_server/VibeBrowser_server_prefs.h: does not exist in index
+error: cannot read the current contents of 'chrome/browser/VibeBrowser_server/VibeBrowser_server_prefs.h'
+error: chrome/browser/VibeBrowser_server/VibeBrowser_server_prefs.h: patch does not apply
+
+[2025-11-17 06:55:16] ERROR:   ✗ Failed: chrome/common/chrome_constants.cc
+[2025-11-17 06:55:16] ERROR:     error: chrome/common/chrome_constants.cc: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/chrome_paths_linux.cc
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/chrome_paths_linux.cc: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/extensions/api/_api_features.json
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/extensions/api/_api_features.json: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/extensions/api/_permission_features.json
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/extensions/api/_permission_features.json: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/extensions/api/api_sources.gni
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/extensions/api/api_sources.gni: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/extensions/api/browser_os.idl
+[2025-11-17 06:55:17] ERROR:     Performing three-way merge...
+error: chrome/common/extensions/api/browser_os.idl: does not exist in index
+error: cannot read the current contents of 'chrome/common/extensions/api/browser_os.idl'
+error: chrome/common/extensions/api/browser_os.idl: patch does not apply
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/extensions/permissions/chrome_api_permissions.cc
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/extensions/permissions/chrome_api_permissions.cc: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/importer/importer_bridge.h
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/importer/importer_bridge.h: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/importer/importer_data_types.h
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/importer/importer_data_types.h: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/importer/importer_type.h
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/importer/importer_type.h: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/importer/profile_import.mojom
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/importer/profile_import.mojom: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/importer/profile_import_process_param_traits_macros.h
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/importer/profile_import_process_param_traits_macros.h: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/pref_names.h
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/pref_names.h: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/webui_url_constants.cc
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/webui_url_constants.cc: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/common/webui_url_constants.h
+[2025-11-17 06:55:17] ERROR:     error: chrome/common/webui_url_constants.h: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/install_static/chromium_install_modes.cc
+[2025-11-17 06:55:17] ERROR:     error: chrome/install_static/chromium_install_modes.cc: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/install_static/chromium_install_modes.h
+[2025-11-17 06:55:17] ERROR:     error: chrome/install_static/chromium_install_modes.h: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/installer/mini_installer/chrome.release
+[2025-11-17 06:55:17] ERROR:     error: chrome/installer/mini_installer/chrome.release: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/installer/setup/setup_constants.cc
+[2025-11-17 06:55:17] ERROR:     error: chrome/installer/setup/setup_constants.cc: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/utility/BUILD.gn
+[2025-11-17 06:55:17] ERROR:     error: chrome/utility/BUILD.gn: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/utility/importer/chrome_importer.cc
+[2025-11-17 06:55:17] ERROR:     Performing three-way merge...
+error: chrome/utility/importer/chrome_importer.cc: does not exist in index
+error: cannot read the current contents of 'chrome/utility/importer/chrome_importer.cc'
+error: chrome/utility/importer/chrome_importer.cc: patch does not apply
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/utility/importer/chrome_importer.h
+[2025-11-17 06:55:17] ERROR:     Performing three-way merge...
+error: chrome/utility/importer/chrome_importer.h: does not exist in index
+error: cannot read the current contents of 'chrome/utility/importer/chrome_importer.h'
+error: chrome/utility/importer/chrome_importer.h: patch does not apply
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/utility/importer/external_process_importer_bridge.cc
+[2025-11-17 06:55:17] ERROR:     error: chrome/utility/importer/external_process_importer_bridge.cc: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/utility/importer/external_process_importer_bridge.h
+[2025-11-17 06:55:17] ERROR:     error: chrome/utility/importer/external_process_importer_bridge.h: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: chrome/utility/importer/importer_creator.cc
+[2025-11-17 06:55:17] ERROR:     error: chrome/utility/importer/importer_creator.cc: does not match index
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: components/metrics/vibebrowser_metrics/BUILD.gn
+[2025-11-17 06:55:17] ERROR:     Performing three-way merge...
+error: components/metrics/VibeBrowser_metrics/BUILD.gn: does not exist in index
+error: cannot read the current contents of 'components/metrics/VibeBrowser_metrics/BUILD.gn'
+error: components/metrics/VibeBrowser_metrics/BUILD.gn: patch does not apply
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: components/metrics/vibebrowser_metrics/DEPS
+[2025-11-17 06:55:17] ERROR:     Performing three-way merge...
+error: components/metrics/VibeBrowser_metrics/DEPS: does not exist in index
+error: cannot read the current contents of 'components/metrics/VibeBrowser_metrics/DEPS'
+error: components/metrics/VibeBrowser_metrics/DEPS: patch does not apply
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: components/metrics/vibebrowser_metrics/vibebrowser_metrics.cc
+[2025-11-17 06:55:17] ERROR:     Performing three-way merge...
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics.cc: does not exist in index
+error: cannot read the current contents of 'components/metrics/VibeBrowser_metrics/VibeBrowser_metrics.cc'
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics.cc: patch does not apply
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: components/metrics/vibebrowser_metrics/vibebrowser_metrics.h
+[2025-11-17 06:55:17] ERROR:     Performing three-way merge...
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics.h: does not exist in index
+error: cannot read the current contents of 'components/metrics/VibeBrowser_metrics/VibeBrowser_metrics.h'
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics.h: patch does not apply
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: components/metrics/vibebrowser_metrics/vibebrowser_metrics_prefs.cc
+[2025-11-17 06:55:17] ERROR:     Performing three-way merge...
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_prefs.cc: does not exist in index
+error: cannot read the current contents of 'components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_prefs.cc'
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_prefs.cc: patch does not apply
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: components/metrics/vibebrowser_metrics/vibebrowser_metrics_prefs.h
+[2025-11-17 06:55:17] ERROR:     Performing three-way merge...
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_prefs.h: does not exist in index
+error: cannot read the current contents of 'components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_prefs.h'
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_prefs.h: patch does not apply
+
+[2025-11-17 06:55:17] ERROR:   ✗ Failed: components/metrics/vibebrowser_metrics/vibebrowser_metrics_service.cc
+[2025-11-17 06:55:17] ERROR:     Performing three-way merge...
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service.cc: does not exist in index
+error: cannot read the current contents of 'components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service.cc'
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service.cc: patch does not apply
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: components/metrics/vibebrowser_metrics/vibebrowser_metrics_service.h
+[2025-11-17 06:55:18] ERROR:     Performing three-way merge...
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service.h: does not exist in index
+error: cannot read the current contents of 'components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service.h'
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service.h: patch does not apply
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: components/metrics/vibebrowser_metrics/vibebrowser_metrics_service_factory.cc
+[2025-11-17 06:55:18] ERROR:     Performing three-way merge...
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service_factory.cc: does not exist in index
+error: cannot read the current contents of 'components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service_factory.cc'
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service_factory.cc: patch does not apply
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: components/metrics/vibebrowser_metrics/vibebrowser_metrics_service_factory.h
+[2025-11-17 06:55:18] ERROR:     Performing three-way merge...
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service_factory.h: does not exist in index
+error: cannot read the current contents of 'components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service_factory.h'
+error: components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service_factory.h: patch does not apply
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: components/os_crypt/sync/keychain_password_mac.mm
+[2025-11-17 06:55:18] ERROR:     error: components/os_crypt/sync/keychain_password_mac.mm: does not match index
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: components/vector_icons/BUILD.gn
+[2025-11-17 06:55:18] ERROR:     error: components/vector_icons/BUILD.gn: does not match index
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: components/vector_icons/chat_orange.icon
+[2025-11-17 06:55:18] ERROR:     Performing three-way merge...
+error: components/vector_icons/chat_orange.icon: does not exist in index
+error: cannot read the current contents of 'components/vector_icons/chat_orange.icon'
+error: components/vector_icons/chat_orange.icon: patch does not apply
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: components/vector_icons/clash_of_gpts.icon
+[2025-11-17 06:55:18] ERROR:     Performing three-way merge...
+error: components/vector_icons/clash_of_gpts.icon: does not exist in index
+error: cannot read the current contents of 'components/vector_icons/clash_of_gpts.icon'
+error: components/vector_icons/clash_of_gpts.icon: patch does not apply
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: extensions/browser/extension_function_histogram_value.h
+[2025-11-17 06:55:18] ERROR:     error: extensions/browser/extension_function_histogram_value.h: does not match index
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: extensions/common/mojom/api_permission_id.mojom
+[2025-11-17 06:55:18] ERROR:     error: extensions/common/mojom/api_permission_id.mojom: does not match index
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: third_party/blink/renderer/core/frame/navigator.cc
+[2025-11-17 06:55:18] ERROR:     error: third_party/blink/renderer/core/frame/navigator.cc: does not match index
+
+[2025-11-17 06:55:18] SUCCESS:   ✓ Applied: third_party/sparkle/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: tools/metrics/histograms/metadata/extensions/enums.xml
+[2025-11-17 06:55:18] ERROR:     error: tools/metrics/histograms/metadata/extensions/enums.xml: does not match index
+
+[2025-11-17 06:55:18] ERROR:   ✗ Failed: tools/metrics/histograms/metadata/sql/histograms.xml
+[2025-11-17 06:55:18] ERROR:     error: tools/metrics/histograms/metadata/sql/histograms.xml: does not match index
+
+[2025-11-17 06:55:18] INFO: 
+Summary: 2 applied, 170 failed
+[2025-11-17 06:55:18] ERROR: Failed patches:
+[2025-11-17 06:55:18] ERROR:   - chrome/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - chrome/VERSION
+[2025-11-17 06:55:18] ERROR:   - chrome/app/app-Info.plist
+[2025-11-17 06:55:18] ERROR:   - chrome/app/chrome_command_ids.h
+[2025-11-17 06:55:18] ERROR:   - chrome/app/generated_resources.grd
+[2025-11-17 06:55:18] ERROR:   - chrome/app/settings_strings.grdp
+[2025-11-17 06:55:18] ERROR:   - chrome/app/visual_elements_resources/vibebrowser.VisualElementsManifest.xml
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/chrome_browser_main.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_api.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_api.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_api_helpers.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_api_helpers.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_api_utils.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_api_utils.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_change_detector.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_change_detector.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_content_processor.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_content_processor.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/debugger/debugger_api.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/developer_private/extension_info_generator_shared.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/settings_private/prefs_util.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/api/side_panel/side_panel_api.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/chrome_extension_registrar_delegate.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/chrome_extensions_browser_api_provider.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/extension_context_menu_model.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/extension_management.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/extension_web_ui_override_registrar.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/external_provider_impl.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/vibebrowser_extension_constants.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/vibebrowser_external_loader.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/extensions/vibebrowser_external_loader.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/global_keyboard_shortcuts_mac.mm
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/importer/external_process_importer_client.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/importer/external_process_importer_client.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/importer/importer_list.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/importer/importer_uma.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/importer/in_process_importer_bridge.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/importer/in_process_importer_bridge.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/importer/profile_writer.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/importer/profile_writer.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/mac/chrome_browser_main_extra_parts_mac.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/mac/chrome_browser_main_extra_parts_mac.mm
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/mac/sparkle_glue.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/mac/sparkle_glue.mm
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/mac/su_updater.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/media/extension_media_access_handler.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/metrics/chrome_metrics_service_client.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/prefs/browser_prefs.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/prefs/browser_prefs.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/people_page/import_data_browser_proxy.ts
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/people_page/import_data_dialog.html
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/route.ts
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/router.ts
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/settings.ts
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/settings_main/settings_main.html
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/settings_main/settings_main.ts
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/settings_menu/settings_menu.html
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/vibebrowser_page/models_data.html
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/vibebrowser_page/models_data.ts
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.ts
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/vibebrowser_prefs_page/vibebrowser_prefs_page.html
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/resources/settings/vibebrowser_prefs_page/vibebrowser_prefs_page.ts
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/sparkle_buildflags.gni
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/sync/prefs/chrome_syncable_prefs_database.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/actions/chrome_action_id.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/actions/vibebrowser_actions_config.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/browser_command_controller.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/extensions/settings_overridden_params_providers.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/omnibox/chrome_omnibox_client.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/startup/google_api_keys_infobar_delegate.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/toolbar/toolbar_actions_model.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/toolbar/toolbar_pref_names.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/toolbar/toolbar_pref_names.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/ui_features.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/ui_features.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/accelerator_table.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/extensions/extension_side_panel_manager.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/side_panel.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/side_panel.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/side_panel_entry_id.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/side_panel_prefs.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/side_panel_util.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/views/toolbar/pinned_toolbar_actions_container.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/chrome_web_ui_configs.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/help/sparkle_version_updater_mac.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/help/sparkle_version_updater_mac.mm
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/help/version_updater_mac.mm
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/settings/import_data_handler.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/settings/settings_ui.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/settings/vibebrowser_metrics_handler.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/settings/vibebrowser_metrics_handler.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/ui/webui/vibebrowser_first_run.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/vibebrowser_server/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/vibebrowser_server/vibebrowser_server_manager.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/vibebrowser_server/vibebrowser_server_manager.h
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/vibebrowser_server/vibebrowser_server_prefs.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/browser/vibebrowser_server/vibebrowser_server_prefs.h
+[2025-11-17 06:55:18] ERROR:   - chrome/common/chrome_constants.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/common/chrome_paths_linux.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/common/extensions/api/_api_features.json
+[2025-11-17 06:55:18] ERROR:   - chrome/common/extensions/api/_permission_features.json
+[2025-11-17 06:55:18] ERROR:   - chrome/common/extensions/api/api_sources.gni
+[2025-11-17 06:55:18] ERROR:   - chrome/common/extensions/api/browser_os.idl
+[2025-11-17 06:55:18] ERROR:   - chrome/common/extensions/permissions/chrome_api_permissions.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/common/importer/importer_bridge.h
+[2025-11-17 06:55:18] ERROR:   - chrome/common/importer/importer_data_types.h
+[2025-11-17 06:55:18] ERROR:   - chrome/common/importer/importer_type.h
+[2025-11-17 06:55:18] ERROR:   - chrome/common/importer/profile_import.mojom
+[2025-11-17 06:55:18] ERROR:   - chrome/common/importer/profile_import_process_param_traits_macros.h
+[2025-11-17 06:55:18] ERROR:   - chrome/common/pref_names.h
+[2025-11-17 06:55:18] ERROR:   - chrome/common/webui_url_constants.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/common/webui_url_constants.h
+[2025-11-17 06:55:18] ERROR:   - chrome/install_static/chromium_install_modes.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/install_static/chromium_install_modes.h
+[2025-11-17 06:55:18] ERROR:   - chrome/installer/mini_installer/chrome.release
+[2025-11-17 06:55:18] ERROR:   - chrome/installer/setup/setup_constants.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/utility/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - chrome/utility/importer/chrome_importer.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/utility/importer/chrome_importer.h
+[2025-11-17 06:55:18] ERROR:   - chrome/utility/importer/external_process_importer_bridge.cc
+[2025-11-17 06:55:18] ERROR:   - chrome/utility/importer/external_process_importer_bridge.h
+[2025-11-17 06:55:18] ERROR:   - chrome/utility/importer/importer_creator.cc
+[2025-11-17 06:55:18] ERROR:   - components/metrics/vibebrowser_metrics/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - components/metrics/vibebrowser_metrics/DEPS
+[2025-11-17 06:55:18] ERROR:   - components/metrics/vibebrowser_metrics/vibebrowser_metrics.cc
+[2025-11-17 06:55:18] ERROR:   - components/metrics/vibebrowser_metrics/vibebrowser_metrics.h
+[2025-11-17 06:55:18] ERROR:   - components/metrics/vibebrowser_metrics/vibebrowser_metrics_prefs.cc
+[2025-11-17 06:55:18] ERROR:   - components/metrics/vibebrowser_metrics/vibebrowser_metrics_prefs.h
+[2025-11-17 06:55:18] ERROR:   - components/metrics/vibebrowser_metrics/vibebrowser_metrics_service.cc
+[2025-11-17 06:55:18] ERROR:   - components/metrics/vibebrowser_metrics/vibebrowser_metrics_service.h
+[2025-11-17 06:55:18] ERROR:   - components/metrics/vibebrowser_metrics/vibebrowser_metrics_service_factory.cc
+[2025-11-17 06:55:18] ERROR:   - components/metrics/vibebrowser_metrics/vibebrowser_metrics_service_factory.h
+[2025-11-17 06:55:18] ERROR:   - components/os_crypt/sync/keychain_password_mac.mm
+[2025-11-17 06:55:18] ERROR:   - components/vector_icons/BUILD.gn
+[2025-11-17 06:55:18] ERROR:   - components/vector_icons/chat_orange.icon
+[2025-11-17 06:55:18] ERROR:   - components/vector_icons/clash_of_gpts.icon
+[2025-11-17 06:55:18] ERROR:   - extensions/browser/extension_function_histogram_value.h
+[2025-11-17 06:55:18] ERROR:   - extensions/common/mojom/api_permission_id.mojom
+[2025-11-17 06:55:18] ERROR:   - third_party/blink/renderer/core/frame/navigator.cc
+[2025-11-17 06:55:18] ERROR:   - tools/metrics/histograms/metadata/extensions/enums.xml
+[2025-11-17 06:55:18] ERROR:   - tools/metrics/histograms/metadata/sql/histograms.xml
+[2025-11-17 06:55:18] ERROR: 
+Build failed: Failed to apply 170 patches
