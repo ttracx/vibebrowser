@@ -1,0 +1,353 @@
+VibeBrowser Build Log - Started at 2025-11-16 23:16:59
+================================================================================
+
+[2025-11-16 23:16:59] INFO: 🚀 VibeBrowser Build System
+[2025-11-16 23:16:59] INFO: ==================================================
+[2025-11-16 23:16:59] INFO: 📄 Loaded config from: build/config/debug.yaml
+[2025-11-16 23:16:59] INFO: 📁 Using Chromium source from CLI: /Volumes/VibeStore/chromium/src
+[2025-11-16 23:16:59] INFO: 📍 Using platform default architecture: arm64
+[2025-11-16 23:16:59] INFO: 📍 Root: /Users/knightdev/vibebrowser/packages/vibebrowser
+[2025-11-16 23:16:59] INFO: 📍 Chromium source: /Volumes/VibeStore/chromium/src
+[2025-11-16 23:16:59] INFO: 📍 Architectures: ['arm64']
+[2025-11-16 23:16:59] INFO: 📍 Universal build: False
+[2025-11-16 23:16:59] INFO: 📍 Build type: debug
+[2025-11-16 23:16:59] INFO: 
+============================================================
+[2025-11-16 23:16:59] INFO: 🏗️  Building for architecture: arm64
+[2025-11-16 23:16:59] INFO: ============================================================
+[2025-11-16 23:16:59] WARNING: 📁 Using provided Chromium source: /Volumes/VibeStore/chromium/src
+[2025-11-16 23:16:59] INFO: 📍 Chromium: 137.0.7151.69
+[2025-11-16 23:16:59] INFO: 📍 VibeBrowser: 
+[2025-11-16 23:16:59] INFO: 📍 Output directory: out/Default_arm64
+[2025-11-16 23:16:59] INFO: 
+🔀 Setting up Chromium 137.0.7151.69...
+[2025-11-16 23:16:59] INFO: 📥 Fetching all tags from remote...
+[2025-11-16 23:16:59] RUN_COMMAND: 🔧 Running: git fetch --tags --force
+[2025-11-16 23:16:59] INFO: 🔧 Running: git fetch --tags --force
+[2025-11-16 23:17:01] RUN_COMMAND: ✅ Command completed with exit code: 0
+[2025-11-16 23:17:01] INFO: 🔀 Checking out tag: 137.0.7151.69
+[2025-11-16 23:17:01] RUN_COMMAND: 🔧 Running: git checkout tags/137.0.7151.69
+[2025-11-16 23:17:01] INFO: 🔧 Running: git checkout tags/137.0.7151.69
+[2025-11-16 23:17:04] RUN_COMMAND: STDOUT: HEAD is now at 0b41cf178df5e Incrementing VERSION to 137.0.7151.69
+[2025-11-16 23:17:04] RUN_COMMAND: ✅ Command completed with exit code: 0
+[2025-11-16 23:17:04] INFO: 📥 Syncing dependencies (this may take a while)...
+[2025-11-16 23:17:04] RUN_COMMAND: 🔧 Running: gclient sync -D --no-history --shallow
+[2025-11-16 23:17:04] INFO: 🔧 Running: gclient sync -D --no-history --shallow
+[2025-11-16 23:17:08] RUN_COMMAND: STDOUT: ________ running 'vpython3 -vpython-spec src/.vpython3 -vpython-tool install' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/landmines.py' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/third_party/depot_tools/update_depot_tools_toggle.py --disable' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/tools/remove_stale_files.py src/third_party/test_fonts/test_fonts.tar.gz src/third_party/node/node_modules.tar.gz src/third_party/tfhub_models' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/tools/remove_stale_pyc_files.py src/android_webview/tools src/build/android src/gpu/gles2_conform_support src/infra src/ppapi src/printing src/third_party/blink/renderer/build/scripts src/third_party/blink/tools src/third_party/catapult src/third_party/mako src/tools' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/mac_toolchain.py' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: Skipping Mac toolchain installation for mac
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -o src/build/util/LASTCHANGE' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -m GPU_LISTS_VERSION --revision-id-only --header src/gpu/config/gpu_lists_version.h' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -m SKIA_COMMIT_HASH -s src/third_party/skia --header src/skia/ext/skia_commit_hash.h' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -s src/third_party/dawn --revision src/gpu/webgpu/DAWN_VERSION' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: ________ running 'python3 src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --bucket chromium-browser-clang -s src/tools/clang/dsymutil/bin/dsymutil.arm64.sha1 -o src/tools/clang/dsymutil/bin/dsymutil' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:09] RUN_COMMAND: STDOUT: --no_auth is deprecated, this flag has no effect.
+[2025-11-16 23:17:10] RUN_COMMAND: STDOUT: ________ running 'python3 src/testing/generate_location_tags.py --out src/testing/location_tags.json' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:10] RUN_COMMAND: STDOUT: ________ running 'python3 src/buildtools/reclient_cfgs/configure_reclient_cfgs.py --rbe_instance projects/rbe-chrome-untrusted/instances/default_instance --reproxy_cfg_template reproxy.cfg.template --rewrapper_cfg_project  --skip_remoteexec_cfg_fetch --quiet' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:10] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/config/siso/configure_siso.py --rbe_instance projects/rbe-chrome-untrusted/instances/default_instance' in '/Volumes/VibeStore/chromium'
+[2025-11-16 23:17:10] RUN_COMMAND: ✅ Command completed with exit code: 0
+[2025-11-16 23:17:10] SUCCESS: Git setup complete
+[2025-11-16 23:17:10] INFO: 
+🔄 Replacing chromium files...
+[2025-11-16 23:17:10] INFO:   Build type: debug
+[2025-11-16 23:17:10] INFO:     ✓ Replaced: chrome/updater/branding.gni → chrome/updater/branding.gni
+[2025-11-16 23:17:10] INFO:     ✓ Replaced: chrome/enterprise_companion/branding.gni → chrome/enterprise_companion/branding.gni
+[2025-11-16 23:17:10] INFO:     ✓ Replaced: chrome/app/theme/chromium/BRANDING.debug → chrome/app/theme/chromium/BRANDING
+[2025-11-16 23:17:10] SUCCESS: Replaced 3 files (skipped 1 non-matching files)
+[2025-11-16 23:17:10] INFO: 
+🔤 Applying string replacements...
+[2025-11-16 23:17:10] INFO:   • Processing: chrome/app/chromium_strings.grd
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 1 occurrences of 'The Chromium Authors. All rights reserved.'
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 1 occurrences of 'Google LLC. All rights reserved.'
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 1 occurrences of 'The Chromium Authors'
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 9 occurrences of 'Google Chrome'
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 87 occurrences of '(Google)(?! Play)'
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 529 occurrences of 'Chromium'
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 89 occurrences of 'Chrome'
+[2025-11-16 23:17:10] SUCCESS:     Updated with 717 total replacements
+[2025-11-16 23:17:10] INFO:   • Processing: chrome/app/settings_chromium_strings.grdp
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 1 occurrences of 'Google Chrome'
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 33 occurrences of '(Google)(?! Play)'
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 159 occurrences of 'Chromium'
+[2025-11-16 23:17:10] INFO:     ✓ Replaced 72 occurrences of 'Chrome'
+[2025-11-16 23:17:10] SUCCESS:     Updated with 265 total replacements
+[2025-11-16 23:17:10] SUCCESS: String replacements completed
+[2025-11-16 23:17:10] INFO: 
+✨ Setting up Sparkle framework...
+[2025-11-16 23:17:10] INFO: Downloading Sparkle from https://github.com/sparkle-project/Sparkle/releases/download/2.7.0/Sparkle-2.7.0.tar.xz...
+[2025-11-16 23:17:11] INFO: Extracting Sparkle...
+[2025-11-16 23:17:12] SUCCESS: Sparkle setup complete
+[2025-11-16 23:17:12] INFO: 
+🩹 Applying patches using new dev CLI system...
+[2025-11-16 23:17:12] INFO: Found 172 patches
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/BUILD.gn
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/VERSION
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/app/app-Info.plist
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/app/chrome_command_ids.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/app/generated_resources.grd
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/app/settings_strings.grdp
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/app/visual_elements_resources/vibebrowser.VisualElementsManifest.xml
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/BUILD.gn
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/chrome_browser_main.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/BUILD.gn
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_api.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_api.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_api_helpers.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_api_helpers.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_api_utils.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_api_utils.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_change_detector.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_change_detector.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_content_processor.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_content_processor.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/debugger/debugger_api.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/developer_private/extension_info_generator_shared.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/settings_private/prefs_util.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/api/side_panel/side_panel_api.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/chrome_extension_registrar_delegate.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/chrome_extensions_browser_api_provider.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/extension_context_menu_model.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/extension_management.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/extension_web_ui_override_registrar.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/external_provider_impl.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/vibebrowser_extension_constants.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/vibebrowser_external_loader.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/extensions/vibebrowser_external_loader.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/global_keyboard_shortcuts_mac.mm
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/importer/external_process_importer_client.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/importer/external_process_importer_client.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/importer/importer_list.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/importer/importer_uma.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/importer/in_process_importer_bridge.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/importer/in_process_importer_bridge.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/importer/profile_writer.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/importer/profile_writer.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/mac/chrome_browser_main_extra_parts_mac.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/mac/chrome_browser_main_extra_parts_mac.mm
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/mac/sparkle_glue.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/mac/sparkle_glue.mm
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/mac/su_updater.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/media/extension_media_access_handler.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/metrics/chrome_metrics_service_client.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/prefs/browser_prefs.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/prefs/browser_prefs.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/BUILD.gn
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/people_page/import_data_browser_proxy.ts
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/people_page/import_data_dialog.html
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/route.ts
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/router.ts
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/settings.ts
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/settings_main/settings_main.html
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/settings_main/settings_main.ts
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/settings_menu/settings_menu.html
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/vibebrowser_page/models_data.html
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/vibebrowser_page/models_data.ts
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.ts
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/vibebrowser_prefs_page/vibebrowser_prefs_page.html
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/resources/settings/vibebrowser_prefs_page/vibebrowser_prefs_page.ts
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/sparkle_buildflags.gni
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/sync/prefs/chrome_syncable_prefs_database.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/BUILD.gn
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/actions/chrome_action_id.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/actions/vibebrowser_actions_config.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/browser_actions.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/browser_command_controller.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/extensions/settings_overridden_params_providers.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/omnibox/chrome_omnibox_client.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/startup/google_api_keys_infobar_delegate.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/toolbar/toolbar_actions_model.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/toolbar/toolbar_pref_names.cc
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/toolbar/toolbar_pref_names.h
+[2025-11-16 23:17:12] SUCCESS:   ✓ Applied: chrome/browser/ui/ui_features.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/ui_features.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/accelerator_table.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/BUILD.gn
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/extensions/extension_side_panel_manager.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/side_panel.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/side_panel.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/side_panel_entry_id.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/side_panel_prefs.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/side_panel_util.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/views/toolbar/pinned_toolbar_actions_container.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/BUILD.gn
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/chrome_web_ui_configs.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/help/sparkle_version_updater_mac.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/help/sparkle_version_updater_mac.mm
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/help/version_updater_mac.mm
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/settings/import_data_handler.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/settings/settings_ui.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/settings/vibebrowser_metrics_handler.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/settings/vibebrowser_metrics_handler.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/ui/webui/vibebrowser_first_run.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/vibebrowser_server/BUILD.gn
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/vibebrowser_server/vibebrowser_server_manager.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/vibebrowser_server/vibebrowser_server_manager.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/vibebrowser_server/vibebrowser_server_prefs.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/browser/vibebrowser_server/vibebrowser_server_prefs.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/chrome_constants.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/chrome_paths_linux.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/extensions/api/_api_features.json
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/extensions/api/_permission_features.json
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/extensions/api/api_sources.gni
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/extensions/api/browser_os.idl
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/extensions/permissions/chrome_api_permissions.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/importer/importer_bridge.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/importer/importer_data_types.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/importer/importer_type.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/importer/profile_import.mojom
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/importer/profile_import_process_param_traits_macros.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/pref_names.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/webui_url_constants.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/common/webui_url_constants.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/install_static/chromium_install_modes.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/install_static/chromium_install_modes.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/installer/mini_installer/chrome.release
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/installer/setup/setup_constants.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/utility/BUILD.gn
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/utility/importer/chrome_importer.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/utility/importer/chrome_importer.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/utility/importer/external_process_importer_bridge.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/utility/importer/external_process_importer_bridge.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: chrome/utility/importer/importer_creator.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/metrics/vibebrowser_metrics/BUILD.gn
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/metrics/vibebrowser_metrics/DEPS
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/metrics/vibebrowser_metrics/vibebrowser_metrics.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/metrics/vibebrowser_metrics/vibebrowser_metrics.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/metrics/vibebrowser_metrics/vibebrowser_metrics_prefs.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/metrics/vibebrowser_metrics/vibebrowser_metrics_prefs.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/metrics/vibebrowser_metrics/vibebrowser_metrics_service.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/metrics/vibebrowser_metrics/vibebrowser_metrics_service.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/metrics/vibebrowser_metrics/vibebrowser_metrics_service_factory.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/metrics/vibebrowser_metrics/vibebrowser_metrics_service_factory.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/os_crypt/sync/keychain_password_mac.mm
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/vector_icons/BUILD.gn
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/vector_icons/chat_orange.icon
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: components/vector_icons/clash_of_gpts.icon
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: extensions/browser/extension_function_histogram_value.h
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: extensions/common/mojom/api_permission_id.mojom
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: third_party/blink/renderer/core/frame/navigator.cc
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: third_party/sparkle/BUILD.gn
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: tools/metrics/histograms/metadata/extensions/enums.xml
+[2025-11-16 23:17:13] SUCCESS:   ✓ Applied: tools/metrics/histograms/metadata/sql/histograms.xml
+[2025-11-16 23:17:13] INFO: 
+Summary: 172 applied, 0 failed
+[2025-11-16 23:17:13] INFO: 
+📦 Copying resources...
+[2025-11-16 23:17:13] INFO:   • Product Logo Icons
+[2025-11-16 23:17:13] INFO:     ✓ Copied 19 files: resources/icons/*.png → chrome/app/theme/chromium/
+[2025-11-16 23:17:13] INFO:   • Product Logo AI Files
+[2025-11-16 23:17:13] INFO:     ✓ Copied 2 files: resources/icons/*.ai → chrome/app/theme/chromium/
+[2025-11-16 23:17:13] INFO:   • Product Logo SVG Files
+[2025-11-16 23:17:13] INFO:     ✓ Copied 6 files: resources/icons/*.svg → chrome/app/theme/chromium/
+[2025-11-16 23:17:13] INFO:   • ChromeOS Icons
+[2025-11-16 23:17:13] INFO:     ✓ Copied directory: resources/icons/chromeos → chrome/app/theme/chromium/chromeos
+[2025-11-16 23:17:13] INFO:   • Linux Icons
+[2025-11-16 23:17:13] INFO:     ✓ Copied directory: resources/icons/linux → chrome/app/theme/chromium/linux
+[2025-11-16 23:17:13] INFO:   • Mac Icons
+[2025-11-16 23:17:13] INFO:     ✓ Copied directory: resources/icons/mac → chrome/app/theme/chromium/mac
+[2025-11-16 23:17:13] INFO:   • Windows Icons
+[2025-11-16 23:17:13] INFO:     ✓ Copied directory: resources/icons/win → chrome/app/theme/chromium/win
+[2025-11-16 23:17:13] INFO:   • Product Logo Name 22 - 100%
+[2025-11-16 23:17:13] INFO:     ✓ Copied file: resources/icons/product_logo_name_22.png → chrome/app/theme/default_100_percent/chromium/product_logo_name_22.png
+[2025-11-16 23:17:13] INFO:   • Product Logo Name 22 White - 100%
+[2025-11-16 23:17:13] INFO:     ✓ Copied file: resources/icons/product_logo_name_22_white.png → chrome/app/theme/default_100_percent/chromium/product_logo_name_22_white.png
+[2025-11-16 23:17:13] INFO:   • Product Logo Name 22 - 200%
+[2025-11-16 23:17:13] INFO:     ✓ Copied file: resources/icons/product_logo_name_22_2x.png → chrome/app/theme/default_200_percent/chromium/product_logo_name_22.png
+[2025-11-16 23:17:13] INFO:   • Product Logo Name 22 White - 200%
+[2025-11-16 23:17:13] INFO:     ✓ Copied file: resources/icons/product_logo_name_22_white_2x.png → chrome/app/theme/default_200_percent/chromium/product_logo_name_22_white.png
+[2025-11-16 23:17:13] INFO:   • Product Logo 16 - 100%
+[2025-11-16 23:17:13] INFO:     ✓ Copied file: resources/icons/product_logo_16.png → chrome/app/theme/default_100_percent/chromium/product_logo_16.png
+[2025-11-16 23:17:13] INFO:   • Product Logo 32 - 100%
+[2025-11-16 23:17:13] INFO:     ✓ Copied file: resources/icons/product_logo_32.png → chrome/app/theme/default_100_percent/chromium/product_logo_32.png
+[2025-11-16 23:17:13] INFO:   • Product Logo 16 - 200%
+[2025-11-16 23:17:13] INFO:     ✓ Copied file: resources/icons/product_logo_32.png → chrome/app/theme/default_200_percent/chromium/product_logo_16.png
+[2025-11-16 23:17:13] INFO:   • Product Logo 32 - 200%
+[2025-11-16 23:17:13] INFO:     ✓ Copied file: resources/icons/product_logo_64.png → chrome/app/theme/default_200_percent/chromium/product_logo_32.png
+[2025-11-16 23:17:13] INFO:   • VibeBrowser Server Binary - macOS ARM64
+[2025-11-16 23:17:13] WARNING:     Source file not found: resources/binaries/vibebrowser_server/vibebrowser-server-darwin-arm64
+[2025-11-16 23:17:13] INFO:   ⏭️  Skipping VibeBrowser Server Binary - macOS x64 (arch: ['x64'], current: arm64)
+[2025-11-16 23:17:13] INFO:   ⏭️  Skipping VibeBrowser Server Binary - Linux ARM64 (os: ['linux'], current: macos)
+[2025-11-16 23:17:13] INFO:   ⏭️  Skipping VibeBrowser Server Binary - Linux x64 (os: ['linux'], current: macos)
+[2025-11-16 23:17:13] INFO:   ⏭️  Skipping VibeBrowser Server Binary - Windows x64 (os: ['windows'], current: macos)
+[2025-11-16 23:17:13] INFO:   • Codex Binary - macOS ARM64
+[2025-11-16 23:17:13] INFO:     ✓ Copied file: resources/binaries/codex/codex-aarch64-apple-darwin → chrome/browser/vibebrowser_server/resources/bin/codex
+[2025-11-16 23:17:13] INFO:   ⏭️  Skipping Codex Binary - macOS x64 (arch: ['x64'], current: arm64)
+[2025-11-16 23:17:13] INFO:   ⏭️  Skipping Codex Binary - Linux ARM64 (os: ['linux'], current: macos)
+[2025-11-16 23:17:13] INFO:   ⏭️  Skipping Codex Binary - Linux x64 (os: ['linux'], current: macos)
+[2025-11-16 23:17:13] INFO:   ⏭️  Skipping Codex Binary - Windows ARM64 (os: ['windows'], current: macos)
+[2025-11-16 23:17:13] INFO:   ⏭️  Skipping Codex Binary - Windows x64 (os: ['windows'], current: macos)
+[2025-11-16 23:17:13] SUCCESS: Resources copied
+[2025-11-16 23:17:13] INFO: 
+⚙️  Configuring debug build for arm64...
+[2025-11-16 23:17:13] RUN_COMMAND: 🔧 Running: gn gen out/Default_arm64 --fail-on-unused-args
+[2025-11-16 23:17:13] INFO: 🔧 Running: gn gen out/Default_arm64 --fail-on-unused-args
+[2025-11-16 23:17:18] RUN_COMMAND: STDOUT: Done. Made 25833 targets from 3973 files in 4235ms
+[2025-11-16 23:17:18] RUN_COMMAND: ✅ Command completed with exit code: 0
+[2025-11-16 23:17:18] SUCCESS: Build configured
+[2025-11-16 23:17:18] INFO: 
+🔨 Building VibeBrowser (this will take a while)...
+[2025-11-16 23:17:18] WARNING: No vibebrowser_chromium_version set. Not building
+[2025-11-16 23:17:18] INFO: Using default autoninja parallelism
+[2025-11-16 23:17:18] RUN_COMMAND: 🔧 Running: autoninja -C out/Default_arm64 chrome chromedriver
+[2025-11-16 23:17:18] INFO: 🔧 Running: autoninja -C out/Default_arm64 chrome chromedriver
+[2025-11-16 23:17:18] RUN_COMMAND: STDOUT: [31;1moffline mode[0m
+[2025-11-16 23:17:18] RUN_COMMAND: STDOUT: ninja: Entering directory `out/Default_arm64'
+[2025-11-16 23:17:18] RUN_COMMAND: STDOUT: loading fs state done 811.625µs
+[2025-11-16 23:17:18] RUN_COMMAND: STDOUT: loading/recompacting deps log done 1.958µs
+[2025-11-16 23:17:20] RUN_COMMAND: STDOUT: load siso config done 2.011965916s
+[2025-11-16 23:17:20] RUN_COMMAND: STDOUT: load build.ninja done 357.944125ms
+[2025-11-16 23:17:20] RUN_COMMAND: STDOUT: schedule pending:0+ready:1 (node:315017 edge:2)
+[2025-11-16 23:17:20] RUN_COMMAND: STDOUT: build start: Ready 1 Pending 1
+[2025-11-16 23:17:20] RUN_COMMAND: STDOUT: rebuild manifest finished
+[2025-11-16 23:17:21] RUN_COMMAND: STDOUT: schedule pending:0+ready:1 (node:315017 edge:9)
+[2025-11-16 23:17:22] RUN_COMMAND: STDOUT: schedule pending:12899+ready:2592 (node:315017 edge:15509)
+[2025-11-16 23:17:23] RUN_COMMAND: STDOUT: schedule pending:27201+ready:5094 (node:315017 edge:32308)
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: schedule pending:44833+ready:6652 (node:315017 edge:51506)
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT:  6.40s Error: failed in schedule out/Default_arm64/chrome: schedule out/Default_arm64/phony/chrome/chrome: schedule out/Default_arm64/phony/chrome/chrome_app: schedule out/Default_arm64/VibeBrowser Dev.app/Contents/Resources/af.lproj/InfoPlist.strings: schedule out/Default_arm64/phony/chrome/chrome_app.inputdeps: schedule out/Default_arm64/phony/chrome/chrome_app_executable_bundle_data: schedule out/Default_arm64/obj/chrome/chrome_app_executable/VibeBrowser Dev: schedule out/Default_arm64/phony/chrome/browser/VibeBrowser_server/VibeBrowser_server_resources: schedule out/Default_arm64/phony/chrome/browser/VibeBrowser_server/VibeBrowser_server_bundle_data: schedule chrome/browser/VibeBrowser_server/binaries/VibeBrowser-server-darwin-arm64: "../../chrome/browser/VibeBrowser_server/binaries/VibeBrowser-server-darwin-arm64", needed by "phony/chrome/browser/VibeBrowser_server/VibeBrowser_server_bundle_data", missing and no known rule to make it
+[2025-11-16 23:17:24] RUN_COMMAND: ✅ Command completed with exit code: 1
+[2025-11-16 23:17:24] RUN_COMMAND: ❌ Command failed: autoninja -C out/Default_arm64 chrome chromedriver
+[2025-11-16 23:17:24] RUN_COMMAND: ❌ Exit code: 1
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: [31;1moffline mode[0m
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: ninja: Entering directory `out/Default_arm64'
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: loading fs state done 811.625µs
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: loading/recompacting deps log done 1.958µs
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: load siso config done 2.011965916s
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: load build.ninja done 357.944125ms
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: schedule pending:0+ready:1 (node:315017 edge:2)
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: build start: Ready 1 Pending 1
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: rebuild manifest finished
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: schedule pending:0+ready:1 (node:315017 edge:9)
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: schedule pending:12899+ready:2592 (node:315017 edge:15509)
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: schedule pending:27201+ready:5094 (node:315017 edge:32308)
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT: schedule pending:44833+ready:6652 (node:315017 edge:51506)
+[2025-11-16 23:17:24] RUN_COMMAND: STDOUT:  6.40s Error: failed in schedule out/Default_arm64/chrome: schedule out/Default_arm64/phony/chrome/chrome: schedule out/Default_arm64/phony/chrome/chrome_app: schedule out/Default_arm64/VibeBrowser Dev.app/Contents/Resources/af.lproj/InfoPlist.strings: schedule out/Default_arm64/phony/chrome/chrome_app.inputdeps: schedule out/Default_arm64/phony/chrome/chrome_app_executable_bundle_data: schedule out/Default_arm64/obj/chrome/chrome_app_executable/VibeBrowser Dev: schedule out/Default_arm64/phony/chrome/browser/VibeBrowser_server/VibeBrowser_server_resources: schedule out/Default_arm64/phony/chrome/browser/VibeBrowser_server/VibeBrowser_server_bundle_data: schedule chrome/browser/VibeBrowser_server/binaries/VibeBrowser-server-darwin-arm64: "../../chrome/browser/VibeBrowser_server/binaries/VibeBrowser-server-darwin-arm64", needed by "phony/chrome/browser/VibeBrowser_server/VibeBrowser_server_bundle_data", missing and no known rule to make it
+[2025-11-16 23:17:24] ERROR: Command failed: autoninja -C out/Default_arm64 chrome chromedriver
+[2025-11-16 23:17:24] ERROR: 
+Build failed: Command '['autoninja', '-C', 'out/Default_arm64', 'chrome', 'chromedriver']' returned non-zero exit status 1.

@@ -51,7 +51,7 @@ All rebranding, theme implementation, bug fixes, and git management are complete
 
 **Options:**
 
-#### Option A: Use Pre-built BrowserOS.app
+#### Option A: Use Pre-built VibeBrowser (currently named BrowserOS.app in pre-built binary)
 ```bash
 open -a BrowserOS
 ```
@@ -98,7 +98,7 @@ gclient sync
 
 ### For Users ✅
 ```
-✓ BrowserOS.app running (VibeBrowser code)
+✓ VibeBrowser (currently named BrowserOS.app in pre-built binary) running (VibeBrowser code)
 ✓ All documentation accessible
 ✓ Theme visible in docs
 ✓ Ready for community use
@@ -108,8 +108,8 @@ gclient sync
 
 ## 📦 Recommended Next Steps
 
-### Immediate: Use BrowserOS.app
-The currently installed **BrowserOS.app** contains all the VibeBrowser code with:
+### Immediate: Use VibeBrowser (currently named BrowserOS.app in pre-built binary)
+The currently installed **VibeBrowser (currently named BrowserOS.app in pre-built binary)** contains all the VibeBrowser code with:
 - ✅ VibeBrowser functionality
 - ✅ All features working
 - ⚠️ Old bundle name (BrowserOS)
@@ -162,7 +162,7 @@ All guides are ready:
 - ✅ All paths correct
 - ✅ Build system configured
 
-### Browser (BrowserOS.app for now)
+### Browser (VibeBrowser (currently named BrowserOS.app in pre-built binary) for now)
 - ✅ Functional browser
 - ✅ VibeBrowser code inside
 - ✅ All features working
@@ -194,10 +194,10 @@ Everything is ready **except** the final Chromium compilation which requires pat
 1. ✅ All source code fully rebranded
 2. ✅ Documentation perfect and published
 3. ✅ Theme system complete
-4. ✅ BrowserOS.app available for immediate use
+4. ✅ VibeBrowser (currently named BrowserOS.app in pre-built binary) available for immediate use
 5. ⏳ Production VibeBrowser.app build needs patch work
 
-**Recommendation:** Use BrowserOS.app now, work on patch compatibility separately.
+**Recommendation:** Use VibeBrowser (currently named BrowserOS.app in pre-built binary) now, work on patch compatibility separately.
 
 ---
 
