@@ -62,7 +62,7 @@ export function VoiceWaveform({ audioLevel, isActive, isMuted = false, className
       const opacity = 0.3 + (normalized * 0.7)
       ctx.fillStyle = isMuted
         ? `rgba(156, 163, 175, ${opacity})`  // Gray when muted
-        : `rgba(251, 101, 31, ${opacity})`  // Brand orange (hsl(19 96% 55%))
+        : `rgba(109, 74, 255, ${opacity})`  // Brand orange (hsl(19 96% 55%))
 
       // Draw rounded rectangle
       const radius = barWidth / 4

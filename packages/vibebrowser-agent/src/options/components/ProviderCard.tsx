@@ -21,7 +21,7 @@ export function ProviderCard({
     const styles: Record<string, { letter: string; bg: string; color: string }> = {
       vibebrowser: { letter: 'B', bg: 'bg-purple-500', color: 'text-white' },
       openai: { letter: 'O', bg: 'bg-green-500', color: 'text-white' },
-      anthropic: { letter: 'R', bg: 'bg-orange-500', color: 'text-white' },
+      anthropic: { letter: 'R', bg: 'bg-purple-500', color: 'text-white' },
       google_gemini: { letter: 'G', bg: 'bg-blue-500', color: 'text-white' },
       ollama: { letter: 'O', bg: 'bg-teal-500', color: 'text-white' },
       openrouter: { letter: 'A', bg: 'bg-amber-500', color: 'text-white' },

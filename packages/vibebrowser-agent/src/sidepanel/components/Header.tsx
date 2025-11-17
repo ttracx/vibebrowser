@@ -368,7 +368,7 @@ export const Header = memo(function Header({ onReset, showReset, isProcessing, i
               onClick={handleReset}
               variant="ghost"
               size="sm"
-              className="h-9 w-9 p-0 rounded-xl hover:bg-orange-100 dark:hover:bg-orange-900/20 hover:text-orange-600 dark:hover:text-orange-400 transition-all duration-300"
+              className="h-9 w-9 p-0 rounded-xl hover:bg-purple-100 dark:hover:bg-purple-900/20 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300"
               aria-label="Reset conversation"
               title="Reset"
             >

@@ -41,7 +41,7 @@ export function StepOne() {
         </div>
 
         <div className="flex flex-col items-center gap-3">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-brand/20 to-orange-500/20 border-2 border-brand/40 flex items-center justify-center shadow-xl p-4">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-brand/20 to-purple-500/20 border-2 border-brand/40 flex items-center justify-center shadow-xl p-4">
             <img
               src="/assets/product_logo_svg.svg"
               alt="VibeBrowser"
@@ -71,7 +71,7 @@ export function StepOne() {
       </div>
 
       {/* CTA Section */}
-      <div className="flex flex-col items-center gap-5 bg-gradient-to-br from-orange-50/50 to-orange-100/30 dark:from-orange-950/20 dark:to-orange-900/10 border border-orange-200/50 dark:border-orange-800/30 rounded-2xl p-8">
+      <div className="flex flex-col items-center gap-5 bg-gradient-to-br from-purple-50/50 to-purple-100/30 dark:from-purple-950/20 dark:to-purple-900/10 border border-purple-200/50 dark:border-purple-800/30 rounded-2xl p-8">
         <div className="text-center space-y-2 max-w-xl">
           <h3 className="text-xl font-bold">Ready to Import Your Data?</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
@@ -81,7 +81,7 @@ export function StepOne() {
 
         <button
           onClick={handleOpenImportSettings}
-          className="group relative px-10 py-4 bg-gradient-to-r from-brand to-orange-500 hover:from-brand/90 hover:to-orange-500/90 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/40 hover:scale-105 active:scale-95 overflow-hidden"
+          className="group relative px-10 py-4 bg-gradient-to-r from-brand to-purple-500 hover:from-brand/90 hover:to-purple-500/90 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/40 hover:scale-105 active:scale-95 overflow-hidden"
         >
           <span className="relative z-10 flex items-center gap-3">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

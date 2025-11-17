@@ -23,7 +23,7 @@ export function WelcomeStep() {
       <div className="space-y-4">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight px-4">
           Welcome to{' '}
-          <span className="inline-block bg-gradient-to-r from-brand via-orange-500 to-brand bg-clip-text text-transparent">
+          <span className="inline-block bg-gradient-to-r from-brand via-purple-500 to-brand bg-clip-text text-transparent">
             VibeBrowser
           </span>
         </h1>
@@ -38,7 +38,7 @@ export function WelcomeStep() {
       {/* Feature highlights with enhanced cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto pt-6 px-4">
         <div className="group flex flex-col items-center text-center space-y-3 p-6 rounded-2xl border-2 border-border/60 bg-card/80 hover:bg-card hover:border-brand/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand/20 to-orange-500/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand/20 to-purple-500/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
             <svg
               className="w-7 h-7 text-brand"
               fill="none"
@@ -60,7 +60,7 @@ export function WelcomeStep() {
         </div>
 
         <div className="group flex flex-col items-center text-center space-y-3 p-6 rounded-2xl border-2 border-border/60 bg-card/80 hover:bg-card hover:border-brand/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand/20 to-orange-500/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand/20 to-purple-500/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
             <svg
               className="w-7 h-7 text-brand"
               fill="none"
@@ -82,7 +82,7 @@ export function WelcomeStep() {
         </div>
 
         <div className="group flex flex-col items-center text-center space-y-3 p-6 rounded-2xl border-2 border-border/60 bg-card/80 hover:bg-card hover:border-brand/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand/20 to-orange-500/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand/20 to-purple-500/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
             <svg
               className="w-7 h-7 text-brand"
               fill="none"

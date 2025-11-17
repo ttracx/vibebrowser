@@ -547,7 +547,7 @@ export function AddProviderModal({ isOpen, onClose, onSave, editProvider }: AddP
           </button>
           <button
             onClick={handleSave}
-            className="px-4 py-2 text-[13px] font-medium text-white bg-gradient-to-r from-brand to-orange-500 hover:from-brand/90 hover:to-orange-500/90 rounded-lg transition-all shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/40 disabled:opacity-50"
+            className="px-4 py-2 text-[13px] font-medium text-white bg-gradient-to-r from-brand to-purple-500 hover:from-brand/90 hover:to-purple-500/90 rounded-lg transition-all shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/40 disabled:opacity-50"
             disabled={isSaving}
           >
             {isSaving ? 'Saving...' : 'Save'}

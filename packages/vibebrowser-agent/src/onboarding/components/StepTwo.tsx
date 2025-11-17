@@ -44,7 +44,7 @@ export function StepTwo() {
             key={item.title}
             className="bg-gradient-to-br from-card/80 to-background/60 backdrop-blur-sm border-2 border-border/60 rounded-xl p-4 text-center hover:border-brand/50 hover:shadow-lg hover:shadow-brand/10 transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:scale-95"
           >
-            <div className="w-10 h-10 mx-auto rounded-lg bg-gradient-to-br from-brand/15 to-orange-500/15 border border-brand/20 flex items-center justify-center text-brand mb-3 shadow-sm">
+            <div className="w-10 h-10 mx-auto rounded-lg bg-gradient-to-br from-brand/15 to-purple-500/15 border border-brand/20 flex items-center justify-center text-brand mb-3 shadow-sm">
               {item.icon}
             </div>
             <h4 className="font-bold text-sm mb-1">{item.title}</h4>
@@ -54,7 +54,7 @@ export function StepTwo() {
       </div>
 
       {/* CTA Section */}
-      <div className="flex flex-col items-center gap-5 bg-gradient-to-br from-orange-50/50 to-orange-100/30 dark:from-orange-950/20 dark:to-orange-900/10 border border-orange-200/50 dark:border-orange-800/30 rounded-2xl p-8">
+      <div className="flex flex-col items-center gap-5 bg-gradient-to-br from-purple-50/50 to-purple-100/30 dark:from-purple-950/20 dark:to-purple-900/10 border border-purple-200/50 dark:border-purple-800/30 rounded-2xl p-8">
         <div className="text-center space-y-2 max-w-xl">
           <h3 className="text-xl font-bold">Ready to Configure Your Keys?</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
@@ -64,7 +64,7 @@ export function StepTwo() {
 
         <button
           onClick={handleOpenSettings}
-          className="group relative px-10 py-4 bg-gradient-to-r from-brand to-orange-500 hover:from-brand/90 hover:to-orange-500/90 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/40 hover:scale-105 active:scale-95 overflow-hidden"
+          className="group relative px-10 py-4 bg-gradient-to-r from-brand to-purple-500 hover:from-brand/90 hover:to-purple-500/90 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/40 hover:scale-105 active:scale-95 overflow-hidden"
         >
           <span className="relative z-10 flex items-center gap-3">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

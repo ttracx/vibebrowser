@@ -1,1 +1,0 @@
-!function(){const t=localStorage.getItem("vibebrowser-theme")||"light";document.documentElement.setAttribute("data-theme",t),"dark"!==t&&"gray"!==t||document.documentElement.classList.add(t)}();

@@ -45,8 +45,8 @@ export function StepThree() {
           />
         </svg>
       ),
-      gradient: 'from-brand to-orange-500',
-      bgGradient: 'from-brand/10 to-orange-500/10',
+      gradient: 'from-brand to-purple-500',
+      bgGradient: 'from-brand/10 to-purple-500/10',
       hoverBorder: 'hover:border-brand/60'
     },
     {
@@ -56,7 +56,7 @@ export function StepThree() {
       query: 'Unsubscribe from all promotional emails on my gmail tab',
       clickable: false,
       icon: (
-        <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -73,7 +73,7 @@ export function StepThree() {
       query: '(in claude code) "Open LinkedIn.com and extract all my connections and give it as a table"',
       clickable: false,
       icon: (
-        <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -96,7 +96,7 @@ export function StepThree() {
       query: '',
       clickable: false,
       icon: (
-        <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -119,7 +119,7 @@ export function StepThree() {
       query: '',
       clickable: false,
       icon: (
-        <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"

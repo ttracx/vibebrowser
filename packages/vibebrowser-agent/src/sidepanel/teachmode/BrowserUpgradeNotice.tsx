@@ -16,12 +16,12 @@ export function BrowserUpgradeNotice({ currentVersion, onDismiss, className }: B
   return (
     <div
       className={cn(
-        "relative flex items-center gap-3 rounded-lg border border-l-4 border-orange-200 border-l-orange-500 bg-white p-4 shadow-sm dark:border-orange-800 dark:border-l-orange-600 dark:bg-card",
+        "relative flex items-center gap-3 rounded-lg border border-l-4 border-purple-200 border-l-purple-500 bg-white p-4 shadow-sm dark:border-purple-800 dark:border-l-purple-600 dark:bg-card",
         className
       )}
     >
       {/* Icon */}
-      <AlertCircle className="h-5 w-5 flex-shrink-0 text-orange-500 dark:text-orange-400" />
+      <AlertCircle className="h-5 w-5 flex-shrink-0 text-purple-500 dark:text-purple-400" />
 
       {/* Content */}
       <div className="flex-1 min-w-0">
@@ -36,7 +36,7 @@ export function BrowserUpgradeNotice({ currentVersion, onDismiss, className }: B
       {/* Action Button */}
       <button
         onClick={handleUpgradeClick}
-        className="flex-shrink-0 inline-flex items-center gap-1.5 rounded-md border border-orange-500 bg-transparent px-3 py-1.5 text-xs font-medium text-orange-500 transition-colors hover:bg-orange-500 hover:text-white dark:border-orange-400 dark:text-orange-400 dark:hover:bg-orange-400 dark:hover:text-white"
+        className="flex-shrink-0 inline-flex items-center gap-1.5 rounded-md border border-purple-500 bg-transparent px-3 py-1.5 text-xs font-medium text-purple-500 transition-colors hover:bg-purple-500 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-400 dark:hover:text-white"
       >
         Update VibeBrowser
         <ExternalLink className="h-3 w-3" />
