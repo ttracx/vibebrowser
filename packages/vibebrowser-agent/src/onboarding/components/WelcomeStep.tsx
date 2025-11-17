@@ -28,7 +28,7 @@ export function WelcomeStep() {
           </span>
         </h1>
         <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto font-medium px-4">
-          The Open-Source Agentic Browser
+          The VibeCoding Agentic Browser
         </p>
         <p className="text-sm sm:text-base text-muted-foreground/80 max-w-xl mx-auto leading-relaxed px-4">
            VibeBrowser turns your words into actions. Privacy-first alternative to ChatGPT Atlas, Perplexity Comet and Dia!
