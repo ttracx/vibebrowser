@@ -1,0 +1,161 @@
+VibeBrowser Build Log - Started at 2025-11-16 22:57:35
+================================================================================
+
+[2025-11-16 22:57:35] INFO: 🚀 VibeBrowser Build System
+[2025-11-16 22:57:35] INFO: ==================================================
+[2025-11-16 22:57:35] INFO: 📄 Loaded config from: build/config/debug.yaml
+[2025-11-16 22:57:35] INFO: 📁 Using Chromium source from CLI: /Volumes/VibeStore/chromium/src
+[2025-11-16 22:57:35] INFO: 📍 Using platform default architecture: arm64
+[2025-11-16 22:57:35] INFO: 📍 Root: /Users/knightdev/vibebrowser/packages/vibebrowser
+[2025-11-16 22:57:35] INFO: 📍 Chromium source: /Volumes/VibeStore/chromium/src
+[2025-11-16 22:57:35] INFO: 📍 Architectures: ['arm64']
+[2025-11-16 22:57:35] INFO: 📍 Universal build: False
+[2025-11-16 22:57:35] INFO: 📍 Build type: debug
+[2025-11-16 22:57:35] INFO: 
+============================================================
+[2025-11-16 22:57:35] INFO: 🏗️  Building for architecture: arm64
+[2025-11-16 22:57:35] INFO: ============================================================
+[2025-11-16 22:57:35] WARNING: 📁 Using provided Chromium source: /Volumes/VibeStore/chromium/src
+[2025-11-16 22:57:35] INFO: 📍 Chromium: 137.0.7151.69
+[2025-11-16 22:57:35] INFO: 📍 VibeBrowser: 
+[2025-11-16 22:57:35] INFO: 📍 Output directory: out/Default_arm64
+[2025-11-16 22:57:35] INFO: 
+🔀 Setting up Chromium 137.0.7151.69...
+[2025-11-16 22:57:35] INFO: 📥 Fetching all tags from remote...
+[2025-11-16 22:57:35] RUN_COMMAND: 🔧 Running: git fetch --tags --force
+[2025-11-16 22:57:35] INFO: 🔧 Running: git fetch --tags --force
+[2025-11-16 22:57:41] RUN_COMMAND: STDOUT: From https://chromium.googlesource.com/chromium/src
+[2025-11-16 22:57:41] RUN_COMMAND: STDOUT:    a898f98237545..2cdd064a9620a  main       -> origin/main
+[2025-11-16 22:57:41] RUN_COMMAND: ✅ Command completed with exit code: 0
+[2025-11-16 22:57:41] INFO: 🔀 Checking out tag: 137.0.7151.69
+[2025-11-16 22:57:41] RUN_COMMAND: 🔧 Running: git checkout tags/137.0.7151.69
+[2025-11-16 22:57:41] INFO: 🔧 Running: git checkout tags/137.0.7151.69
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: Note: switching to 'tags/137.0.7151.69'.
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: You are in 'detached HEAD' state. You can look around, make experimental
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: changes and commit them, and you can discard any commits you make in this
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: state without impacting any branches by switching back to a branch.
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: If you want to create a new branch to retain commits you create, you may
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: do so (now or later) by using -c with the switch command. Example:
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT:   git switch -c <new-branch-name>
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: Or undo this operation with:
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT:   git switch -
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: Turn off this advice by setting config variable advice.detachedHead to false
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: HEAD is now at 0b41cf178df5e Incrementing VERSION to 137.0.7151.69
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	docs/website
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	media/cdm/api
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	net/third_party/quiche/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	testing/libfuzzer/fuzzers/wasm_corpus
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/angle
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/anonymous_tokens/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/boringssl/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/breakpad/breakpad
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/cast_core/public/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/catapult
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/clang-format/script
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/cpuinfo/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/crabbyavif/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/cros-components/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/crossbench
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/dav1d/libdav1d
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/dawn
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/depot_tools
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/devtools-frontend/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/eigen3/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/expat/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/fast_float/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/ffmpeg
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/freetype-testing/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/freetype/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/fuzztest/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/glslang/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/google_benchmark/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/googletest/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/harfbuzz-ng/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/highway/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/icu
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/ink/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/ink_stroke_modeler/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/leveldatabase/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libFuzzer/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libaddressinput/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libaom/source/libaom
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libc++/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libc++abi/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libgav1/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libjpeg_turbo
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libphonenumber/dist
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libprotobuf-mutator/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libsrtp
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libunwind/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libvpx/source/libvpx
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libwebm/source
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libwebp/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/libyuv
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/nasm
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/nearby/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/neon_2_sse/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/openh264/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/openscreen/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/pdfium
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/perfetto
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/protobuf-javascript/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/pthreadpool/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/quic_trace/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/re2/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/ruy/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/skia
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/smhasher/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/snappy/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/spirv-headers/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/spirv-tools/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/sqlite/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/swiftshader
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/tflite/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/vulkan-deps
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/vulkan-headers/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/vulkan-loader/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/vulkan-tools/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/vulkan-utility-libraries/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/vulkan-validation-layers/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/webgl/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/webgpu-cts/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/webrtc
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/xnnpack/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	third_party/zstd/src
+[2025-11-16 22:58:11] RUN_COMMAND: STDOUT: M	v8
+[2025-11-16 22:58:11] RUN_COMMAND: ✅ Command completed with exit code: 0
+[2025-11-16 22:58:11] INFO: 📥 Syncing dependencies (this may take a while)...
+[2025-11-16 22:58:11] RUN_COMMAND: 🔧 Running: gclient sync -D --no-history --shallow
+[2025-11-16 22:58:11] INFO: 🔧 Running: gclient sync -D --no-history --shallow
+[2025-11-16 22:59:04] RUN_COMMAND: STDOUT: ________ deleting 'src/tools/page_cycler/acid3' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:04] RUN_COMMAND: STDOUT: ________ deleting 'src/third_party/libavifinfo/src' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:05] RUN_COMMAND: STDOUT: ________ deleting 'src/third_party/libavif/src' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:06] RUN_COMMAND: STDOUT: ________ deleting 'src/third_party/grpc/src' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:06] RUN_COMMAND: STDOUT: ________ deleting 'src/third_party/dawn/third_party/webgpu-headers' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:06] RUN_COMMAND: STDOUT: ________ deleting 'src/third_party/chromium-variations' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:06] RUN_COMMAND: STDOUT: ________ deleting 'src/third_party/beto-core/src' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:45] RUN_COMMAND: STDOUT: ________ running 'vpython3 -vpython-spec src/.vpython3 -vpython-tool install' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:45] RUN_COMMAND: STDOUT: Hook 'vpython3 -vpython-spec src/.vpython3 -vpython-tool install' took 17.03 secs
+[2025-11-16 22:59:45] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/landmines.py' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:45] RUN_COMMAND: STDOUT: ________ running 'python3 src/third_party/depot_tools/update_depot_tools_toggle.py --disable' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:45] RUN_COMMAND: STDOUT: ________ running 'python3 src/tools/remove_stale_files.py src/third_party/test_fonts/test_fonts.tar.gz src/third_party/node/node_modules.tar.gz src/third_party/tfhub_models' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:45] RUN_COMMAND: STDOUT: ________ running 'python3 src/tools/remove_stale_pyc_files.py src/android_webview/tools src/build/android src/gpu/gles2_conform_support src/infra src/ppapi src/printing src/third_party/blink/renderer/build/scripts src/third_party/blink/tools src/third_party/catapult src/third_party/mako src/tools' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:45] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/mac_toolchain.py' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:45] RUN_COMMAND: STDOUT: Skipping Mac toolchain installation for mac
+[2025-11-16 22:59:45] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -o src/build/util/LASTCHANGE' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:46] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -m GPU_LISTS_VERSION --revision-id-only --header src/gpu/config/gpu_lists_version.h' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:46] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -m SKIA_COMMIT_HASH -s src/third_party/skia --header src/skia/ext/skia_commit_hash.h' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:46] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/util/lastchange.py -s src/third_party/dawn --revision src/gpu/webgpu/DAWN_VERSION' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:46] RUN_COMMAND: STDOUT: ________ running 'python3 src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --bucket chromium-browser-clang -s src/tools/clang/dsymutil/bin/dsymutil.arm64.sha1 -o src/tools/clang/dsymutil/bin/dsymutil' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:46] RUN_COMMAND: STDOUT: --no_auth is deprecated, this flag has no effect.
+[2025-11-16 22:59:53] RUN_COMMAND: STDOUT: ________ running 'python3 src/testing/generate_location_tags.py --out src/testing/location_tags.json' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:53] RUN_COMMAND: STDOUT: ________ running 'python3 src/buildtools/reclient_cfgs/configure_reclient_cfgs.py --rbe_instance projects/rbe-chrome-untrusted/instances/default_instance --reproxy_cfg_template reproxy.cfg.template --rewrapper_cfg_project  --skip_remoteexec_cfg_fetch --quiet' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:53] RUN_COMMAND: STDOUT: ________ running 'python3 src/build/config/siso/configure_siso.py --rbe_instance projects/rbe-chrome-untrusted/instances/default_instance' in '/Volumes/VibeStore/chromium'
+[2025-11-16 22:59:53] RUN_COMMAND: ✅ Command completed with exit code: 0
+[2025-11-16 22:59:53] SUCCESS: Git setup complete
+[2025-11-16 22:59:53] INFO: 
+🔄 Replacing chromium files...
+[2025-11-16 22:59:53] INFO:   Build type: debug
+[2025-11-16 22:59:53] ERROR:     Destination file not found in chromium_src: .DS_Store
+[2025-11-16 22:59:53] ERROR: 
+Build failed: Destination file not found in chromium_src: .DS_Store

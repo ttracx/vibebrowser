@@ -1,0 +1,202 @@
+# Copy resources configuration for VibeBrowser build
+# This file defines all copy operations for resources during the build process
+#
+# Conditional Operations:
+# - Use 'build_type' field to specify when an operation should run
+#   - Supported build types: debug, release, dev, prod
+#   - Operations without build_type run for all builds
+# - Use 'os' field to specify target operating systems
+#   - Supported values: windows, macos, linux (case-sensitive)
+#   - Operations without os run for all platforms
+# - Use 'arch' field to specify target architectures
+#   - Supported values: x64, arm64
+#   - Operations without arch run for all architectures
+#
+# Example:
+#   - name: "macOS-only Binary"
+#     source: "resources/binaries/macos_only"
+#     destination: "chrome/browser/resources/macos/"
+#     type: "directory"
+#     os: ["macos"]
+#
+#   - name: "ARM64-only Library"
+#     source: "resources/libs/arm64_optimized"
+#     destination: "chrome/browser/lib/"
+#     type: "directory"
+#     arch: ["arm64"]
+#
+#   - name: "Windows x64 DLL"
+#     source: "resources/dlls/x64/special.dll"
+#     destination: "chrome/browser/resources/"
+#     type: "file"
+#     os: ["windows"]
+#     arch: ["x64"]
+
+copy_operations:
+  # Extensions
+  # - name: "AI Side Panel Extension"
+  #   source: "resources/files/ai_side_panel"
+  #   destination: "chrome/browser/resources/ai_side_panel"
+  #   type: "directory"
+
+  # - name: "Bug Reporter Extension"
+  #   source: "resources/files/bug_reporter"
+  #   destination: "chrome/browser/resources/bug_reporter"
+  #   type: "directory"
+
+  # Icons - General
+  - name: "Product Logo Icons"
+    source: "resources/icons/*.png"
+    destination: "chrome/app/theme/chromium/"
+    type: "files"
+
+  - name: "Product Logo AI Files"
+    source: "resources/icons/*.ai"
+    destination: "chrome/app/theme/chromium/"
+    type: "files"
+
+  - name: "Product Logo SVG Files"
+    source: "resources/icons/*.svg"
+    destination: "chrome/app/theme/chromium/"
+    type: "files"
+
+  # Icons - Platform specific
+  - name: "ChromeOS Icons"
+    source: "resources/icons/chromeos"
+    destination: "chrome/app/theme/chromium/chromeos"
+    type: "directory"
+
+  - name: "Linux Icons"
+    source: "resources/icons/linux"
+    destination: "chrome/app/theme/chromium/linux"
+    type: "directory"
+
+  - name: "Mac Icons"
+    source: "resources/icons/mac"
+    destination: "chrome/app/theme/chromium/mac"
+    type: "directory"
+
+  - name: "Windows Icons"
+    source: "resources/icons/win"
+    destination: "chrome/app/theme/chromium/win"
+    type: "directory"
+
+  # Icons - DPI specific
+  - name: "Product Logo Name 22 - 100%"
+    source: "resources/icons/product_logo_name_22.png"
+    destination: "chrome/app/theme/default_100_percent/chromium/product_logo_name_22.png"
+    type: "file"
+
+  - name: "Product Logo Name 22 White - 100%"
+    source: "resources/icons/product_logo_name_22_white.png"
+    destination: "chrome/app/theme/default_100_percent/chromium/product_logo_name_22_white.png"
+    type: "file"
+
+  - name: "Product Logo Name 22 - 200%"
+    source: "resources/icons/product_logo_name_22_2x.png"
+    destination: "chrome/app/theme/default_200_percent/chromium/product_logo_name_22.png"
+    type: "file"
+
+  - name: "Product Logo Name 22 White - 200%"
+    source: "resources/icons/product_logo_name_22_white_2x.png"
+    destination: "chrome/app/theme/default_200_percent/chromium/product_logo_name_22_white.png"
+    type: "file"
+
+  - name: "Product Logo 16 - 100%"
+    source: "resources/icons/product_logo_16.png"
+    destination: "chrome/app/theme/default_100_percent/chromium/product_logo_16.png"
+    type: "file"
+
+  - name: "Product Logo 32 - 100%"
+    source: "resources/icons/product_logo_32.png"
+    destination: "chrome/app/theme/default_100_percent/chromium/product_logo_32.png"
+    type: "file"
+
+  - name: "Product Logo 16 - 200%"
+    source: "resources/icons/product_logo_32.png"
+    destination: "chrome/app/theme/default_200_percent/chromium/product_logo_16.png"
+    type: "file"
+
+  - name: "Product Logo 32 - 200%"
+    source: "resources/icons/product_logo_64.png"
+    destination: "chrome/app/theme/default_200_percent/chromium/product_logo_32.png"
+    type: "file"
+
+  # VibeBrowser Server Binary - Platform & Architecture specific
+  - name: "VibeBrowser Server Binary - macOS ARM64"
+    source: "resources/binaries/vibebrowser_server/vibebrowser-server-darwin-arm64"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/vibebrowser_server"
+    type: "file"
+    os: ["macos"]
+    arch: ["arm64"]
+
+  - name: "VibeBrowser Server Binary - macOS x64"
+    source: "resources/binaries/vibebrowser_server/vibebrowser-server-darwin-x64"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/vibebrowser_server"
+    type: "file"
+    os: ["macos"]
+    arch: ["x64"]
+
+  - name: "VibeBrowser Server Binary - Linux ARM64"
+    source: "resources/binaries/vibebrowser_server/vibebrowser-server-linux-arm64"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/vibebrowser_server"
+    type: "file"
+    os: ["linux"]
+    arch: ["arm64"]
+
+  - name: "VibeBrowser Server Binary - Linux x64"
+    source: "resources/binaries/vibebrowser_server/vibebrowser-server-linux-x64"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/vibebrowser_server"
+    type: "file"
+    os: ["linux"]
+    arch: ["x64"]
+
+  - name: "VibeBrowser Server Binary - Windows x64"
+    source: "resources/binaries/vibebrowser_server/vibebrowser-server-windows-x64.exe"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/vibebrowser_server.exe"
+    type: "file"
+    os: ["windows"]
+    arch: ["x64"]
+
+  # Codex Binary - Platform & Architecture specific
+  - name: "Codex Binary - macOS ARM64"
+    source: "resources/binaries/codex/codex-aarch64-apple-darwin"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/codex"
+    type: "file"
+    os: ["macos"]
+    arch: ["arm64"]
+
+  - name: "Codex Binary - macOS x64"
+    source: "resources/binaries/codex/codex-x86_64-apple-darwin"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/codex"
+    type: "file"
+    os: ["macos"]
+    arch: ["x64"]
+
+  - name: "Codex Binary - Linux ARM64"
+    source: "resources/binaries/codex/codex-aarch64-unknown-linux-musl"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/codex"
+    type: "file"
+    os: ["linux"]
+    arch: ["arm64"]
+
+  - name: "Codex Binary - Linux x64"
+    source: "resources/binaries/codex/codex-x86_64-unknown-linux-musl"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/codex"
+    type: "file"
+    os: ["linux"]
+    arch: ["x64"]
+
+  - name: "Codex Binary - Windows ARM64"
+    source: "resources/binaries/codex/codex-aarch64-pc-windows-msvc.exe"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/codex.exe"
+    type: "file"
+    os: ["windows"]
+    arch: ["arm64"]
+
+  - name: "Codex Binary - Windows x64"
+    source: "resources/binaries/codex/codex-x86_64-pc-windows-msvc.exe"
+    destination: "chrome/browser/vibebrowser_server/resources/bin/codex.exe"
+    type: "file"
+    os: ["windows"]
+    arch: ["x64"]

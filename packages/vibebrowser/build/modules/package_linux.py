@@ -1,0 +1,536 @@
+#!/usr/bin/env python3
+"""
+Linux packaging module for VibeBrowser (AppImage and .deb)
+"""
+
+import os
+import shutil
+import subprocess
+from pathlib import Path
+from typing import List, Tuple, Optional
+
+from context import BuildContext
+from utils import (
+    log_info,
+    log_error,
+    log_warning,
+    log_success,
+    run_command,
+    safe_rmtree,
+    join_paths,
+)
+
+
+# =============================================================================
+# Shared Helper Functions (used by both AppImage and .deb)
+# =============================================================================
+
+
+def copy_browser_files(
+    ctx: BuildContext, target_dir: Path, set_sandbox_suid: bool = True
+) -> bool:
+    """Copy browser binaries, libraries, and resources to target directory.
+
+    Args:
+        ctx: Build context
+        target_dir: Destination directory for browser files
+        set_sandbox_suid: If True, set SUID bit on chrome_sandbox (AppImage only)
+
+    Returns:
+        True if successful, False otherwise
+    """
+    target_dir.mkdir(parents=True, exist_ok=True)
+    out_dir = join_paths(ctx.chromium_src, ctx.out_dir)
+
+    files_to_copy = [
+        ctx.VIBEBROWSER_APP_NAME,
+        "chrome_crashpad_handler",
+        "chrome_sandbox",
+        "chromedriver",
+        "libEGL.so",
+        "libGLESv2.so",
+        "libvk_swiftshader.so",
+        "libvulkan.so.1",
+        "vk_swiftshader_icd.json",
+        "icudtl.dat",
+        "snapshot_blob.bin",
+        "v8_context_snapshot.bin",
+        "chrome_100_percent.pak",
+        "chrome_200_percent.pak",
+        "resources.pak",
+    ]
+
+    for file in files_to_copy:
+        src = join_paths(out_dir, file)
+        if Path(src).exists():
+            shutil.copy2(src, join_paths(target_dir, file))
+            log_info(f"  ✓ Copied {file}")
+        else:
+            log_warning(f"  ⚠ File not found: {file}")
+
+    dirs_to_copy = ["locales", "MEIPreload", "VibeBrowserServer"]
+    for dir_name in dirs_to_copy:
+        src = join_paths(out_dir, dir_name)
+        if Path(src).exists():
+            shutil.copytree(src, join_paths(target_dir, dir_name), dirs_exist_ok=True)
+            log_info(f"  ✓ Copied {dir_name}/")
+
+    VibeBrowser_path = Path(join_paths(target_dir, ctx.VIBEBROWSER_APP_NAME))
+    if VibeBrowser_path.exists():
+        VibeBrowser_path.chmod(0o755)
+
+    sandbox_path = Path(join_paths(target_dir, "chrome_sandbox"))
+    if sandbox_path.exists():
+        if set_sandbox_suid:
+            sandbox_path.chmod(0o4755)
+        else:
+            sandbox_path.chmod(0o755)
+
+    crashpad_path = Path(join_paths(target_dir, "chrome_crashpad_handler"))
+    if crashpad_path.exists():
+        crashpad_path.chmod(0o755)
+
+    return True
+
+
+def create_desktop_file(apps_dir: Path, exec_path: str) -> Path:
+    """Create .desktop file with specified Exec path.
+
+    Args:
+        apps_dir: Directory where .desktop file should be created
+        exec_path: Full path for Exec= line in desktop file
+
+    Returns:
+        Path to created .desktop file
+    """
+    apps_dir.mkdir(parents=True, exist_ok=True)
+
+    desktop_content = f"""[Desktop Entry]
+Version=1.0
+Name=VibeBrowser
+GenericName=Web Browser
+Comment=Browse the World Wide Web
+Exec={exec_path} %U
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
+Icon=VibeBrowser
+"""
+
+    desktop_file = Path(join_paths(apps_dir, "VibeBrowser.desktop"))
+    desktop_file.write_text(desktop_content)
+    log_info("  ✓ Created desktop file")
+    return desktop_file
+
+
+def copy_icon(ctx: BuildContext, icons_dir: Path) -> bool:
+    """Copy product icon to hicolor icon directory.
+
+    Args:
+        ctx: Build context
+        icons_dir: Base icons directory (usr/share/icons/hicolor)
+
+    Returns:
+        True if icon was copied, False if not found
+    """
+    icon_src = Path(join_paths(ctx.root_dir, "resources", "icons", "product_logo.png"))
+    if not icon_src.exists():
+        log_warning("  ⚠ Icon not found at resources/icons/product_logo.png")
+        return False
+
+    icon_dest = Path(join_paths(icons_dir, "256x256", "apps", "VibeBrowser.png"))
+    icon_dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(icon_src, icon_dest)
+    log_info("  ✓ Copied icon")
+    return True
+
+
+# =============================================================================
+# AppImage Packaging Functions
+# =============================================================================
+
+
+def prepare_appdir(ctx: BuildContext, appdir: Path) -> bool:
+    """Prepare the AppDir structure for AppImage"""
+    log_info("📁 Preparing AppDir structure...")
+
+    app_root = join_paths(appdir, "opt", "VibeBrowser")
+    usr_share = join_paths(appdir, "usr", "share")
+    icons_dir = join_paths(usr_share, "icons", "hicolor")
+    apps_dir = join_paths(usr_share, "applications")
+
+    # Copy browser files (with SUID on chrome_sandbox for AppImage)
+    if not copy_browser_files(ctx, app_root, set_sandbox_suid=True):
+        return False
+
+    # Create desktop file
+    desktop_file = create_desktop_file(
+        apps_dir, f"/opt/VibeBrowser/{ctx.VIBEBROWSER_APP_NAME}"
+    )
+
+    # Copy icon
+    icon_src = Path(join_paths(ctx.root_dir, "resources", "icons", "product_logo.png"))
+    copy_icon(ctx, icons_dir)
+
+    # AppImage-specific: Copy desktop file to root and update Exec line
+    appdir_desktop = Path(join_paths(appdir, "VibeBrowser.desktop"))
+    shutil.copy2(desktop_file, appdir_desktop)
+    desktop_content = appdir_desktop.read_text()
+    desktop_content = desktop_content.replace(
+        f"Exec=/opt/VibeBrowser/{ctx.VIBEBROWSER_APP_NAME} %U", "Exec=AppRun %U"
+    )
+    appdir_desktop.write_text(desktop_content)
+
+    # AppImage-specific: Copy icon to root
+    if icon_src.exists():
+        appdir_icon = Path(join_paths(appdir, "VibeBrowser.png"))
+        shutil.copy2(icon_src, appdir_icon)
+
+    # AppImage-specific: Create AppRun script
+    apprun_content = f"""#!/bin/sh
+THIS="$(readlink -f "${{0}}")"
+HERE="$(dirname "${{THIS}}")"
+export LD_LIBRARY_PATH="${{HERE}}"/opt/VibeBrowser:$LD_LIBRARY_PATH
+export CHROME_WRAPPER="${{THIS}}"
+"${{HERE}}"/opt/VibeBrowser/{ctx.VIBEBROWSER_APP_NAME} "$@"
+"""
+
+    apprun_file = Path(join_paths(appdir, "AppRun"))
+    apprun_file.write_text(apprun_content)
+    apprun_file.chmod(0o755)
+    log_info("  ✓ Created AppRun script")
+
+    return True
+
+
+def download_appimagetool(ctx: BuildContext) -> Optional[Path]:
+    """Download appimagetool if not available"""
+    tool_dir = Path(join_paths(ctx.root_dir, "build", "tools"))
+    tool_dir.mkdir(exist_ok=True)
+
+    tool_path = Path(join_paths(tool_dir, "appimagetool-x86_64.AppImage"))
+
+    if tool_path.exists():
+        log_info("✓ appimagetool already available")
+        return tool_path
+
+    log_info("📥 Downloading appimagetool...")
+    url = "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
+
+    cmd = ["wget", "-O", str(tool_path), url]
+    result = run_command(cmd, check=False)
+
+    if result.returncode == 0:
+        tool_path.chmod(0o755)
+        log_success("✓ Downloaded appimagetool")
+        return tool_path
+    else:
+        log_error("Failed to download appimagetool")
+        return None
+
+
+def create_appimage(ctx: BuildContext, appdir: Path, output_path: Path) -> bool:
+    """Create AppImage from AppDir"""
+    log_info("📦 Creating AppImage...")
+
+    # Download appimagetool if needed
+    appimagetool = download_appimagetool(ctx)
+    if not appimagetool:
+        return False
+
+    # Set architecture
+    arch = "x86_64" if ctx.architecture == "x64" else "aarch64"
+    os.environ["ARCH"] = arch
+
+    # Create AppImage
+    cmd = [
+        str(appimagetool),
+        "--comp",
+        "gzip",  # Use gzip compression
+        str(appdir),
+        str(output_path),
+    ]
+
+    result = run_command(cmd, check=False)
+
+    if result.returncode == 0:
+        log_success(f"✓ Created AppImage: {output_path}")
+        # Make executable
+        output_path.chmod(0o755)
+        return True
+    else:
+        log_error("Failed to create AppImage")
+        return False
+
+
+# =============================================================================
+# Debian Package (.deb) Functions
+# =============================================================================
+
+
+def create_launcher_script(ctx: BuildContext, bin_dir: Path) -> None:
+    """Create launcher script in /usr/bin/VibeBrowser."""
+    bin_dir.mkdir(parents=True, exist_ok=True)
+
+    launcher_content = f"""#!/bin/sh
+# VibeBrowser launcher script
+export LD_LIBRARY_PATH=/usr/lib/VibeBrowser:$LD_LIBRARY_PATH
+exec /usr/lib/VibeBrowser/{ctx.VIBEBROWSER_APP_NAME} "$@"
+"""
+
+    launcher_path = Path(join_paths(bin_dir, "VibeBrowser"))
+    launcher_path.write_text(launcher_content)
+    launcher_path.chmod(0o755)
+    log_info("  ✓ Created launcher script")
+
+
+def create_control_file(ctx: BuildContext, debian_dir: Path) -> None:
+    """Create DEBIAN/control file with package metadata."""
+    debian_dir.mkdir(parents=True, exist_ok=True)
+
+    # Version formatting: strip 'v' prefix and spaces, ensure numeric
+    version = ctx.get_vibebrowser_chromium_version()
+    version = version.lstrip("v").replace(" ", "").replace("_", ".")
+
+    # Architecture mapping
+    deb_arch = "amd64" if ctx.architecture == "x64" else "arm64"
+
+    control_content = f"""Package: VibeBrowser
+Version: {version}
+Section: web
+Priority: optional
+Architecture: {deb_arch}
+Depends: libc6 (>= 2.31), libglib2.0-0, libnss3, libnspr4, libx11-6, libatk1.0-0, libatk-bridge2.0-0, libcups2, libasound2, libdrm2, libgbm1, libpango-1.0-0, libcairo2, libudev1, libxcomposite1, libxdamage1, libxrandr2, libxkbcommon0, libgtk-3-0
+Maintainer: VibeBrowser Team <support@VibeBrowser.com>
+Homepage: https://www.VibeBrowser.com/
+Description: VibeBrowser - The open source agentic browser
+ VibeBrowser is a privacy-focused web browser built on Chromium,
+ designed for modern web browsing with AI capabilities.
+"""
+
+    control_path = Path(join_paths(debian_dir, "control"))
+    control_path.write_text(control_content)
+    log_info("  ✓ Created DEBIAN/control")
+
+
+def create_postinst_script(debian_dir: Path) -> None:
+    """Create DEBIAN/postinst script to set SUID on chrome_sandbox.
+
+    Debian policy prohibits setting SUID in package files directly,
+    so we set it in postinst after installation.
+    """
+    postinst_content = """#!/bin/sh
+# Post-installation script for VibeBrowser
+set -e
+
+# Set SUID bit on chrome_sandbox for sandboxing support
+if [ -f /usr/lib/VibeBrowser/chrome_sandbox ]; then
+    chmod 4755 /usr/lib/VibeBrowser/chrome_sandbox
+fi
+
+exit 0
+"""
+
+    postinst_path = Path(join_paths(debian_dir, "postinst"))
+    postinst_path.write_text(postinst_content)
+    postinst_path.chmod(0o755)
+    log_info("  ✓ Created DEBIAN/postinst")
+
+
+def prepare_debdir(ctx: BuildContext, debdir: Path) -> bool:
+    """Prepare directory structure for .deb package.
+
+    Structure:
+    debdir/
+    ├── DEBIAN/
+    │   ├── control
+    │   └── postinst
+    ├── usr/
+    │   ├── bin/
+    │   │   └── VibeBrowser (launcher script)
+    │   ├── lib/VibeBrowser/
+    │   │   └── [all browser files]
+    │   └── share/
+    │       ├── applications/VibeBrowser.desktop
+    │       └── icons/hicolor/256x256/apps/VibeBrowser.png
+    """
+    log_info("📁 Preparing .deb directory structure...")
+
+    lib_dir = join_paths(debdir, "usr", "lib", "VibeBrowser")
+    bin_dir = join_paths(debdir, "usr", "bin")
+    share_dir = join_paths(debdir, "usr", "share")
+    apps_dir = join_paths(share_dir, "applications")
+    icons_dir = join_paths(share_dir, "icons", "hicolor")
+    debian_dir = join_paths(debdir, "DEBIAN")
+
+    # Copy browser files (without SUID, will be set in postinst)
+    if not copy_browser_files(ctx, lib_dir, set_sandbox_suid=False):
+        return False
+
+    # Create launcher script in /usr/bin/
+    create_launcher_script(ctx, bin_dir)
+
+    # Create desktop file
+    create_desktop_file(apps_dir, "/usr/bin/VibeBrowser")
+
+    # Copy icon
+    copy_icon(ctx, icons_dir)
+
+    # Create DEBIAN metadata files
+    create_control_file(ctx, debian_dir)
+    create_postinst_script(debian_dir)
+
+    log_success("✓ .deb directory prepared")
+    return True
+
+
+def create_deb(ctx: BuildContext, debdir: Path, output_path: Path) -> bool:
+    """Build .deb package using dpkg-deb."""
+    log_info("📦 Creating .deb package...")
+
+    # Verify dpkg-deb is available
+    if not shutil.which("dpkg-deb"):
+        log_error("dpkg-deb not found. Install with: sudo apt install dpkg")
+        return False
+
+    cmd = [
+        "dpkg-deb",
+        "--build",
+        "--root-owner-group",  # Ensure files owned by root:root
+        str(debdir),
+        str(output_path),
+    ]
+
+    result = run_command(cmd, check=False)
+
+    if result.returncode == 0:
+        log_success(f"✓ Created .deb package: {output_path}")
+        output_path.chmod(0o644)  # Standard package permissions
+        return True
+    else:
+        log_error("Failed to create .deb package")
+        return False
+
+
+# =============================================================================
+# Main Packaging Entry Points
+# =============================================================================
+
+
+def package_appimage(ctx: BuildContext, package_dir: Path) -> Optional[Path]:
+    """Create AppImage package.
+
+    Returns:
+        Path to created AppImage, or None if failed
+    """
+    log_info("🖼️  Building AppImage...")
+
+    appdir = Path(join_paths(package_dir, f"{ctx.VIBEBROWSER_APP_BASE_NAME}.AppDir"))
+    if appdir.exists():
+        safe_rmtree(appdir)
+
+    if not prepare_appdir(ctx, appdir):
+        safe_rmtree(appdir)
+        return None
+
+    version = ctx.get_vibebrowser_chromium_version().replace(" ", "_")
+    arch_suffix = "x86_64" if ctx.architecture == "x64" else "arm64"
+    filename = f"{ctx.VIBEBROWSER_APP_BASE_NAME}-{version}-{arch_suffix}.AppImage"
+    output_path = Path(join_paths(package_dir, filename))
+
+    success = create_appimage(ctx, appdir, output_path)
+    safe_rmtree(appdir)
+
+    if success:
+        log_success(f"✅ AppImage created: {output_path.name}")
+        log_info(f"   Size: {output_path.stat().st_size / 1024 / 1024:.1f} MB")
+        return output_path
+
+    return None
+
+
+def package_deb(ctx: BuildContext, package_dir: Path) -> Optional[Path]:
+    """Create .deb package.
+
+    Returns:
+        Path to created .deb, or None if failed
+    """
+    log_info("📦 Building .deb package...")
+
+    debdir = Path(join_paths(package_dir, f"{ctx.VIBEBROWSER_APP_BASE_NAME}_deb"))
+    if debdir.exists():
+        safe_rmtree(debdir)
+
+    if not prepare_debdir(ctx, debdir):
+        safe_rmtree(debdir)
+        return None
+
+    version = (
+        ctx.get_vibebrowser_chromium_version()
+        .lstrip("v")
+        .replace(" ", "")
+        .replace("_", ".")
+    )
+    arch_suffix = "amd64" if ctx.architecture == "x64" else "arm64"
+    filename = f"VibeBrowser_{version}_{arch_suffix}.deb"
+    output_path = Path(join_paths(package_dir, filename))
+
+    success = create_deb(ctx, debdir, output_path)
+    safe_rmtree(debdir)
+
+    if success:
+        log_success(f"✅ .deb package created: {output_path.name}")
+        log_info(f"   Size: {output_path.stat().st_size / 1024 / 1024:.1f} MB")
+        return output_path
+
+    return None
+
+
+def package(ctx: BuildContext) -> bool:
+    """Package VibeBrowser for Linux as both AppImage and .deb"""
+    log_info(
+        f"📦 Packaging {ctx.VIBEBROWSER_APP_BASE_NAME} {ctx.get_vibebrowser_chromium_version()} for Linux ({ctx.architecture})"
+    )
+
+    # Create packaging directory
+    package_dir = ctx.get_dist_dir()
+    package_dir.mkdir(parents=True, exist_ok=True)
+
+    # Build both packages
+    appimage_path = package_appimage(ctx, package_dir)
+    deb_path = package_deb(ctx, package_dir)
+
+    # Store package path in context (prefer .deb for GCS upload)
+    if deb_path:
+        ctx.package_path = deb_path
+    elif appimage_path:
+        ctx.package_path = appimage_path
+
+    # Overall success if at least one format succeeded
+    success = bool(appimage_path or deb_path)
+
+    if success:
+        log_success("✅ Linux packaging complete!")
+        if appimage_path and deb_path:
+            log_info("   Both AppImage and .deb created successfully")
+        elif appimage_path:
+            log_warning("   Only AppImage created (.deb failed)")
+        elif deb_path:
+            log_warning("   Only .deb created (AppImage failed)")
+    else:
+        log_error("❌ Both AppImage and .deb packaging failed")
+
+    return success
+
+
+def package_universal(contexts: List[BuildContext]) -> bool:
+    """Linux doesn't support universal binaries"""
+    log_warning("Universal binaries are not supported on Linux")
+    return False
+
+
+def sign_binaries(ctx: BuildContext) -> bool:
+    """Linux doesn't require code signing like macOS/Windows"""
+    log_info("Code signing is not required for Linux packages")
+    return True

@@ -1,0 +1,313 @@
+version: '1.0'
+features:
+  VibeBrowser-add-sparkle-info-plist-keys:
+    description: 'patch: app-info.plist changes'
+    files:
+    - chrome/app/app-Info.plist
+  VibeBrowser-adding-new-vector-icons:
+    description: 'patch: adding-new-vector-icons'
+    files:
+    - components/vector_icons/BUILD.gn
+    - components/vector_icons/chat_orange.icon
+    - components/vector_icons/clash_of_gpts.icon
+  VibeBrowser-branding-file-updates:
+    description: VibeBrowser branding for file paths
+    files:
+    - chrome/common/chrome_constants.cc
+    - chrome/common/chrome_paths_linux.cc
+    - chrome/install_static/chromium_install_modes.cc
+    - chrome/install_static/chromium_install_modes.h
+    - components/os_crypt/sync/keychain_password_mac.mm
+  VibeBrowser-VibeBrowser-ai-settings-page:
+    description: llm settings page
+    files:
+    - chrome/browser/extensions/api/settings_private/prefs_util.cc
+    - chrome/browser/prefs/browser_prefs.cc
+    - chrome/browser/prefs/browser_prefs.h
+    - chrome/browser/resources/settings/BUILD.gn
+    - chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html
+    - chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.ts
+    - chrome/browser/resources/settings/route.ts
+    - chrome/browser/resources/settings/router.ts
+    - chrome/browser/resources/settings/settings.ts
+    - chrome/browser/resources/settings/settings_main/settings_main.html
+    - chrome/browser/resources/settings/settings_main/settings_main.ts
+    - chrome/browser/resources/settings/settings_menu/settings_menu.html
+    - chrome/common/pref_names.h
+  VibeBrowser-VibeBrowser-api-updates-v2:
+    description: 'VibeBrowser api updates v2: execute js, highlights, screenshot'
+    files:
+    - chrome/browser/extensions/api/browser_os/browser_os_api.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_api.h
+    - chrome/browser/extensions/api/browser_os/browser_os_api_helpers.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_api_helpers.h
+    - chrome/browser/extensions/api/browser_os/browser_os_api_utils.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_api_utils.h
+    - chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.h
+    - chrome/browser/extensions/chrome_extensions_browser_api_provider.cc
+    - chrome/common/extensions/api/browser_os.idl
+    - extensions/browser/extension_function_histogram_value.h
+  VibeBrowser-VibeBrowser-api-updates:
+    description: 'VibeBrowser api updates: version, metric, click, prefs,'
+    files:
+    - chrome/browser/extensions/BUILD.gn
+    - chrome/browser/extensions/api/browser_os/browser_os_api.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_api.h
+    - chrome/browser/extensions/api/browser_os/browser_os_api_helpers.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_api_helpers.h
+    - chrome/browser/extensions/api/browser_os/browser_os_api_utils.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_api_utils.h
+    - chrome/browser/extensions/api/browser_os/browser_os_change_detector.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_change_detector.h
+    - chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.h
+    - chrome/common/extensions/api/browser_os.idl
+    - extensions/browser/extension_function_histogram_value.h
+  VibeBrowser-VibeBrowser-api:
+    description: VibeBrowser API
+    files:
+    - chrome/browser/extensions/BUILD.gn
+    - chrome/browser/extensions/api/browser_os/browser_os_api.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_api.h
+    - chrome/browser/extensions/api/browser_os/browser_os_api_helpers.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_api_helpers.h
+    - chrome/browser/extensions/api/browser_os/browser_os_api_utils.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_api_utils.h
+    - chrome/browser/extensions/api/browser_os/browser_os_change_detector.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_change_detector.h
+    - chrome/browser/extensions/api/browser_os/browser_os_content_processor.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_content_processor.h
+    - chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.cc
+    - chrome/browser/extensions/api/browser_os/browser_os_snapshot_processor.h
+    - chrome/browser/extensions/chrome_extensions_browser_api_provider.cc
+    - chrome/common/extensions/api/_api_features.json
+    - chrome/common/extensions/api/_permission_features.json
+    - chrome/common/extensions/api/api_sources.gni
+    - chrome/common/extensions/api/browser_os.idl
+    - chrome/common/extensions/permissions/chrome_api_permissions.cc
+    - extensions/browser/extension_function_histogram_value.h
+    - extensions/common/mojom/api_permission_id.mojom
+    - tools/metrics/histograms/metadata/extensions/enums.xml
+  VibeBrowser-VibeBrowser-metrics:
+    description: VibeBrowser metrics
+    files:
+    - chrome/browser/metrics/chrome_metrics_service_client.cc
+    - chrome/browser/prefs/browser_prefs.cc
+    - chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
+    - chrome/browser/ui/BUILD.gn
+    - chrome/browser/ui/webui/settings/VibeBrowser_metrics_handler.cc
+    - chrome/browser/ui/webui/settings/VibeBrowser_metrics_handler.h
+    - chrome/browser/ui/webui/settings/settings_ui.cc
+    - chrome/common/pref_names.h
+    - components/metrics/VibeBrowser_metrics/BUILD.gn
+    - components/metrics/VibeBrowser_metrics/DEPS
+    - components/metrics/VibeBrowser_metrics/VibeBrowser_metrics.cc
+    - components/metrics/VibeBrowser_metrics/VibeBrowser_metrics.h
+    - components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_prefs.cc
+    - components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_prefs.h
+    - components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service.cc
+    - components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service.h
+    - components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service_factory.cc
+    - components/metrics/VibeBrowser_metrics/VibeBrowser_metrics_service_factory.h
+  VibeBrowser-VibeBrowser-ota-updater:
+    description: extensions ota updater
+    files:
+    - chrome/browser/extensions/BUILD.gn
+    - chrome/browser/extensions/api/developer_private/extension_info_generator_shared.cc
+    - chrome/browser/extensions/VibeBrowser_extension_constants.h
+    - chrome/browser/extensions/VibeBrowser_external_loader.cc
+    - chrome/browser/extensions/VibeBrowser_external_loader.h
+    - chrome/browser/extensions/chrome_extension_registrar_delegate.cc
+    - chrome/browser/extensions/extension_web_ui_override_registrar.cc
+    - chrome/browser/extensions/external_provider_impl.cc
+    - chrome/browser/ui/extensions/settings_overridden_params_providers.cc
+  VibeBrowser-chrome-importer:
+    description: chrome importer
+    files:
+    - chrome/app/generated_resources.grd
+    - chrome/app/settings_strings.grdp
+    - chrome/browser/extensions/api/settings_private/prefs_util.cc
+    - chrome/browser/importer/external_process_importer_client.cc
+    - chrome/browser/importer/external_process_importer_client.h
+    - chrome/browser/importer/importer_list.cc
+    - chrome/browser/importer/importer_uma.cc
+    - chrome/browser/importer/in_process_importer_bridge.cc
+    - chrome/browser/importer/in_process_importer_bridge.h
+    - chrome/browser/importer/profile_writer.cc
+    - chrome/browser/importer/profile_writer.h
+    - chrome/browser/resources/settings/people_page/import_data_browser_proxy.ts
+    - chrome/browser/resources/settings/people_page/import_data_dialog.html
+    - chrome/browser/ui/webui/settings/import_data_handler.cc
+    - chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
+    - chrome/browser/ui/webui/settings/settings_ui.cc
+    - chrome/common/importer/importer_bridge.h
+    - chrome/common/importer/importer_data_types.h
+    - chrome/common/importer/importer_type.h
+    - chrome/common/importer/profile_import.mojom
+    - chrome/common/importer/profile_import_process_param_traits_macros.h
+    - chrome/common/pref_names.h
+    - chrome/utility/BUILD.gn
+    - chrome/utility/importer/chrome_importer.cc
+    - chrome/utility/importer/chrome_importer.h
+    - chrome/utility/importer/external_process_importer_bridge.cc
+    - chrome/utility/importer/external_process_importer_bridge.h
+    - chrome/utility/importer/importer_creator.cc
+    - tools/metrics/histograms/metadata/sql/histograms.xml
+  VibeBrowser-chrome-version-updater:
+    description: 'patch: chrome version update'
+    files:
+    - chrome/VERSION
+  VibeBrowser-disable-chrome-labs-pinning:
+    description: 'patch: disable-chrome-labs-pinning'
+    files:
+    - chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc
+    - chrome/browser/ui/toolbar/toolbar_pref_names.cc
+  VibeBrowser-disable-google-key-info-bar:
+    description: 'patch: disable-google-key-info-bar'
+    files:
+    - chrome/browser/ui/startup/google_api_keys_infobar_delegate.cc
+  VibeBrowser-disable-info-bar-in-cdp:
+    description: 'patch: disable-info-bar-in-cdp'
+    files:
+    - chrome/browser/extensions/api/debugger/debugger_api.cc
+  VibeBrowser-disable-sidepanel-animation:
+    description: disable sidepanel animation
+    files:
+    - chrome/browser/ui/views/side_panel/side_panel.cc
+    - chrome/browser/ui/views/side_panel/side_panel.h
+  VibeBrowser-disable-user-gesture-restriction-on-sidepanel:
+    description: 'patch: disable-user-gesture-restriction-on-sidepanel'
+    files:
+    - chrome/browser/extensions/api/side_panel/side_panel_api.cc
+  VibeBrowser-first-run:
+    description: first run
+    files:
+    - chrome/browser/chrome_browser_main.cc
+    - chrome/browser/ui/webui/chrome_web_ui_configs.cc
+    - chrome/browser/ui/webui/vibebrowser_first_run.h
+    - chrome/common/webui_url_constants.cc
+  VibeBrowser-llm-chat:
+    description: llm-chat
+    files:
+    - chrome/app/chrome_command_ids.h
+    - chrome/app/generated_resources.grd
+    - chrome/browser/global_keyboard_shortcuts_mac.mm
+    - chrome/browser/ui/actions/chrome_action_id.h
+    - chrome/browser/ui/browser_actions.cc
+    - chrome/browser/ui/browser_command_controller.cc
+    - chrome/browser/ui/toolbar/toolbar_pref_names.cc
+    - chrome/browser/ui/ui_features.cc
+    - chrome/browser/ui/ui_features.h
+    - chrome/browser/ui/views/accelerator_table.cc
+    - chrome/browser/ui/views/side_panel/BUILD.gn
+    - chrome/browser/ui/views/side_panel/side_panel_entry_id.h
+    - chrome/browser/ui/views/side_panel/side_panel_prefs.cc
+    - chrome/browser/ui/views/side_panel/side_panel_util.cc
+    - chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.cc
+    - chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.h
+    - chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.cc
+    - chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_view.h
+    - chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom
+    - chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc
+  VibeBrowser-llm-hub:
+    description: llm-hub
+    files:
+    - chrome/app/chrome_command_ids.h
+    - chrome/app/generated_resources.grd
+    - chrome/browser/global_keyboard_shortcuts_mac.mm
+    - chrome/browser/ui/actions/chrome_action_id.h
+    - chrome/browser/ui/browser_actions.cc
+    - chrome/browser/ui/browser_command_controller.cc
+    - chrome/browser/ui/toolbar/toolbar_pref_names.cc
+    - chrome/browser/ui/ui_features.cc
+    - chrome/browser/ui/ui_features.h
+    - chrome/browser/ui/views/accelerator_table.cc
+    - chrome/browser/ui/views/side_panel/BUILD.gn
+    - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.cc
+    - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.h
+    - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.cc
+    - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_view.h
+    - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.cc
+    - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_window.h
+    - chrome/browser/ui/views/side_panel/side_panel_entry_id.h
+    - chrome/browser/ui/views/side_panel/side_panel_prefs.cc
+    - chrome/browser/ui/views/side_panel/side_panel_util.cc
+    - chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.cc
+    - chrome/browser/ui/webui/BUILD.gn
+    - chrome/browser/ui/webui/chrome_web_ui_configs.cc
+    - chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.cc
+    - chrome/browser/ui/webui/clash_of_gpts/clash_of_gpts_ui.h
+    - chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar.mojom
+    - chrome/browser/ui/webui/side_panel/customize_chrome/customize_toolbar/customize_toolbar_handler.cc
+    - chrome/common/webui_url_constants.h
+  VibeBrowser-llm-settings-page-updates:
+    description: 'llm settings page: updates'
+    files:
+    - chrome/browser/resources/settings/BUILD.gn
+    - chrome/browser/resources/settings/vibebrowser_page/models_data.html
+    - chrome/browser/resources/settings/vibebrowser_page/models_data.ts
+    - chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.html
+    - chrome/browser/resources/settings/vibebrowser_page/vibebrowser_page.ts
+  VibeBrowser-mac-sparkle-updater:
+    description: 'patch: vibebrowser-updater-sparkle'
+    files:
+    - chrome/BUILD.gn
+    - chrome/browser/BUILD.gn
+    - chrome/browser/mac/chrome_browser_main_extra_parts_mac.h
+    - chrome/browser/mac/chrome_browser_main_extra_parts_mac.mm
+    - chrome/browser/mac/sparkle_glue.h
+    - chrome/browser/mac/sparkle_glue.mm
+    - chrome/browser/mac/su_updater.h
+    - chrome/browser/sparkle_buildflags.gni
+    - chrome/browser/ui/BUILD.gn
+    - chrome/browser/ui/webui/help/sparkle_version_updater_mac.h
+    - chrome/browser/ui/webui/help/sparkle_version_updater_mac.mm
+    - chrome/browser/ui/webui/help/version_updater_mac.mm
+    - third_party/sparkle/BUILD.gn
+  VibeBrowser-pin-chat-and-hub:
+    description: pin VibeBrowser native panels
+    files:
+    - chrome/browser/extensions/VibeBrowser_extension_constants.h
+    - chrome/browser/sync/prefs/chrome_syncable_prefs_database.cc
+    - chrome/browser/ui/actions/VibeBrowser_actions_config.h
+    - chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.cc
+    - chrome/browser/ui/toolbar/pinned_toolbar/pinned_toolbar_actions_model.h
+    - chrome/browser/ui/toolbar/toolbar_pref_names.cc
+    - chrome/browser/ui/toolbar/toolbar_pref_names.h
+    - chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.cc
+    - chrome/browser/ui/views/toolbar/pinned_toolbar_actions_container.cc
+  VibeBrowser-pin-extensions-toolbar:
+    description: pin VibeBrowser extensions to extension toolbar
+    files:
+    - chrome/browser/extensions/VibeBrowser_extension_constants.h
+    - chrome/browser/extensions/extension_context_menu_model.cc
+    - chrome/browser/extensions/extension_management.cc
+    - chrome/browser/ui/actions/VibeBrowser_actions_config.h
+    - chrome/browser/ui/toolbar/toolbar_actions_model.cc
+    - chrome/browser/ui/views/side_panel/extensions/extension_side_panel_manager.cc
+  VibeBrowser-preferences-settings-page:
+    description: 'patch: settings prefs page'
+    files:
+    - chrome/browser/extensions/api/settings_private/prefs_util.cc
+    - chrome/browser/prefs/browser_prefs.cc
+    - chrome/browser/resources/settings/BUILD.gn
+    - chrome/browser/resources/settings/VibeBrowser_prefs_page/VibeBrowser_prefs_page.html
+    - chrome/browser/resources/settings/VibeBrowser_prefs_page/VibeBrowser_prefs_page.ts
+    - chrome/browser/resources/settings/route.ts
+    - chrome/browser/resources/settings/router.ts
+    - chrome/browser/resources/settings/settings.ts
+    - chrome/browser/resources/settings/settings_main/settings_main.html
+    - chrome/browser/resources/settings/settings_main/settings_main.ts
+    - chrome/browser/resources/settings/settings_menu/settings_menu.html
+    - chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.cc
+    - chrome/browser/ui/views/toolbar/pinned_action_toolbar_button.h
+    - chrome/common/pref_names.h
+  VibeBrowser-updates-llm-chat-and-hub:
+    description: 'updates: llmchat and llmhub'
+    files:
+    - chrome/browser/ui/browser_command_controller.cc
+    - chrome/browser/ui/views/side_panel/BUILD.gn
+    - chrome/browser/ui/views/side_panel/clash_of_gpts/clash_of_gpts_coordinator.cc
+    - chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.cc
+    - chrome/browser/ui/views/side_panel/third_party_llm/third_party_llm_panel_coordinator.h
