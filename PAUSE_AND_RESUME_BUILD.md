@@ -145,4 +145,3 @@ Time at Starbucks:       ~1.5 hours
 ---
 
 © 2025 VibeBrowser powered by VibeCaaS.com a division of NeuralQuantum.ai LLC. All rights reserved.
-
